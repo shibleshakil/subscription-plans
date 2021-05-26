@@ -13,7 +13,7 @@ Project:	Hound
 	++Form++
 	++Form-Wizard++
 	++Product Deatails*++
-	++Product Cart++	
+	++Product Cart++
 	++Popover++
 	++Typerhead++
 	++Editors++
@@ -53,7 +53,7 @@ Project:	Hound
 	++Vecotor Map++
 	++Progressbar++
 	++Search Bar++
-	++Chat UI++	
+	++Chat UI++
 	++Widgets++
 	++Profile++
 	++Followers++
@@ -61,7 +61,7 @@ Project:	Hound
 	++Timeline++
 	++Caledar++
 	++Todo List++
-	++Activity++  
+	++Activity++
 	++Message Box++
 	++Inbox++
 	++Contact Cards++
@@ -190,7 +190,7 @@ strong {
 }
 
 body {
-    color: #878787;
+    color: #2d2a2a;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -1169,7 +1169,7 @@ button.fc-agendaWeek-button,
     color: #fff;
     padding: 10px 25px;
     text-transform: capitalize;
-    border-radius: 2px;
+    border-radius: 5px;
     outline: none;
     box-shadow: none;
     border: none;
@@ -9521,7 +9521,6 @@ button.btn-icon-anim.btn-github.fc-agendaWeek-button:hover:before,
 .btn-icon-anim.btn-github.fc-today-button:hover:before {
     box-shadow: 0 0 0 1px #171515 inset;
 }
-.btn.btn-square,
 .wizard > .actions a.btn-square,
 .dt-buttons .btn-square.dt-button,
 .tablesaw-sortable th.tablesaw-sortable-head button.btn-square,
@@ -9535,6 +9534,11 @@ button.btn-square.fc-agendaWeek-button,
 .btn-square.fc-today-button {
     height: 42px;
     width: 42px;
+    padding: 0;
+}
+.btn.btn-square {
+    height: 25px;
+    width: 30px;
     padding: 0;
 }
 .btn.btn-square.btn-lg,
@@ -15027,7 +15031,7 @@ ul.wysihtml5-toolbar
 /* Admin Basic */
 .fixed-sidebar-left {
     position: fixed;
-    top: 66px;
+    top: 80px;
     left: 0;
     width: 225px;
     margin-left: 0;
@@ -15152,8 +15156,9 @@ ul.wysihtml5-toolbar
 a.toggle-left-nav-btn,
 a#toggle_mobile_nav,
 a#toggle_mobile_search {
-    color: #878787;
+    color: #0e0e0e;
     position: relative;
+    font-size: x-large;
     line-height: 66px;
 }
 a.toggle-left-nav-btn i,
@@ -16323,12 +16328,12 @@ a#toggle_mobile_nav {
 .navbar.navbar-inverse.navbar-fixed-top .nav-header .logo-wrap .brand-img {
     margin-right: 10px;
     position: relative;
-    top: 2px;
+    top: -3px !important;
 }
 .navbar.navbar-inverse.navbar-fixed-top .nav-header .logo-wrap .brand-text {
     display: inline-block;
     font-family: "Poppins", sans-serif;
-    color: #212121;
+    color: #0e0e0e;
     font-size: 21px;
     text-transform: capitalize;
     opacity: 1;
@@ -16866,6 +16871,7 @@ a#toggle_mobile_nav {
     .dropdown-menu.user-auth-dropdown {
     min-width: 175px;
     text-transform: capitalize;
+    background: skyblue;
 }
 .navbar.navbar-inverse.navbar-fixed-top .nav > li .dropdown-menu.mega-menu {
     right: 23px;
@@ -17000,7 +17006,7 @@ a#toggle_mobile_nav {
 }
 .navbar.navbar-inverse.navbar-fixed-top .nav.top-nav > li {
     display: inline-block;
-    float: left;
+    /* float: left; */
 }
 .navbar.navbar-inverse.navbar-fixed-top .nav.top-nav > li > a i.top-nav-icon {
     font-size: 24px;
@@ -17133,7 +17139,7 @@ a#toggle_mobile_nav {
     width: 100%;
 }
 .card-view.panel .panel-body {
-    padding: 5px 0 20px;
+    padding: 5px 0 5px;
 }
 .card-view.panel.panel-default > .panel-heading {
     background: transparent;
@@ -17199,7 +17205,7 @@ a#toggle_mobile_nav {
 
 .heading-bg {
     height: 67px;
-    margin: 0 -39px 10px;
+    margin: -27px -39px 10px !important;
     padding: 13px 15px;
 }
 .heading-bg h5 {
@@ -17275,6 +17281,157 @@ footer .nav > li > a:hover {
     border-radius: 0 !important;
 }
 
+/*custom label color*/
+.form-group label {
+    color: #2d2a2a !important;
+}
+
+/*custom sorting-action*/
+.sorting-action {
+    width: 80px;
+}
+/* custom switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ca2222;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2ab934;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(68px);
+    -ms-transform: translateX(68px);
+    transform: translateX(68px);
+}
+
+.on {
+    display: none;
+}
+
+.on,
+.off {
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider .on {
+    display: block;
+}
+
+input:checked + .slider .off {
+    display: none;
+}
+
+/*custom loader color*/
+.loader {
+    border: 16px solid #87ceeb;
+    border-radius: 50%;
+    border-top: 16px solid #1b1719;
+    border-bottom: 16px solid #1b1719;
+    width: 500px;
+    height: 500px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*custom header color*/
+.user-info-header {
+    display: inline-block;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    letter-spacing: 0.8px;
+}
+
+.user-info p {
+    display: inline-block;
+    text-align: left;
+    line-height: 15px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-left: 0px;
+    color: #000000;
+    font-weight: normal;
+    letter-spacing: 0.8px;
+    font-size: 15px;
+}
+
+ul li i {
+    color: black;
+}
+
+/*custom employee-image*/
+.employee-image {
+    height: 250px;
+    width: 100%;
+}
+
 /*Form*/
 .form-control,
 .select2-container--default
@@ -17313,10 +17470,10 @@ footer .nav > li > a:hover {
 .app-search .dd-handle:focus,
 .app-search .dd3-content:focus {
     border: 1px solid rgba(33, 33, 33, 0.12);
-    border-radius: 10px !important;
+    border-radius: 10px;
     background-color: #fff;
     box-shadow: none;
-    color: #212121;
+    color: #212121 !important;
     height: 42px;
 }
 .form-control:focus,
@@ -19413,9 +19570,9 @@ ul.wysihtml5-toolbar a.wysihtml5-command-active.fc-today-button {
 .table,
 .jsgrid-table {
     border-color: rgba(33, 33, 33, 0.1) !important;
+    color: #000 !important;
 }
 
-.table > tbody > tr > td,
 .jsgrid-table > tbody > tr > td,
 .table > tbody > tr > th,
 .jsgrid-table > tbody > tr > th,
@@ -19427,9 +19584,17 @@ ul.wysihtml5-toolbar a.wysihtml5-command-active.fc-today-button {
 .jsgrid-table > thead > tr > td,
 .table > thead > tr > th,
 .jsgrid-table > thead > tr > th {
-    padding: 16px;
+    padding: 8px;
     border-top: 1px solid rgba(33, 33, 33, 0.1);
     vertical-align: middle;
+}
+
+.table > thead > tr > th {
+    padding: 10px !important;
+}
+
+.table > tbody > tr > td {
+    padding: 4px !important;
 }
 
 .table > thead > tr > th,
@@ -19513,6 +19678,10 @@ ul.wysihtml5-toolbar a.wysihtml5-command-active.fc-today-button {
 
 table.dataTable tbody tr {
     background-color: transparent;
+}
+
+.even {
+    background-color: #c1d8e7 !important;
 }
 
 table.dataTable.display tbody tr.even > .sorting_1,
@@ -21243,7 +21412,7 @@ a.compose-mail {
 /*Instafeed*/
 .instagram-lite > li {
     display: inline-block;
-    float: left;
+    /* float: left; */
     font-size: 0;
     height: auto;
     width: 25%;
@@ -21620,7 +21789,7 @@ a.compose-mail {
     background: rgba(33, 33, 33, 0.05);
 }
 .dropdown-menu > li > a i {
-    color: #878787;
+    color: #000000;
     font-size: 18px;
     margin-right: 10px;
     width: 18px;
@@ -23875,7 +24044,7 @@ button.fc-agendaWeek-button {
 }
 .todo-list .todo-item {
     padding: 10px 15px;
-    @iclude transition(.2s ease);
+    transition: 0.2s ease;
     cursor: pointer;
 }
 .todo-list .todo-item:hover {

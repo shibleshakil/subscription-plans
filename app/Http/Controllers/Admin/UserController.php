@@ -6,26 +6,30 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Auth;
+use DB;
 
 class UserController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        return view('admin.user.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $users = User::get()->reverse();
+        $sl = 0;
+        return view('admin.user.index')->with(compact('users', 'sl'));
     }
 
     /**
@@ -34,37 +38,35 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        // dd($request->all());
+    public function store(Request $request){
         $validate = $request->validate([
             'name' => 'required | string | min:3',
             'email' => 'required | email | unique:users',
-            'email' => 'required | min:4',
+            'password' => 'required | min:4',
         ]);
 
-    }
+        $data = new User;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password = $request->password;
+        $data->type = $request->type;
+        $data->created_by = Auth()->user()->id;
+        // dd($data);
+        DB::beginTransaction();
+        try {
+            if($data->save()){
+                DB::commit();
+                return redirect()->route('admin-user.index')->with('success', 'User Added Successfully!');
+            }else{
+                DB::rollback();
+                return redirect()->route('admin-user.index')->with('errors', 'Somethings Went Wrong!');
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->route('admin-user.index')->with('error', $e->getMessage());
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -74,9 +76,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request) {
+        DB::beginTransaction();
+        try {
+            $data = User::find($request->id);
+            $data->type = $request->type;
+            $data->updated_by = Auth()->user()->id;
+            // dd($data);
+            if($data->save()){
+                DB::commit();
+                return redirect()->route('admin-user.index')->with('success', 'User Updated Successfully!');
+            }else{
+                DB::rollback();
+                return redirect()->route('admin-user.index')->with('errors', 'Somethings Went Wrong!');
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->route('admin-user.index')->with('error', $e->getMessage());
+        }
     }
 
     /**
@@ -85,8 +102,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {    
+        DB::beginTransaction();
+        try {
+            $data = User::findOrFail($id);
+            if($data->destroy($id)){
+                DB::commit();
+                return redirect()->route('admin-user.index')->with('success', 'User Deleted Successfully!');
+            }else{
+                DB::rollback();
+                return redirect()->route('admin-user.index')->with('errors', 'Somethings Went Wrong!');
+            }
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->route('admin-user.index')->with('error', $e->getMessage());
+        }
     }
 }

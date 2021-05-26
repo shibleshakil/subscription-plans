@@ -20,11 +20,11 @@ class AdminMiddleware
             return redirect()->route('login');
         }
 
-        if(Auth::User()->is_admin == 1){
+        if(Auth::User()->type == "Admin"){
             return $next($request);   
         }
 
-        if(Auth::User()->is_admin == 0){
+        if(Auth::User()->type == "User"){
             return redirect()->route('user');  
         }
         

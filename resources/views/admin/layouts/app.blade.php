@@ -12,6 +12,8 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <!-- Custom CSS -->
+	<link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">
 
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
     
@@ -20,6 +22,9 @@
     
     <!-- bootstrap-select CSS -->
     <link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- bootstrap-touchspin CSS -->
+	<link href="{{asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css"/>
     
 	<!-- Data table CSS -->
 	<link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -31,9 +36,9 @@
 	<link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
 	
 	<link href="{{ asset('vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css') }}" rel="stylesheet" type="text/css">
-    <!-- Custom CSS -->
-	<link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">
-		
+
+	<!-- Custom CSS -->
+	<link href="{{asset('src/scss/style.scss')}}" rel="stylesheet" type="text/css">		
 	
 </head>
 
@@ -77,6 +82,9 @@
 	
 	<!-- Slimscroll JavaScript -->
 	<script src="dist/js/jquery.slimscroll.js"></script>
+
+	<!-- Bootstrap Touchspin JavaScript -->
+	<script src="{{asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')}}"></script>
 	
 	<!-- simpleWeather JavaScript -->
 	<script src="vendors/bower_components/moment/min/moment.min.js"></script>
