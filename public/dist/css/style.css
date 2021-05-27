@@ -15484,6 +15484,20 @@ a#toggle_mobile_nav {
     left: 0;
 }
 
+.front-navbar {
+    background-color: #4a8db9 !important;
+}
+.front-navbar li > a {
+    color: black !important;
+    font-size: medium;
+    font-weight: bold;
+}
+.front-navbar li > a:hover {
+    color: white !important;
+    font-size: medium;
+    font-weight: bold;
+}
+
 .page-front {
     margin-left: 0;
     padding: 66px 6px;
@@ -17276,6 +17290,7 @@ footer {
     height: 40px;
     left: 0;
     text-align: center;
+    background-color: #5591b9;
 }
 footer p {
     display: block;
