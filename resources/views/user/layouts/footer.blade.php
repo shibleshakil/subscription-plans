@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer>
+<footer class="front-footer">
     <div class="row">
         <div class="col-sm-12">
             <p>2017 &copy; Hound. Pampered by Hencework</p>

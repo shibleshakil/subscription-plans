@@ -17290,6 +17290,14 @@ footer {
     height: 40px;
     left: 0;
     text-align: center;
+}
+.front-footer {
+    position: relative !important;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    text-align: center;
     background-color: #5591b9;
 }
 footer p {
