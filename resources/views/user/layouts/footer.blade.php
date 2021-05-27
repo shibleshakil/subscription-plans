@@ -1,12 +1,9 @@
-	<!-- Footer -->
-    <footer class="footer container-fluid pl-30 pr-30">
-        <div class="row">
-            <div class="col-sm-12">
-                <p>2017 &copy; Hound. Pampered by Hencework</p>
-            </div>
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-sm-12">
+            <p>2017 &copy; Hound. Pampered by Hencework</p>
         </div>
-    </footer>
-    <!-- /Footer -->
-    
-</div>
-<!-- /Main Content -->
+    </div>
+</footer>
+<!-- /Footer -->

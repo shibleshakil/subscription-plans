@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>user | Dashboard</title>
+	<title>Subsription Plan</title>
 	<meta name="description" content="Hound is a Dashboard & Admin Site Responsive Template by hencework." />
 	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Hound Admin, Houndadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 	<meta name="author" content="hencework"/>
@@ -46,12 +46,12 @@
 </head>
 
 <body>
-    <div class="wrapper theme-1-active pimary-color-red">
-        @include('user.layouts.header')
-        @include('user.layouts.sidebar')
-        @yield('content')
-        @include('user.layouts.footer')
-
+    <div class="wrapper theme-1-active pimary-color-red">  
+		@include('user.layouts.header')
+		@yield('content')
+        
+		@include('user.layouts.footer')
+        
     </div>
     <!-- /#wrapper -->
 	
@@ -121,7 +121,6 @@
 	<!-- Init JavaScript -->
 	<script src="{{ asset('dist/js/init.js') }}"></script>
 	<script src="{{ asset('dist/js/dashboard-data.js') }}"></script>
-    @yield('script')
 </body>
 
 </html>
