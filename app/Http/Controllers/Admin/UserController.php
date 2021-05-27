@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use Auth;
@@ -48,7 +49,7 @@ class UserController extends Controller
         $data = new User;
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->password = $request->password;
+        $data->password = Hash::make($request->password);
         $data->type = $request->type;
         $data->created_by = Auth()->user()->id;
         // dd($data);

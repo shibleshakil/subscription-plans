@@ -47,7 +47,7 @@
                         <div class="panel-body">
                             <div class="table-wrap">
                                 <div class="table-responsive">
-                                    <table id="example" class="table table-hover table-bordered display text-center" >
+                                    <table id="example" class="table table-hover table-bordered display" >
                                         <thead>
                                             <tr>
                                                 <th>Sl</th>
@@ -79,7 +79,7 @@
                                         <tbody>
                                             @if(sizeof($data) > 0)
                                             @foreach($data as $key => $d)
-                                            <tr class="text-center">
+                                            <tr class="@if(($key%2) == 0) even @else odd @endif">
                                                 <td>{{++$sl}}</td>
                                                 <td>{{$d->name}}</td>
                                                 <td>{{$d->price}}</td>

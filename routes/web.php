@@ -24,9 +24,13 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 // Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('admin');
 // Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user')->middleware('user');
 
+Route::middleware(['admin'])->group(function(){
+    Route::resource('/admin-user', 'App\Http\Controllers\Admin\UserController')->parameters('admin-user', 'id');
+    Route::post('/admin-user.update', 'App\Http\Controllers\Admin\UserController@update')->name('admin-user.update');
+    
+    Route::resource('/admin-subscription', 'App\Http\Controllers\Admin\SubscriptionController')->parameters('admin-subscription', 'id');
+    Route::post('/admin-subscription/update', 'App\Http\Controllers\Admin\SubscriptionController@update')->name('admin-subscription.update');
+});
 
-Route::resource('/admin-user', 'App\Http\Controllers\Admin\UserController')->parameters('admin-user', 'id');
-Route::post('/admin-user.update', 'App\Http\Controllers\Admin\UserController@update')->name('admin-user.update');
-
-Route::resource('/admin-subscription', 'App\Http\Controllers\Admin\SubscriptionController')->parameters('admin-subscription', 'id');
-Route::post('/admin-subscription/update', 'App\Http\Controllers\Admin\SubscriptionController@update')->name('admin-subscription.update');
+Route::middleware(['user'])->group(function(){
+});

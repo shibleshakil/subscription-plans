@@ -6,21 +6,7 @@
             <i class="zmdi zmdi-more"></i>
         </li>
         <li>
-            <a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-landscape mr-20"></i><span class="right-nav-text">Dashboard</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
-            <ul id="dashboard_dr" class="collapse collapse-level-1">
-                <li>
-                    <a href="#">Analytical</a>
-                </li>
-                <li>
-                    <a  href="#">Demographic</a>
-                </li>
-                <li>
-                    <a href="#">Project</a>
-                </li>
-                <li>
-                    <a href="#">profile</a>
-                </li>
-            </ul>
+            <a href="{{ route('home') }}" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-landscape mr-20"></i><span class="right-nav-text">Dashboard</span></div><div class="clearfix"></div></a>
         </li>
         <li><hr class="light-grey-hr mb-10"/></li>
         <li>
