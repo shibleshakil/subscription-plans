@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Admin | Dashboard</title>
+	<title>user | Dashboard</title>
 	<meta name="description" content="Hound is a Dashboard & Admin Site Responsive Template by hencework." />
 	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Hound Admin, Houndadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 	<meta name="author" content="hencework"/>
@@ -14,7 +14,7 @@
 
     <!-- Custom CSS -->
 	<link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">
-
+	
     <!-- fontawesome CSS -->
 	<link href="{{ asset('dist/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
@@ -47,10 +47,10 @@
 
 <body>
     <div class="wrapper theme-1-active pimary-color-red">
-        @include('admin.layouts.header')
-        @include('admin.layouts.sidebar')
+        @include('user.layouts.header')
+        @include('user.layouts.sidebar')
         @yield('content')
-        @include('admin.layouts.footer')
+        @include('user.layouts.footer')
 
     </div>
     <!-- /#wrapper -->
@@ -58,21 +58,21 @@
 	<!-- JavaScript -->
 	
     <!-- jQuery -->
-    <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('dist/js/modal-data.js') }}"></script>
+    <script src="{{asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{asset('dist/js/modal-data.js') }}"></script>
 
             
     <!-- Bootstrap Select JavaScript -->
-    <script src="{{ asset('vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{asset('vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
     
     <!-- Select2 JavaScript -->
-    <script src="{{ asset('vendors/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{asset('vendors/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
     
 	<!-- Data table JavaScript -->
-	<script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 	<script src="{{ asset('vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
 	<script src="{{ asset('vendors/bower_components/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
 	<script src="{{ asset('vendors/bower_components/jszip/dist/jszip.min.js') }}"></script>

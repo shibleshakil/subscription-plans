@@ -33,4 +33,5 @@ Route::middleware(['admin'])->group(function(){
 });
 
 Route::middleware(['user'])->group(function(){
+    Route::resource('/user/subscriptions/recomanded', 'App\Http\Controllers\User\SubscriptionController')->parameters('user-recomanded-subscriptions', 'id');
 });

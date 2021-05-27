@@ -6,7 +6,7 @@
             <div class="logo-wrap">
                 <a href="index.html">
                     <img class="brand-img" src="{{ asset('dist/img/logo.png') }}" alt="brand"/>
-                    <span class="brand-text">Admin</span>
+                    <span class="brand-text">User</span>
                 </a>
             </div>
         </div>	
