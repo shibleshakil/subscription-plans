@@ -38,7 +38,7 @@
         <div class="row">
             @if(sizeof($recomandation) > 0)
             @foreach($recomandation as $key => $recom)
-            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
                 <div class="panel panel-default card-view pa-0">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-body pa-15 text-center">
