@@ -54,9 +54,11 @@
                                     <li class="mb-3">
                                         <i class="fa fa-check mr-2 text-primary"></i>Payment Type: {{$recom->create_subscription->bill_type}}</li>
                                     <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->create_subscription->maturity_date}} Days</li>
-                                    <li class="mb-3">
                                         <i class="fa fa-check mr-2 text-primary"></i>Start Date: {{$recom->active_date}}</li>
+                                    <li class="mb-3">
+                                        <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->maturity_exp}}</li>
+                                    <li class="mb-3">
+                                        <i class="fa fa-check mr-2 text-primary"></i>Days Remainning: {{$recom->maturity_left}} days</li>
                                 </ul>
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel</a> -->
                                 <form action="{{ route ('user-subscriptions.delete')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf

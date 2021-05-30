@@ -56,6 +56,7 @@
                                                 <th>Interest Rate (%)</th>
                                                 <th>Price (R)</th>
                                                 <th>Start Date</th>
+                                                <th>Maturity Date</th>
                                                 <th>Next Payment In (Days)</th>
                                                 <th>Matured In (Days)</th>
                                                 <th>Status</th>
@@ -69,6 +70,7 @@
                                                 <th>Interest Rate (%)</th>
                                                 <th>Price (R)</th>
                                                 <th>Start Date</th>
+                                                <th>Maturity Date</th>
                                                 <th>Next Payment In (Days)</th>
                                                 <th>Matured In (Days)</th>
                                                 <th>Status</th>
@@ -84,7 +86,8 @@
                                                 <td>{{$user->create_subscription->interest_rate}}%</td>
                                                 <td>ZAR{{$user->create_subscription->price}}</td>
                                                 <td>{{$user->active_date}}</td>
-                                                <td>calculating</td>
+                                                <td>{{$user->maturity_exp}}</td>
+                                                <td>{{$user->maturity_left}}</td>
                                                 <td>{{$user->create_subscription->maturity_date}} Days</td>
                                                 <td>@if($user->status == 1) Active @else Deactive @endif</td>
                                             </tr>

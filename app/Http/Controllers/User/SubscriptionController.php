@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\CreateSubscription;
 use App\Models\Subscription;
 Use \Carbon\Carbon;
+use DateTime;
 use Illuminate\Support\Facades\Redirect;
 use DB;
 
@@ -44,6 +45,8 @@ class SubscriptionController extends Controller
             $data->user_id = Auth()->User()->id;
             $data->create_subscription_id = $request->id;
             $data->active_date = Carbon::now()->toDateTimeString();
+            $data->maturity_exp = date('Y-m-d H:m:s',strtotime( $request->maturity_date . ' day'));
+            $data->maturity_left = Carbon::now()->diffInDays($data->maturity_exp, false);
             // dd($data);
             DB::beginTransaction();
             DB::commit();

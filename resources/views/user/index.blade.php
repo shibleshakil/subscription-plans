@@ -59,6 +59,7 @@
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded">Subscribe</a> -->
                                 <form action="{{ route('user-subscriptions.store')}}" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
                                     <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                    <input type="hidden" id="maturity_date" name="maturity_date" value="{{$recom->maturity_date}}">
                                     <button type="submit" class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Subscribe</button>
                                 </form>
                             </div>
