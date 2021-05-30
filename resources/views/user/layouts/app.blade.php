@@ -121,6 +121,7 @@
 	<!-- Init JavaScript -->
 	<script src="{{ asset('dist/js/init.js') }}"></script>
 	<script src="{{ asset('dist/js/dashboard-data.js') }}"></script>
+		@yield('script')
 </body>
 
 </html>

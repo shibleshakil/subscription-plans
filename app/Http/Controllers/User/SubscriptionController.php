@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\CreateSubscription;
+use App\Models\Subscription;
+Use \Carbon\Carbon;
+use Illuminate\Support\Facades\Redirect;
+use DB;
 
 use Auth;
 
@@ -29,6 +33,38 @@ class SubscriptionController extends Controller
     public function index() {
         $recomandation = CreateSubscription::where('status', 1)->get();
         return view('user.subscriptions.index')->with(compact('recomandation'));
+    }
+
+    public function userSubAdd(Request $request){
+        // dd($request->all());
+        if(Subscription::where('user_id', Auth()->User()->id)->exists()){
+          return redirect()->route('home')->with('error', 'Already have a subscription');
+        }else{
+            $data = new Subscription;
+            $data->user_id = Auth()->User()->id;
+            $data->create_subscription_id = $request->id;
+            $data->active_date = Carbon::now()->toDateTimeString();
+            // dd($data);
+            DB::beginTransaction();
+            DB::commit();
+            $data->save();
+            return redirect()->route('user-subscriptions-list')->with('success', 'New Subscription Added Successfully!');
+        }
+
+        // try {
+        //     if($data->save()){
+        //         DB::commit();
+        //         return redirect()->back()->with(compact('success', 'Plan Added in Your Subscription Successfully!'));
+        //     }
+        // } catch (\Exception $e) {
+        //     DB::rollback();
+        //     return Redirect::back()->withErrors(['error', 'The Message']);
+        // }
+    }
+
+    public function userSubList(){
+        $data = Subscription::where('status', 1)->get();
+        return view('user.subscriptions.index')->with(compact('data'));
     }
 
     /**

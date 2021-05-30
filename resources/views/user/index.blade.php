@@ -8,8 +8,10 @@
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <h5 class="txt-dark">Recomanded Subscription</h5>
             </div>
+        </div>
+        
             
-            @if ($message = Session::get('success'))
+        @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>{{ $message }}</strong>
@@ -31,7 +33,6 @@
                     </ul>
                 </div>
             @endif
-        </div>
         <!-- /Title -->
                 
         <!--  Row  -->
@@ -44,7 +45,7 @@
                         <div class="panel-body pa-15 text-center">
                             <div class="bg-white p-5 rounded-lg shadow">
                                 <h4>{{$recom->name}}</h4>
-                                <h4 class="h1 font-weight-bold">${{$recom->price}} <span class="text-small font-weight-normal ml-2">/ {{$recom->price}} Days</span></h4>
+                                <h4 class="h1 font-weight-bold">${{$recom->price}} <span class="text-small font-weight-normal ml-2">/ {{$recom->maturity_date}} Days</span></h4>
                                 <h5>Payment: {{$recom->bill_type}}</h5>
 
                                 <div class="custom-separator"></div>
@@ -69,7 +70,11 @@
                                         <del>Sed ut perspiciatis</del>
                                     </li>
                                 </ul>
-                                <a href="#" class="btn  btn-primary btn-rounded">Subscribe</a>
+                                <!-- <a href="#" class="btn  btn-primary btn-rounded">Subscribe</a> -->
+                                <form action="{{ route('user-subscriptions.store')}}" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
+                                    <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                    <button type="submit" class="btn  btn-primary btn-rounded" id="submitbtn">Subscribe</button>
+                                </form>
                             </div>
                         </div>
                     </div>	
@@ -83,3 +88,11 @@
 </div>
 <!-- /Main Content -->
 @endsection
+
+<!-- script -->
+@section('script')
+<script type="text/javascript">
+    
+</script>
+@endsection
+<!-- /script -->
