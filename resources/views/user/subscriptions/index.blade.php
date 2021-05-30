@@ -45,32 +45,18 @@
                         <div class="panel-body pa-15 text-center">
                             <div class="bg-white p-5 rounded-lg shadow">
                                 <h4>{{$recom->create_subscription->name}}</h4>
-                                <h4 class="h1 font-weight-bold">R{{$recom->create_subscription->price}} <span class="text-small font-weight-normal ml-2">/ {{$recom->create_subscription->maturity_date}} Days</span></h4>
-                                <h5>Payment: {{$recom->create_subscription->bill_type}}</h5>
+                                <h4>Interest Rate: <span class="h1 font-weight-bold">{{$recom->create_subscription->interest_rate}}%</span></h4>
+                                <h5>ZAR{{$recom->create_subscription->price}}</h5>
 
                                 <div class="custom-separator"></div>
 
-                                <ul class="list-unstyled my-5 text-small text-left">
+                                <ul class="list-unstyled my-5 text-small text-center plan-data">
                                     <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i> Lorem ipsum dolor sit amet</li>
+                                        <i class="fa fa-check mr-2 text-primary"></i>Payment Type: {{$recom->create_subscription->bill_type}}</li>
                                     <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i> Sed ut perspiciatis</li>
-                                    <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i> At vero eos et accusamus</li>
-                                    <li class="mb-3 text-muted">
-                                        <i class="fa fa-times mr-2"></i>
-                                        <del>Nam libero tempore</del>
-                                    </li>
-                                    <li class="mb-3 text-muted">
-                                        <i class="fa fa-times mr-2"></i>
-                                        <del>Sed ut perspiciatis</del>
-                                    </li>
-                                    <li class="mb-3 text-muted">
-                                        <i class="fa fa-times mr-2"></i>
-                                        <del>Sed ut perspiciatis</del>
-                                    </li>
+                                        <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->create_subscription->maturity_date}} Days</li>
                                 </ul>
-                                <a href="#" class="btn  btn-primary btn-rounded">Cancel Subscription</a>
+                                <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel Subscription</a>
                                 <!-- <form action="#" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
                                     <input type="hidden" id="id" name="id" value="{{$recom->id}}">
                                     <button type="submit" class="btn  btn-primary btn-rounded">Subscribe</button>

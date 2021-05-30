@@ -17146,14 +17146,16 @@ a#toggle_mobile_nav {
     margin-left: -9px;
     margin-right: -9px;
 }
-
+.plan-data {
+    line-height: 30px !important;
+}
 .custom-separator {
     width: 5rem;
     height: 6px;
     border-radius: 1rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.5rem;
     margin-top: 1.5rem;
     background-color: #007bff;
 }
