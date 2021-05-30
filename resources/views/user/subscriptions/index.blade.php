@@ -55,19 +55,33 @@
                                         <i class="fa fa-check mr-2 text-primary"></i>Payment Type: {{$recom->create_subscription->bill_type}}</li>
                                     <li class="mb-3">
                                         <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->create_subscription->maturity_date}} Days</li>
+                                    <li class="mb-3">
+                                        <i class="fa fa-check mr-2 text-primary"></i>Start Date: {{$recom->active_date}}</li>
                                 </ul>
-                                <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel</a>
-                                <!-- <form action="#" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
+                                <!-- <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel</a> -->
+                                <form action="{{ route ('user-subscriptions.delete')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
                                     <input type="hidden" id="id" name="id" value="{{$recom->id}}">
-                                    <button type="submit" class="btn  btn-primary btn-rounded">Subscribe</button>
-                                </form> -->
+                                    <button type="submit" class="btn  btn-primary btn-rounded">Cancel</button>
+                                </form>
                             </div>
                         </div>
                     </div>	
                 </div>	
             </div>
             @endforeach
-            @endif					
+            @else
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-default card-view pa-0">
+                    <div class="panel-wrapper collapse in">
+                        <div class="panel-body text-center">
+                            <div class="bg-white rounded-lg shadow">
+                                <p><span class="h1 font-weight-bold">No Subscription Avaiable</span></p>
+                            </div>
+                        </div>
+                    </div>	
+                </div>	
+            </div>
+            @endif				
         </div>	
         <!-- / Row  -->	
     </div>

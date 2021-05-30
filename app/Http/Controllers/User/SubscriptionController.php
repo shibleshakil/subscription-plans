@@ -37,7 +37,7 @@ class SubscriptionController extends Controller
 
     public function userSubAdd(Request $request){
         // dd($request->all());
-        if(Subscription::where('user_id', Auth()->User()->id)->exists()){
+        if(Subscription::where('user_id', Auth()->User()->id)->where('status', 1)->exists()){
           return redirect()->route('home')->with('error', 'Already have a subscription');
         }else{
             $data = new Subscription;
@@ -60,6 +60,26 @@ class SubscriptionController extends Controller
         //     DB::rollback();
         //     return Redirect::back()->withErrors(['error', 'The Message']);
         // }
+    }
+
+    public function userSubCancel(Request $request){
+        DB::beginTransaction();
+        try {
+            $data = Subscription::find($request->id);
+            $data->cancel_date = Carbon::now()->toDateTimeString();
+            $data->status = 0;
+            // dd($data);
+            if($data->save()){
+                DB::commit();
+                return redirect()->route('user-subscriptions-list')->with('success', 'Your Subscription Canceled Successfully!');
+            }else{
+                DB::rollback();
+                return redirect()->route('user-subscriptions-list')->with('errors', 'Somethings Went Wrong!');
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->route('user-subscriptions-list')->with('error', $e->getMessage());
+        }
     }
 
     public function userSubList(){
