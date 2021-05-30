@@ -45,7 +45,7 @@
                         <div class="panel-body pa-15 text-center">
                             <div class="bg-white p-5 rounded-lg shadow">
                                 <h4>{{$recom->name}}</h4>
-                                <h4>Interest Rate: <span class="h1 font-weight-bold">{{$recom->interest_rate}}%</span></h4>
+                                <h5>Interest Rate: <span class="h1 font-weight-bold">{{$recom->interest_rate}}%</span></h5>
                                 <h5>ZAR{{$recom->price}}</h5>
 
                                 <div class="custom-separator"></div>
