@@ -31,7 +31,7 @@ class SubscriptionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $recomandation = CreateSubscription::where('status', 1)->get();
+        $recomandation = CreateSubscription::where('status', 1)->inRandomOrder()->get();
         return view('user.subscriptions.index')->with(compact('recomandation'));
     }
 

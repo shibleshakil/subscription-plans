@@ -6,7 +6,7 @@
         <!-- Title -->
         <div class="row heading-bg">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h5 class="txt-dark">Recomanded Subscription</h5>
+                <h5 class="txt-dark">Offerced Plans</h5>
             </div>
         </div>
         
@@ -39,13 +39,13 @@
         <div class="row">
             @if(sizeof($recomandation) > 0)
             @foreach($recomandation as $key => $recom)
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                 <div class="panel panel-default card-view pa-0">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-body pa-15 text-center">
                             <div class="bg-white p-5 rounded-lg shadow">
                                 <h4>{{$recom->name}}</h4>
-                                <h4 class="h1 font-weight-bold">${{$recom->price}} <span class="text-small font-weight-normal ml-2">/ {{$recom->maturity_date}} Days</span></h4>
+                                <h4 class="h1 font-weight-bold">R{{$recom->price}} <span class="text-small font-weight-normal ml-2">/ {{$recom->maturity_date}} Days</span></h4>
                                 <h5>Payment: {{$recom->bill_type}}</h5>
 
                                 <div class="custom-separator"></div>

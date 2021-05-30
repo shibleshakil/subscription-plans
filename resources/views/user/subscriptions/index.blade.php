@@ -6,7 +6,7 @@
         <!-- Title -->
         <div class="row heading-bg">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h5 class="txt-dark">Subscription List</h5>
+                <h5 class="txt-dark">My Plan</h5>
             </div>
         </div>
 		
@@ -45,7 +45,7 @@
                         <div class="panel-body pa-15 text-center">
                             <div class="bg-white p-5 rounded-lg shadow">
                                 <h4>{{$recom->create_subscription->name}}</h4>
-                                <h4 class="h1 font-weight-bold">${{$recom->create_subscription->price}} <span class="text-small font-weight-normal ml-2">/ {{$recom->create_subscription->maturity_date}} Days</span></h4>
+                                <h4 class="h1 font-weight-bold">R{{$recom->create_subscription->price}} <span class="text-small font-weight-normal ml-2">/ {{$recom->create_subscription->maturity_date}} Days</span></h4>
                                 <h5>Payment: {{$recom->create_subscription->bill_type}}</h5>
 
                                 <div class="custom-separator"></div>
