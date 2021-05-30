@@ -25,7 +25,7 @@
                     <a href="{{ route ('admin-user.index') }}">User List</a>
                 </li>
                 <li>
-                    <a href="#">Subscription User</a>
+                    <a href="{{ route('admin-subscribed-member') }}">Subscribed Members</a>
                 </li>
             </ul>
         </li>

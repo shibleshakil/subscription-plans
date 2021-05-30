@@ -17286,7 +17286,7 @@ a#toggle_mobile_nav {
 }
 
 footer {
-    position: relative !important;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 40px;
@@ -17294,7 +17294,7 @@ footer {
     text-align: center;
 }
 .front-footer {
-    position: fixed !important;
+    position: fixed;
     bottom: 0 !important;
     width: 100%;
     height: 40px;

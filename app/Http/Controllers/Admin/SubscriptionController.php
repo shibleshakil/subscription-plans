@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\CreateSubscription;
+use App\Models\Subscription;
 use DB;
 
 class SubscriptionController extends Controller
@@ -103,6 +104,7 @@ class SubscriptionController extends Controller
         }
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -127,5 +129,12 @@ class SubscriptionController extends Controller
             DB::rollback();
             return redirect()->route('admin-subscription.index')->with('error', $e->getMessage());
         }
+    }
+
+    
+    public function subscribedMember(){
+        $subscriber = Subscription::get()->reverse();
+        $sl = 0;
+        return view('admin.user.members')->with(compact('subscriber', 'sl'));
     }
 }
