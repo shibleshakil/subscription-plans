@@ -63,7 +63,7 @@ class SubscriptionController extends Controller
     }
 
     public function userSubList(){
-        $data = Subscription::where('status', 1)->get();
+        $data = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->get();
         return view('user.subscriptions.index')->with(compact('data'));
     }
 

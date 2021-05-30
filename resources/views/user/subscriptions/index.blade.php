@@ -56,7 +56,7 @@
                                     <li class="mb-3">
                                         <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->create_subscription->maturity_date}} Days</li>
                                 </ul>
-                                <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel Subscription</a>
+                                <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel</a>
                                 <!-- <form action="#" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
                                     <input type="hidden" id="id" name="id" value="{{$recom->id}}">
                                     <button type="submit" class="btn  btn-primary btn-rounded">Subscribe</button>
