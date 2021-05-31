@@ -14,7 +14,7 @@ class CreateCreateSubscriptionsTable extends Migration
     public function up()
     {
         Schema::create('create_subscriptions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
             $table->float('price', 8, 2);
             $table->float('interest_rate', 8, 2);

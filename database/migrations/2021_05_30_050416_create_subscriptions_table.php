@@ -14,15 +14,15 @@ class CreateSubscriptionsTable extends Migration
     public function up()
     {
         Schema::create('subscriptions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->unsignedInteger('user_id')->unsigned();
             $table->unsignedInteger('create_subscription_id')->unsigned();
             $table->date('active_date');
             $table->date('maturity_exp');
             $table->integer('maturity_left');
-            $table->string('status')->default(1);
+            $table->integer('status')->default(1);
             $table->date('cancel_date')->nullable();
-            $table->foreign('user_id')->references('id')->on('categories')->onDelete('users')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
             $table->foreign('create_subscription_id')->references('id')->on('create_subscriptions')->onDelete('restrict')->onUpdate('cascade');
 
             $table->timestamps();
