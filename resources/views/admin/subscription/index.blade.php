@@ -52,12 +52,12 @@
                                             <tr>
                                                 <th>Sl</th>
                                                 <th>Plan</th>
-                                                <th>Price</th>
+                                                <th>Price (ZAR)</th>
                                                 <th>Start Date</th>
-                                                <th>Bill Type</th>
+                                                <th>Billing Frequency</th>
                                                 <th>Maturity Days</th>
-                                                <th>Interest Rate</th>
-                                                <th>Total Earning</th>
+                                                <th>Interest Rate (%)</th>
+                                                <th>Total Earning (ZAR)</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -66,12 +66,12 @@
                                             <tr>
                                                 <th>Sl</th>
                                                 <th>Plan</th>
-                                                <th>Price</th>
+                                                <th>Price (ZAR)</th>
                                                 <th>Start Date</th>
-                                                <th>Bill Type</th>
+                                                <th>Billing Frequency</th>
                                                 <th>Maturity Dats</th>
-                                                <th>Interest Rate</th>
-                                                <th>Total Earning</th>
+                                                <th>Interest Rate (%)</th>
+                                                <th>Total Earning (ZAR)</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -82,12 +82,12 @@
                                             <tr class="@if(($key%2) == 0) even @else odd @endif">
                                                 <td>{{++$sl}}</td>
                                                 <td>{{$d->name}}</td>
-                                                <td>{{$d->price}}</td>
+                                                <td>ZAR {{$d->price}}</td>
                                                 <td>{{$d->start_date}}</td>
                                                 <td>{{$d->bill_type}}</td>
                                                 <td>{{$d->maturity_date}} Days</td>
-                                                <td>{{$d->interest_rate}}</td>
-                                                <td>{{$d->total_earning}}</td>
+                                                <td>{{$d->interest_rate}} %</td>
+                                                <td>ZAR {{$d->total_earning}}</td>
                                                 <td>@if($d->status == 1) Active @else Deactive @endif</td>
                                                 <td><a data-toggle="modal" data-target="#subscriptionEdit" data-target-id="{{$d->id}}"
                                                     data-name="{{ $d->name }}" data-price="{{ $d->price }}" data-maturity_date="{{ $d->maturity_date }}"

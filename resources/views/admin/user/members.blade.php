@@ -53,7 +53,7 @@
                                                 <th>Price (R)</th>
                                                 <th>Start Date</th>
                                                 <th>Maturity Date</th>
-                                                <th>Next Payment In (Days)</th>
+                                                <th>Billing Frequency</th>
                                                 <th>Matured In (Days)</th>
                                                 <th>Status</th>
                                             </tr>
@@ -66,7 +66,7 @@
                                                 <th>Price (R)</th>
                                                 <th>Start Date</th>
                                                 <th>Maturity Date</th>
-                                                <th>Next Payment In (Days)</th>
+                                                <th>Billing Frequency</th>
                                                 <th>Matured In (Days)</th>
                                                 <th>Status</th>
                                             </tr>
@@ -77,12 +77,12 @@
                                             <tr class="@if(($key%2) == 0) even @else odd @endif">
                                                 <td>{{$user->user->name}}</td>
                                                 <td>{{$user->create_subscription->name}}</td>
-                                                <td>{{$user->create_subscription->interest_rate}}%</td>
-                                                <td>ZAR{{$user->create_subscription->price}}</td>
+                                                <td>{{$user->create_subscription->interest_rate}} %</td>
+                                                <td>ZAR {{$user->create_subscription->price}}</td>
                                                 <td>{{$user->active_date}}</td>
                                                 <td>{{$user->maturity_exp}}</td>
-                                                <td>{{$user->maturity_left}}</td>
-                                                <td>{{$user->create_subscription->maturity_date}} Days</td>
+                                                <td>{{$user->create_subscription->bill_type}}</td>
+                                                <td>{{$user->maturity_left}} Days</td>
                                                 <td>@if($user->status == 1) Active @else Deactive @endif</td>
                                             </tr>
                                             @endforeach
