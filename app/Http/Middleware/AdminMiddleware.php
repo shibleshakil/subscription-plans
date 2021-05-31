@@ -24,7 +24,7 @@ class AdminMiddleware
             return $next($request);   
         }
 
-        if(Auth::User()->type == "User"){
+        if(Auth::User()->type == "Member"){
             return redirect()->route('user');  
         }
         
