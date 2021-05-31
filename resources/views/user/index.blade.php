@@ -1,12 +1,12 @@
 @extends('user.layouts.app')
 @section('content')
 <!-- Main Content -->
-<div class="page-front">
+<div class="page-wrapper ml-0">
     <div class="container-fluid">
         <!-- Title -->
         <div class="row heading-bg">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h5 class="txt-dark">Offerced Plans</h5>
+                <h5 class="txt-dark">Offered Plans</h5>
             </div>
         </div>
         

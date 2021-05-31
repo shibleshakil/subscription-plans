@@ -1,5 +1,12 @@
 <!-- Top Menu Items -->
 <nav class="navbar navbar-inverse navbar-fixed-top front-navbar">
+    <div id="mobile_only_nav" class="mobile-only-nav pull-left">
+        <ul class="nav navbar-right top-nav pull-right">
+            <li>
+                <a class="ml-10">Subscription</a>
+            </li>
+        </ul>
+    </div>	
     <div id="mobile_only_nav" class="mobile-only-nav pull-right">
         <ul class="nav navbar-right top-nav pull-right">
             <li>
