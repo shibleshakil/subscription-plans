@@ -7,7 +7,7 @@
         <!-- Title -->
         <div class="row heading-bg">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h3 class="txt-dark">User
+                <h3 class="txt-dark">Member
                     <button type="button" class="btn btn-primary" id="add" data-toggle="modal"
                         data-target="#userEntry" style="padding:4px 8px;"><i class="fa fa-plus-circle"></i>
                     </button>

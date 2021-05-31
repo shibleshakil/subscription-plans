@@ -7,10 +7,7 @@
         <!-- Title -->
         <div class="row heading-bg">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h3 class="txt-dark">User
-                    <button type="button" class="btn btn-primary" id="add" data-toggle="modal"
-                        data-target="#userEntry" style="padding:4px 8px;"><i class="fa fa-plus-circle"></i>
-                    </button>
+                <h3 class="txt-dark">Subscribed Member List
                 </h3>
                 
                 @if ($message = Session::get('success'))
@@ -50,7 +47,7 @@
                                     <table id="example" class="table table-hover table-bordered display">
                                         <thead>
                                             <tr>
-                                                <th>Member ID</th>
+                                                <th>Member Name</th>
                                                 <th>Plan Name</th>
                                                 <th>Interest Rate (%)</th>
                                                 <th>Price (R)</th>

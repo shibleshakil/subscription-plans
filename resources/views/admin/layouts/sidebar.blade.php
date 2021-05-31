@@ -19,10 +19,10 @@
         </li>
         <li><hr class="light-grey-hr mb-10"/></li>
         <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"><div class="pull-left"><i class="fa  fa-users mr-20"></i><span class="right-nav-text">User</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+            <a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"><div class="pull-left"><i class="fa  fa-users mr-20"></i><span class="right-nav-text">Member</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
             <ul id="ecom_dr" class="collapse collapse-level-1">
                 <li>
-                    <a href="{{ route ('admin-user.index') }}">User List</a>
+                    <a href="{{ route ('admin-user.index') }}">Member List</a>
                 </li>
                 <li>
                     <a href="{{ route('admin-subscribed-member') }}">Subscribed Members</a>
