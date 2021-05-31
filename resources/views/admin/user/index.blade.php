@@ -113,7 +113,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">User Entry Form
+                        <h5 class="modal-title" id="exampleModalLabel">Member Entry Form
                             <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -125,8 +125,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">User Name</label>
-                                        <input type="text" class="form-control" id="name" placeholder="User Name"
+                                        <label class="control-label mb-10">Member Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Member Name"
                                             name="name" value="{{ old('name') }}" autocomplete="off">
                                         @if ($errors->has('name'))
                                         <span class="help-block">
@@ -135,8 +135,8 @@
                                         @endif
                                     </div>
                                     <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">User Email</label>
-                                        <input type="emaill" class="form-control" id="email" placeholder="User Email"
+                                        <label class="control-label mb-10">Member Email</label>
+                                        <input type="emaill" class="form-control" id="email" placeholder="Member Email"
                                             name="email" value="{{ old('email') }}" autocomplete="off">
                                         @if ($errors->has('email'))
                                         <span class="help-block">
@@ -155,7 +155,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group {{ $errors->has('type') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">User Type</label>
+                                        <label class="control-label mb-10">Member Type</label>
                                         <select class="form-control select2" id="type" name="type">
                                             <option value="Member">Member</option>
                                             <option value="Admin">Admin</option>
@@ -185,7 +185,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">User Edit Form
+                        <h5 class="modal-title" id="exampleModalLabel">Member Edit Form
                             <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -198,9 +198,9 @@
                                 <div class="col-md-12">
                                     <input type="hidden" name="id" id="id">
                                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">User Name</label>
-                                        <input type="text" class="form-control" id="ename" placeholder="User Name"
-                                            name="name" value="{{ old('name') }}" autocomplete="off">
+                                        <label class="control-label mb-10">Member Name</label>
+                                        <input type="text" class="form-control" id="ename" placeholder="Member Name"
+                                            name="name" value="{{ old('name') }}" autocomplete="off" readonly>
                                         @if ($errors->has('name'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('name') }}</strong>
@@ -209,9 +209,9 @@
                                     </div>
 
                                     <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">User Email</label>
-                                        <input type="emaill" class="form-control" id="eemail" placeholder="User Email"
-                                            name="email" value="{{ old('email') }}" autocomplete="off">
+                                        <label class="control-label mb-10">Member Email</label>
+                                        <input type="emaill" class="form-control" id="eemail" placeholder="Member Email"
+                                            name="email" value="{{ old('email') }}" autocomplete="off" readonly>
                                         @if ($errors->has('email'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -220,7 +220,7 @@
                                     </div>
 
                                     <div class="form-group {{ $errors->has('type') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">User Type</label>
+                                        <label class="control-label mb-10">Member Type</label>
                                         <select class="form-control select2" id="etype" name="type">
                                             <option value="Member">Member</option>
                                             <option value="Admin">Admin</option>
