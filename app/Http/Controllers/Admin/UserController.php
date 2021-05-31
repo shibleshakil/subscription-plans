@@ -44,6 +44,7 @@ class UserController extends Controller
             'name' => 'required | string | min:3',
             'email' => 'required | email | unique:users',
             'password' => 'required | min:4',
+            'type' => 'required',
         ]);
 
         $data = new User;
@@ -51,7 +52,7 @@ class UserController extends Controller
         $data->email = $request->email;
         $data->password = Hash::make($request->password);
         $data->type = $request->type;
-        $data->created_by = Auth()->user()->id;
+        $data->created_by = Auth()->User()->id;
         // dd($data);
         DB::beginTransaction();
         try {

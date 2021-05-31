@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\CreateSubscription;
 use App\Models\Subscription;
+use App\Models\User;
 Use \Carbon\Carbon;
 use DateTime;
 use Illuminate\Support\Facades\Redirect;

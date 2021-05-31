@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\CreateSubscription;
 use App\Models\Subscription;
+use App\Models\User;
 use DB;
 
 class SubscriptionController extends Controller

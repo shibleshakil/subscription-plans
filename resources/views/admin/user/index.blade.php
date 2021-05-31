@@ -157,9 +157,8 @@
                                     <div class="form-group {{ $errors->has('type') ? ' has-error' : '' }}">
                                         <label class="control-label mb-10">User Type</label>
                                         <select class="form-control select2" id="type" name="type">
-                                            <option>Select</option>
-                                            <option value="Admin">Admin</option>
                                             <option value="User">User</option>
+                                            <option value="Admin">Admin</option>
                                         </select>
                                         @if ($errors->has('type'))
                                         <span class="help-block">
