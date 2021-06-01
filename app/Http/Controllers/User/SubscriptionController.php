@@ -38,32 +38,36 @@ class SubscriptionController extends Controller
     }
 
     public function userSubAdd(Request $request){
-        // dd($request->all());
-        if(Subscription::where('user_id', Auth()->User()->id)->where('status', 1)->exists()){
-          return redirect()->route('home')->with('error', 'Already have a subscription');
+        $test = $request->price;
+        $price = (float) $test;
+        if(User::find(Auth()->user()->id)->balance < $price){
+          return redirect()->route('home')->with('error', 'Insuficent Balance! Please Refund');
         }else{
-            $data = new Subscription;
-            $data->user_id = Auth()->User()->id;
-            $data->create_subscription_id = $request->id;
-            $data->active_date = Carbon::now()->toDateTimeString();
-            $data->maturity_exp = date('Y-m-d H:m:s',strtotime( $request->maturity_date . ' day'));
-            $data->maturity_left = Carbon::now()->diffInDays($data->maturity_exp, false);
-            // dd($data);
-            DB::beginTransaction();
-            DB::commit();
-            $data->save();
-            return redirect()->route('user-subscriptions-list')->with('success', 'New Subscription Added Successfully!');
+            if(Subscription::where('user_id', Auth()->User()->id)->where('status', 1)->exists()){
+                return redirect()->route('home')->with('error', 'Already have a subscription');
+            }else{
+                $data = new Subscription;
+                $data->user_id = Auth()->User()->id;
+                $data->create_subscription_id = $request->id;
+                $data->active_date = Carbon::now()->toDateTimeString();
+                $data->maturity_exp = date('Y-m-d H:m:s',strtotime( $request->maturity_date . ' day'));
+                $data->maturity_left = Carbon::now()->diffInDays($data->maturity_exp, false);
+                DB::beginTransaction();
+                try{
+                    if($data->save()){
+                        $trs = User::find(Auth()->user()->id);
+                        $trs->decrement('balance',$price);
+                        DB::commit();
+                        $trs->save();
+                        return redirect()->route('user-subscriptions-list')->with('success', 'New Subscription Added Successfully!');
+                    }
+                }catch (\Exception $e) {
+                    DB::rollback();
+                    return redirect()->route('home')->with('error', $e->getMessage());
+                }
+                
+            }
         }
-
-        // try {
-        //     if($data->save()){
-        //         DB::commit();
-        //         return redirect()->back()->with(compact('success', 'Plan Added in Your Subscription Successfully!'));
-        //     }
-        // } catch (\Exception $e) {
-        //     DB::rollback();
-        //     return Redirect::back()->withErrors(['error', 'The Message']);
-        // }
     }
 
     public function userSubCancel(Request $request){

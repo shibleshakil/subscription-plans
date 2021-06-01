@@ -58,7 +58,8 @@
                                 </ul>
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded">Subscribe</a> -->
                                 <button type="submit" data-toggle="modal" data-target="#payment" data-target-id="{{$recom->id}}"
-                                    data-name="{{ $recom->maturity_date }}" class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Subscribe</button>
+                                    data-maturity_date="{{ $recom->maturity_date }}" data-price="{{ $recom->price }}" 
+                                    class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Subscribe</button>
                                 <!-- <form action="{{ route('user-subscriptions.store')}}" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
                                     <input type="hidden" id="id" name="id" value="{{$recom->id}}">
                                     <input type="hidden" id="maturity_date" name="maturity_date" value="{{$recom->maturity_date}}">
@@ -92,6 +93,7 @@
                                 <div class="col-md-12">
                                     <input type="hidden" id="id" name="id">
                                     <input type="hidden" id="maturity_date" name="maturity_date">
+                                    <input type="hidden" id="price" name="price">
                                     <p>Payment Procedure</p>
                                 </div>
                             </div>
@@ -129,10 +131,12 @@
 
     $("#payment").on("show.bs.modal", function (e) {
         var id = $(e.relatedTarget).data('target-id');
-        var maturity_date = $(e.relatedTarget).data('name');
+        var maturity_date = $(e.relatedTarget).data('maturity_date');
+        var price = $(e.relatedTarget).data('price');
 
         $('.modal-body #id').val(id);
         $('.modal-body #maturity_date').val(maturity_date);
+        $('.modal-body #price').val(price);
         $('.clearForm').clearForm();
         $('.select2').select2();
     });
