@@ -44,7 +44,7 @@ class SubscriptionController extends Controller
             return redirect()->route('home')->with('error', 'Already have a subscription');
         }else{
             if(User::find(Auth()->user()->id)->balance < $price){
-                return redirect()->route('home')->with('error', 'Insuficent Balance! Please Desite');
+                return redirect()->route('home')->with('error', 'Insuficent Balance! Please Deposit');
               }else{
                 $data = new Subscription;
                 $data->user_id = Auth()->User()->id;
@@ -160,7 +160,7 @@ class SubscriptionController extends Controller
 
         if(User::find(Auth()->user()->id)->balance < $price){
             // return "False";
-            return redirect()->route('user-subscriptions-list')->with('error', 'Insuficent Balance! Please Deposit To Upgrade');
+            return redirect()->route('user-subscriptions-list')->with('error', 'Insuficent Balance! Please Deposit To Downgrade');
         }else{
             DB::beginTransaction();
             try{ 

@@ -66,7 +66,7 @@
                             <div class="row text-center pa-5">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <form action="#" enctype="multipart/form-data">
-                                        <button type="submit" class="btn  btn-primary btn-rounded">Renue</button>
+                                        <button type="submit" class="btn  btn-primary btn-rounded">Renew</button>
                                     </form>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
