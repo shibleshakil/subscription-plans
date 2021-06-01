@@ -61,10 +61,34 @@
                                         <i class="fa fa-check mr-2 text-primary"></i>Days Remainning: {{$recom->maturity_left}} days</li>
                                 </ul>
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel</a> -->
-                                <form action="{{ route ('user-subscriptions.delete')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
-                                    <input type="hidden" id="id" name="id" value="{{$recom->id}}">
-                                    <button type="submit" class="btn  btn-primary btn-rounded">Cancel</button>
-                                </form>
+                                
+                            </div>
+                            <div class="row text-center pa-5">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <form action="#" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
+                                        <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                        <button type="submit" class="btn  btn-primary btn-rounded">Renue</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <form action="#" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
+                                        <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                        <button type="submit" class="btn  btn-info btn-rounded">Upgrade</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-15"></div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <form action="#" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
+                                        <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                        <button type="submit" class="btn  btn-info btn-rounded">Downgrade</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <form action="{{ route ('user-subscriptions.delete')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
+                                        <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                        <button type="submit" class="btn  btn-danger btn-rounded">Cancel</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>	
