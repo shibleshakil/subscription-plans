@@ -70,7 +70,10 @@
                                     </form>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <form action="#" enctype="multipart/form-data">
+                                    <!-- <a href="{{ route ('user-subscriptions-upgrade-list') }}" class="btn  btn-primary btn-rounded">Upgrade</a> -->
+                                    <form action="{{ route ('user-subscriptions-upgrade-list') }}" method="POST" enctype="multipart/form-data">@csrf
+                                        <input type="hidden" id="id" name="id" value="{{$recom->create_subscription_id}}">
+                                        <input type="hidden" id="price" name="price" value="{{$recom->create_subscription->price}}">
                                         <button type="submit" class="btn  btn-info btn-rounded">Upgrade</button>
                                     </form>
                                 </div>

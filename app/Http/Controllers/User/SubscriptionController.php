@@ -95,6 +95,26 @@ class SubscriptionController extends Controller
         return view('user.subscriptions.index')->with(compact('data'));
     }
 
+    public function upgradeList(Request $request){
+        // dd(CreateSubscription::where('id', '!=' , $request->id)->where('price', '>', $request->price)->where('status', 1)->get());
+        $uplist = CreateSubscription::where('id', '!=' , $request->id)->where('price', '>', $request->price)->where('status', 1)->get();
+        // dd($uplist);
+        return view('user.subscriptions.upgrade')->with(compact('uplist'));
+    }
+
+    public function subUpgrade(Request $request){
+        // dd($request->all());
+        $test = $request->price;
+        $price = (float) $test;
+
+        if(User::find(Auth()->user()->id)->balance < $price){
+            // return "False";
+            return redirect()->route('user-subscriptions-list')->with('error', 'Insuficent Balance! Please Deposit To Upgrade');
+        }else{
+            return "working on it";
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *
