@@ -94,7 +94,12 @@
                                     <input type="hidden" id="id" name="id">
                                     <input type="hidden" id="maturity_date" name="maturity_date">
                                     <input type="hidden" id="price" name="price">
-                                    <p>Payment Procedure</p>
+                                    <div class="form-group {{ $errors->has('total_earning') ? ' has-error' : '' }}">
+                                        <label class="control-label mb-10">Payment Using</label>
+                                        <div class="input-group">
+                                            <img src="{{ asset('dist/img/cards.png') }}" style="width:100%; height:120px;" alt="">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

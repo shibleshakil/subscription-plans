@@ -40,12 +40,12 @@ class SubscriptionController extends Controller
     public function userSubAdd(Request $request){
         $test = $request->price;
         $price = (float) $test;
-        if(User::find(Auth()->user()->id)->balance < $price){
-          return redirect()->route('home')->with('error', 'Insuficent Balance! Please Refund');
+        if(Subscription::where('user_id', Auth()->User()->id)->where('status', 1)->exists()){
+            return redirect()->route('home')->with('error', 'Already have a subscription');
         }else{
-            if(Subscription::where('user_id', Auth()->User()->id)->where('status', 1)->exists()){
-                return redirect()->route('home')->with('error', 'Already have a subscription');
-            }else{
+            if(User::find(Auth()->user()->id)->balance < $price){
+                return redirect()->route('home')->with('error', 'Insuficent Balance! Please Desite');
+              }else{
                 $data = new Subscription;
                 $data->user_id = Auth()->User()->id;
                 $data->create_subscription_id = $request->id;
