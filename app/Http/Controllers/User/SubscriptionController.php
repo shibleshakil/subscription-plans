@@ -103,6 +103,14 @@ class SubscriptionController extends Controller
         return view('user.subscriptions.upgrade')->with(compact('uplist', 'old'));
     }
 
+    public function downgradeList(Request $request){
+        // dd(CreateSubscription::where('id', '!=' , $request->id)->where('price', '>', $request->price)->where('status', 1)->get());
+        $downlist = CreateSubscription::where('id', '!=' , $request->id)->where('price', '<', $request->price)->where('status', 1)->get();
+        $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
+        //dd($old);
+        return view('user.subscriptions.downgrade')->with(compact('downlist', 'old'));
+    }
+
     public function subUpgrade(Request $request){
         // dd($request->all());
         $test = $request->price;
@@ -132,6 +140,48 @@ class SubscriptionController extends Controller
                         $trs->save();
                         DB::commit();
                         return redirect()->route('user-subscriptions-list')->with('success', 'Subscription Upgraded Successfully!');
+                    }
+                }else{
+                    DB::rollback();
+                    return redirect()->route('user-subscriptions-list')->with('errors', 'Something Went Wrong!');
+                }              
+            }catch (\Exception $e) {
+                DB::rollback();
+                return redirect()->route('user-subscriptions-list')->with('error', $e->getMessage());
+            }
+            // return "working on it";
+        }
+    }
+
+    public function subDowngrade(Request $request){
+        // dd($request->all());
+        $test = $request->price;
+        $price = (float) $test;
+
+        if(User::find(Auth()->user()->id)->balance < $price){
+            // return "False";
+            return redirect()->route('user-subscriptions-list')->with('error', 'Insuficent Balance! Please Deposit To Upgrade');
+        }else{
+            DB::beginTransaction();
+            try{ 
+                $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
+                $old->status = 0;
+                $old->cancel_date = Carbon::now()->toDateTimeString();
+                // dd($old);
+                if($old->save()){
+                    $data = new Subscription;
+                    $data->user_id = Auth()->User()->id;
+                    $data->create_subscription_id = $request->id;
+                    $data->active_date = Carbon::now()->toDateTimeString();
+                    $data->maturity_exp = date('Y-m-d H:m:s',strtotime( $request->maturity_date . ' day'));
+                    $data->maturity_left = Carbon::now()->diffInDays($data->maturity_exp, false);
+                    // dd($data);
+                    if($data->save()){
+                        $trs = User::find(Auth()->user()->id);
+                        $trs->decrement('balance',$price);
+                        $trs->save();
+                        DB::commit();
+                        return redirect()->route('user-subscriptions-list')->with('success', 'Subscription Downgraded Successfully!');
                     }
                 }else{
                     DB::rollback();

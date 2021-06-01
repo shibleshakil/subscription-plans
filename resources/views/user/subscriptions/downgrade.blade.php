@@ -6,7 +6,7 @@
         <!-- Title -->
         <div class="row heading-bg">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h5 class="txt-dark">Offered Plans</h5>
+                <h5 class="txt-dark">Offered Plans To Downgrade</h5>
             </div>
         </div>
         
@@ -34,11 +34,11 @@
                 </div>
             @endif
         <!-- /Title -->
-                
+                        
         <!--  Row  -->
         <div class="row">
-            @if(sizeof($recomandation) > 0)
-            @foreach($recomandation as $key => $recom)
+            @if(sizeof($downlist) > 0)
+            @foreach($downlist as $key => $recom)
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                 <div class="panel panel-default card-view pa-0">
                     <div class="panel-wrapper collapse in">
@@ -57,9 +57,9 @@
                                         <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->maturity_date}} Days</li>
                                 </ul>
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded">Subscribe</a> -->
-                                <button type="submit" data-toggle="modal" data-target="#payment" data-target-id="{{$recom->id}}"
+                                <button type="submit" data-toggle="modal" data-target="#downgradePayment" data-target-id="{{$recom->id}}"
                                     data-maturity_date="{{ $recom->maturity_date }}" data-price="{{ $recom->price }}" 
-                                    class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Subscribe</button>
+                                    class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Downgrade</button>
                                 <!-- <form action="{{ route('user-subscriptions.store')}}" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
                                     <input type="hidden" id="id" name="id" value="{{$recom->id}}">
                                     <input type="hidden" id="maturity_date" name="maturity_date" value="{{$recom->maturity_date}}">
@@ -71,24 +71,24 @@
                 </div>	
             </div>
             @endforeach
-            
             @else
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="panel panel-default card-view pa-0">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-body text-center">
                             <div class="bg-white rounded-lg shadow">
-                                <p><span class="h1 font-weight-bold">No Offered Plan Avaiable</span></p>
+                                <p><span class="h1 font-weight-bold">Sorry! No Plan Available For You.</span></p>
                             </div>
                         </div>
                     </div>	
                 </div>	
             </div>
-            @endif					
+            @endif				
         </div>	
-        <!-- / Row  -->	
-         <!--add Model-->
-         <div class="modal fade" id="payment" role="dialog" aria-labelledby="exampleModalLabel"
+        <!-- / Row  -->  
+
+         <!--upgrade Model-->
+         <div class="modal fade" id="downgradePayment" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -99,7 +99,7 @@
                             </button>
                         </h5>
                     </div>
-                    <form role="form" action="{{ route('user-subscriptions.store')}}" method="post" enctype="multipart/form-data" class="clearForm">
+                    <form role="form" action="{{ route('user-subscriptions-downgrade')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="row">
@@ -107,6 +107,8 @@
                                     <input type="hidden" id="id" name="id">
                                     <input type="hidden" id="maturity_date" name="maturity_date">
                                     <input type="hidden" id="price" name="price">
+                                    <input type="hidden" id="create_subscription_id"  name="create_subscription_id" value="{{ isset($old) ? $old->create_subscription_id : '' }}">
+                                   
                                     <div class="form-group {{ $errors->has('total_earning') ? ' has-error' : '' }}">
                                         <label class="control-label mb-10">Payment Using</label>
                                         <div class="input-group">
@@ -118,13 +120,14 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
-                            <button type="submit" id="subscribe" class="btn btn-success btn-rounded">Submit</button>
+                            <button type="submit" id="subscribe" class="btn btn-success btn-rounded">Downgrade</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <!--/add Model-->
+        <!--/upgrade Model-->    
+
     </div>
 </div>
 <!-- /Main Content -->
@@ -147,7 +150,7 @@
         });
     };
 
-    $("#payment").on("show.bs.modal", function (e) {
+    $("#downgradePayment").on("show.bs.modal", function (e) {
         var id = $(e.relatedTarget).data('target-id');
         var maturity_date = $(e.relatedTarget).data('maturity_date');
         var price = $(e.relatedTarget).data('price');
