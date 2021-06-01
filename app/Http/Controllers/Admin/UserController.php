@@ -98,6 +98,32 @@ class UserController extends Controller
         }
     }
 
+    public function fund(Request $request) {
+        $validate = $request->validate([
+            'balance' => 'required | numeric | between:0, 100000000',
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $data = User::find($request->id);
+            $data->increment('balance',$request->balance);
+            // $data->balance = $request->balance;
+            $data->fund_transfered_by = Auth()->user()->id;
+            if($data->save()){
+                $trs = User::find(Auth()->user()->id);
+                $trs->decrement('balance',$request->balance);
+                DB::commit();
+                return redirect()->route('admin-user.index')->with('success', 'Fund Transfered Successfully!');
+            }else{
+                DB::rollback();
+                return redirect()->route('admin-user.index')->with('errors', 'Somethings Went Wrong!');
+            } 
+        }catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->route('admin-user.index')->with('error', $e->getMessage());
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *

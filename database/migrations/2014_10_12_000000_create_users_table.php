@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
+            $table->integer('fund_transfered_by')->nullable();
             $table->timestamps();
         });
     }

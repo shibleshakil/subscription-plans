@@ -54,6 +54,7 @@
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>User Type</th>
+                                                <th>Member's Fund (ZAR)</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -63,6 +64,7 @@
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>User Type</th>
+                                                <th>Member's Fund (ZAR)</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -74,10 +76,16 @@
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
                                                 <td>{{$user->type}}</td>
+                                                <td>ZAR {{$user->balance}}</td>
                                                 <td><a data-toggle="modal" data-target="#editUser" data-target-id="{{$user->id}}"
                                                   data-name="{{ $user->name }}"data-email="{{ $user->email }}"
-                                                  data-type="{{$user->type}}"><button class="btn btn-primary btn-icon-anim btn-square"
+                                                  data-type="{{$user->type}}"><button class="btn btn-info btn-icon-anim btn-square"
                                                   title="Edit"><i class="fa fa-pencil"> </i></button></a>
+
+                                                  <a data-toggle="modal" data-target="#addFund" data-target-id="{{$user->id}}"
+                                                  data-name="{{ $user->name }}"data-email="{{ $user->email }}"
+                                                  data-type="{{$user->type}}"><button class="btn btn-primary btn-icon-anim btn-square"
+                                                  title="Add Fund"><i class="fa fa-plus-circle"></i></button></a>
 
                                                   {!! Form::open([
                                                   'method'=>'DELETE',
@@ -243,6 +251,56 @@
             </div>
         </div>
         <!--/edit Model-->
+
+        <!--fund Model-->
+        <div class="modal fade" id="addFund" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Member Edit Form
+                            <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </h5>
+                    </div>
+                    <form role="form" action="{{route('admin-user.fund')}}" method="post" enctype="multipart/form-data" class="clearform">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="hidden" name="id" id="id">
+                                    <!-- <div class="form-group {{ $errors->has('balance') ? ' has-error' : '' }}">
+                                        <label class="control-label mb-10">Fund Transfer</label>
+                                        <input type="text" class="form-control" id="balance" placeholder="Transfer Fund"
+                                            name="balance" value="{{ old('balance') }}" autocomplete="off">
+                                        @if ($errors->has('balance'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('balance') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div> -->
+                                    <div class="form-group {{ $errors->has('balance') ? ' has-error' : '' }}">
+                                        <label class="control-label mb-10">Fund Transfer</label>
+                                        <input id="balance" type="text"  placeholder="ZAR 1000"  name="balance" value="{{ old('balance') }}" class=" form-control" data-bts-button-down-class="btn btn-default" data-bts-button-up-class="btn btn-default">
+                                        @if ($errors->has('balance'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('balance') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" id="categorySave" class="btn btn-primary">Transfer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--/fund Model-->
     </div>
 	
 	<!-- footer -->
@@ -266,6 +324,16 @@
         });
     };
 
+    $("input[name='balance']").TouchSpin({
+        min: 10,
+        max: 10000000,
+        step: 0.01,
+        decimals: 2,
+        boostat: 5,
+        maxboostedstep: 10,
+        postfix: 'ZAR'
+    });
+
     $("#userEntry").on("show.bs.modal", function (e) {
         $('.clearForm').clearForm();
         $('.select2').select2();
@@ -282,6 +350,14 @@
         $('.modal-body #ename').val(name);
         $('.modal-body #eemail').val(email);
         $('.modal-body #etype').val(type);
+        $('.select2').select2();
+    });
+    
+    $("#addFund").on("show.bs.modal", function(e) {
+        // alert('gg');
+        var id = $(e.relatedTarget).data('target-id');
+
+        $('.modal-body #id').val(id);
         $('.select2').select2();
     });
 </script>

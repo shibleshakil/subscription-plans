@@ -153,7 +153,7 @@
                                     </div>
                                     <div class="form-group {{ $errors->has('price') ? ' has-error' : '' }}">
                                         <label class="control-label mb-10">Plan Price</label>
-                                        <input id="price" type="text"  placeholder="1000 $" name="price" value="{{ old('price') }}" class=" form-control" data-bts-button-down-class="btn btn-default" data-bts-button-up-class="btn btn-default">
+                                        <input id="price" type="text" placeholder="ZAR 1000" name="price" value="{{ old('price') }}" class=" form-control" data-bts-button-down-class="btn btn-default" data-bts-button-up-class="btn btn-default">
                                         @if ($errors->has('price'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('price') }}</strong>
@@ -367,7 +367,7 @@
         decimals: 2,
         boostat: 5,
         maxboostedstep: 10,
-        postfix: '$'
+        postfix: 'ZAR'
     });
 
     $.fn.clearForm = function () {

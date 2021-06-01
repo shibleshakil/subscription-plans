@@ -27,6 +27,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::middleware(['admin'])->group(function(){
     Route::resource('/admin-user', 'App\Http\Controllers\Admin\UserController')->parameters('admin-user', 'id');
     Route::post('/admin-user.update', 'App\Http\Controllers\Admin\UserController@update')->name('admin-user.update');
+    Route::post('/admin-user/fund', 'App\Http\Controllers\Admin\UserController@fund')->name('admin-user.fund');
     // Route::get('/admin-subscribed-member', 'App\Http\Controllers\Admin\UserController@subscribedMember')->name('admin-subscribed-member');
     
     Route::resource('/admin-subscription', 'App\Http\Controllers\Admin\SubscriptionController')->parameters('admin-subscription', 'id');
