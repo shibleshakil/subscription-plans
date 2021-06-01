@@ -58,7 +58,6 @@
                                 </ul>
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded">Subscribe</a> -->
                                 <button type="submit" data-toggle="modal" data-target="#upgradePayment" data-target-id="{{$recom->id}}"
-                                    data-create_subscription_id="{{ $recom->create_subscription_id }}"
                                     data-maturity_date="{{ $recom->maturity_date }}" data-price="{{ $recom->price }}" 
                                     class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Upgrade</button>
                                 <!-- <form action="{{ route('user-subscriptions.store')}}" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
@@ -100,15 +99,16 @@
                             </button>
                         </h5>
                     </div>
-                    <form role="form" action="{{ route('user-subscriptions-upgrade')}}" method="post" enctype="multipart/form-data" class="clearForm">
+                    <form role="form" action="{{ route('user-subscriptions-upgrade')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <input type="hidden" id="id" name="id">
-                                    <input type="hidden" id="create_subscription_id" name="create_subscription_id">
                                     <input type="hidden" id="maturity_date" name="maturity_date">
                                     <input type="hidden" id="price" name="price">
+                                    <input type="hidden" id="create_subscription_id"  name="create_subscription_id" value="{{ isset($old) ? $old->create_subscription_id : '' }}">
+                                   
                                     <div class="form-group {{ $errors->has('total_earning') ? ' has-error' : '' }}">
                                         <label class="control-label mb-10">Payment Using</label>
                                         <div class="input-group">
@@ -153,12 +153,10 @@
     $("#upgradePayment").on("show.bs.modal", function (e) {
         var id = $(e.relatedTarget).data('target-id');
         var maturity_date = $(e.relatedTarget).data('maturity_date');
-        var create_subscription_id = $(e.relatedTarget).data('create_subscription_id');
         var price = $(e.relatedTarget).data('price');
 
         $('.modal-body #id').val(id);
         $('.modal-body #maturity_date').val(maturity_date);
-        $('.modal-body #create_subscription_id').val(create_subscription_id);
         $('.modal-body #price').val(price);
         $('.clearForm').clearForm();
         $('.select2').select2();
