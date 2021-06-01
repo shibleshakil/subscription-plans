@@ -65,21 +65,18 @@
                             </div>
                             <div class="row text-center pa-5">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <form action="#" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
-                                        <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                    <form action="#" enctype="multipart/form-data">
                                         <button type="submit" class="btn  btn-primary btn-rounded">Renue</button>
                                     </form>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <form action="#" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
-                                        <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                    <form action="#" enctype="multipart/form-data">
                                         <button type="submit" class="btn  btn-info btn-rounded">Upgrade</button>
                                     </form>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-15"></div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <form action="#" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
-                                        <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                    <form action="#" enctype="multipart/form-data">
                                         <button type="submit" class="btn  btn-info btn-rounded">Downgrade</button>
                                     </form>
                                 </div>
