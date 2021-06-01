@@ -112,24 +112,34 @@ class SubscriptionController extends Controller
             // return "False";
             return redirect()->route('user-subscriptions-list')->with('error', 'Insuficent Balance! Please Deposit To Upgrade');
         }else{
-            $data = new Subscription;
-            $data->user_id = Auth()->User()->id;
-            $data->create_subscription_id = $request->id;
-            $data->active_date = Carbon::now()->toDateTimeString();
-            $data->maturity_exp = date('Y-m-d H:m:s',strtotime( $request->maturity_date . ' day'));
-            $data->maturity_left = Carbon::now()->diffInDays($data->maturity_exp, false);
             DB::beginTransaction();
-            try{
-                if($data->save()){   
-                    $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
-                    $old->status = 0;
-                    $old->cancel_date = Carbon::now()->toDateTimeString();
-                    // dd($old);
-                    return redirect()->route('user-subscriptions-list')->with('success', 'Subscription Upgraded Successfully!');
-                }
+            try{ 
+                $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
+                $old->status = 0;
+                $old->cancel_date = Carbon::now()->toDateTimeString();
+                // dd($old);
+                if($old->save()){
+                    $data = new Subscription;
+                    $data->user_id = Auth()->User()->id;
+                    $data->create_subscription_id = $request->id;
+                    $data->active_date = Carbon::now()->toDateTimeString();
+                    $data->maturity_exp = date('Y-m-d H:m:s',strtotime( $request->maturity_date . ' day'));
+                    $data->maturity_left = Carbon::now()->diffInDays($data->maturity_exp, false);
+                    // dd($data);
+                    if($data->save()){
+                        $trs = User::find(Auth()->user()->id);
+                        $trs->decrement('balance',$price);
+                        $trs->save();
+                        DB::commit();
+                        return redirect()->route('user-subscriptions-list')->with('success', 'Subscription Upgraded Successfully!');
+                    }
+                }else{
+                    DB::rollback();
+                    return redirect()->route('user-subscriptions-list')->with('errors', 'Something Went Wrong!');
+                }              
             }catch (\Exception $e) {
                 DB::rollback();
-                return redirect()->route('home')->with('error', $e->getMessage());
+                return redirect()->route('user-subscriptions-list')->with('error', $e->getMessage());
             }
             // return "working on it";
         }
