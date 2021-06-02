@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'greatings'])->name('greatings');
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/555', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('admin');
 // Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user')->middleware('user');
 

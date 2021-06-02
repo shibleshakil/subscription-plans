@@ -76,6 +76,8 @@ class SubscriptionController extends Controller
             $data = Subscription::find($request->id);
             $data->cancel_date = Carbon::now()->toDateTimeString();
             $data->status = 0;
+            $data->maturity_exp = Carbon::now()->toDateTimeString();
+            $data->maturity_left = 0;
             // dd($data);
             if($data->save()){
                 DB::commit();
@@ -125,6 +127,8 @@ class SubscriptionController extends Controller
                 $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
                 $old->status = 0;
                 $old->cancel_date = Carbon::now()->toDateTimeString();
+                $old->maturity_exp = Carbon::now()->toDateTimeString();
+                $old->maturity_left = 0;
                 // dd($old);
                 if($old->save()){
                     $data = new Subscription;
@@ -167,6 +171,8 @@ class SubscriptionController extends Controller
                 $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
                 $old->status = 0;
                 $old->cancel_date = Carbon::now()->toDateTimeString();
+                $old->maturity_exp = Carbon::now()->toDateTimeString();
+                $old->maturity_left = 0;
                 // dd($old);
                 if($old->save()){
                     $data = new Subscription;
