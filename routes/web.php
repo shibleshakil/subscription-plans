@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('admin.dashboard');
 // });
 
-Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'greatings'])->name('greatings');
+// Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'greatings'])->name('greatings');
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-15"></div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <form action="{{ route ('user-subscriptions-downgrade-list') }}" method="POST" enctype="multipart/form-data">@csrf
+                                    <form action="{{ route ('user-subscriptions-downgrade-list') }}" method="POST" enctype="multipart/form-data">@csrf
                                         <input type="hidden" id="id" name="id" value="{{$recom->create_subscription_id}}">
                                         <input type="hidden" id="price" name="price" value="{{$recom->create_subscription->price}}">
                                         <button type="submit" class="btn  btn-info btn-rounded">Downgrade</button>
