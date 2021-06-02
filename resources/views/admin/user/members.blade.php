@@ -47,6 +47,7 @@
                                     <table id="example" class="table table-hover table-bordered display">
                                         <thead>
                                             <tr>
+                                                <th>Sl</th>
                                                 <th>Member Name</th>
                                                 <th>Plan Name</th>
                                                 <th>Interest Rate (%)</th>
@@ -60,6 +61,7 @@
                                         </thead>
                                         <tfoot class="hidden">
                                             <tr>
+                                                <th>Sl</th>
                                                 <th>Member Name</th>
                                                 <th>Plan Name</th>
                                                 <th>Interest Rate (%)</th>
@@ -75,6 +77,7 @@
                                             @if(sizeof($subscriber) > 0)
                                             @foreach($subscriber as $key => $user)
                                             <tr class="@if(($key%2) == 0) even @else odd @endif">
+                                                <td>{{++$sl}}</td>
                                                 <td>{{$user->user->name}}</td>
                                                 <td>{{$user->create_subscription->name}}</td>
                                                 <td>{{$user->create_subscription->interest_rate}} %</td>

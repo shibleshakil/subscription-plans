@@ -24,6 +24,13 @@
     </div>
     <div id="mobile_only_nav" class="mobile-only-nav pull-right">
         <ul class="nav navbar-right top-nav pull-right">
+            
+            <li>
+                <a class="ml-10"><?php echo Auth()->user()->name ?></a>
+            </li>
+            <li>
+                <a class="ml-10">ZAR <?php echo Auth()->user()->balance ?></a>
+            </li>
             <li class="dropdown auth-drp">
                 <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="{{ asset('dist/img/user.png') }}" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
                 <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
