@@ -109,10 +109,74 @@
                                     <input type="hidden" id="price" name="price">
                                     <input type="hidden" id="create_subscription_id"  name="create_subscription_id" value="{{ isset($old) ? $old->create_subscription_id : '' }}">
                                    
-                                    <div class="form-group {{ $errors->has('total_earning') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">Payment Using</label>
-                                        <div class="input-group">
-                                            <img src="{{ asset('dist/img/cards.png') }}" style="width:100%; height:120px;" alt="">
+                                    <div class="panel panel-default card-view">
+                                        <div class="panel-wrapper collapse in">
+                                            <div class="panel-body">
+                                                <div  class="tab-struct custom-tab-1">
+                                                    <ul role="tablist" class="nav nav-tabs" id="myTabs_7">
+                                                        <li class="active" role="presentation"><a aria-expanded="true"  data-toggle="tab" role="tab" id="home_tab_7" href="#home_7">Payment Details</a></li>
+                                                        <li role="presentation" class=""><a  data-toggle="tab" id="profile_tab_7" role="tab" href="#profile_7" aria-expanded="false">Others</a></li>
+                                                    </ul>
+                                                    <div class="tab-content" id="myTabContent_7">
+                                                        <div  id="home_7" class="tab-pane fade active in" role="tabpanel">
+                                                            <div class="col-md-6 mt-10">
+                                                                <div class="input-group">
+                                                                    <img src="{{ asset('dist/img/visa.jpg') }}" style="width:100%; height:auto;" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <h5>Payment Details</h5>
+                                                                <div class="form-group {{ $errors->has('c_name') ? ' has-error' : '' }}">
+                                                                    <label class="control-label mb-10">Name on card</label>
+                                                                    <input type="text" class="form-control" id="c_name" placeholder="Mr John"
+                                                                        name="c_name" value="{{ old('c_name') }}" autocomplete="off">
+                                                                    @if ($errors->has('c_name'))
+                                                                    <span class="help-block">
+                                                                        <strong>{{ $errors->first('c_name') }}</strong>
+                                                                    </span>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="form-group {{ $errors->has('card_no') ? ' has-error' : '' }}">
+                                                                    <label class="control-label mb-10">Card Number</label>
+                                                                    <input type="text" class="form-control" id="card_no" placeholder=".... .... .... ...." data-slots="." data-accept="\d" size="19" name="card_no" value="{{ old('card_no') }}" autocomplete="off">
+                                                                    @if ($errors->has('card_no'))
+                                                                    <span class="help-block">
+                                                                        <strong>{{ $errors->first('card_no') }}</strong>
+                                                                    </span>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="col-md-6 pa-0 pr-5">
+                                                                    <div class="form-group {{ $errors->has('valid_till') ? ' has-error' : '' }}">
+                                                                        <label class="control-label mb-10">Valid Through</label>
+                                                                        <input type="text" class="form-control" id="valid_till" placeholder="02/22"
+                                                                            name="valid_till" value="{{ old('valid_till') }}" autocomplete="off">
+                                                                        @if ($errors->has('valid_till'))
+                                                                        <span class="help-block">
+                                                                            <strong>{{ $errors->first('valid_till') }}</strong>
+                                                                        </span>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 pa-0 pl-5">
+                                                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                                                        <label class="control-label mb-10">CVV</label>
+                                                                        <input type="text" class="form-control" id="cvv" placeholder="201"
+                                                                            name="cvv" value="{{ old('name') }}" autocomplete="off">
+                                                                        @if ($errors->has('name'))
+                                                                        <span class="help-block">
+                                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                                        </span>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div  id="profile_7" class="tab-pane fade" role="tabpanel">
+                                                            <p>under development</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

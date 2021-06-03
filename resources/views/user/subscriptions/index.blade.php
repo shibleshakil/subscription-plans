@@ -39,7 +39,7 @@
         <div class="row">
             @if(sizeof($data) > 0)
             @foreach($data as $key => $recom)
-            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                 <div class="panel panel-default card-view pa-0">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-body pa-15 text-center">
@@ -80,7 +80,7 @@
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel</a> -->
                                 
                             </div>
-                            <div class="row text-center pa-5">
+                            <div class="row text-center pa-5 mt-10">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <form action="#" enctype="multipart/form-data">
                                         <button type="submit" class="btn  btn-primary btn-rounded">Renew</button>

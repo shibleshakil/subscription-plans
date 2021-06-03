@@ -88,9 +88,9 @@
         </div>	
         <!-- / Row  -->	
          <!--add Model-->
-         <div class="modal fade" id="payment" role="dialog" aria-labelledby="exampleModalLabel"
+         <div class="modal fade bs-example-modal-lg in" id="payment" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Payment For Subscription
@@ -107,12 +107,82 @@
                                     <input type="hidden" id="id" name="id">
                                     <input type="hidden" id="maturity_date" name="maturity_date">
                                     <input type="hidden" id="price" name="price">
-                                    <div class="form-group {{ $errors->has('total_earning') ? ' has-error' : '' }}">
-                                        <label class="control-label mb-10">Payment Using</label>
-                                        <div class="input-group">
-                                            <img src="{{ asset('dist/img/cards.png') }}" style="width:100%; height:120px;" alt="">
+                                    <div class="panel panel-default card-view">
+                                        <div class="panel-wrapper collapse in">
+                                            <div class="panel-body">
+                                                <div  class="tab-struct custom-tab-1">
+                                                    <ul role="tablist" class="nav nav-tabs" id="myTabs_7">
+                                                        <li class="active" role="presentation"><a aria-expanded="true"  data-toggle="tab" role="tab" id="home_tab_7" href="#home_7">Payment Details</a></li>
+                                                        <li role="presentation" class=""><a  data-toggle="tab" id="profile_tab_7" role="tab" href="#profile_7" aria-expanded="false">Others</a></li>
+                                                    </ul>
+                                                    <div class="tab-content" id="myTabContent_7">
+                                                        <div  id="home_7" class="tab-pane fade active in" role="tabpanel">
+                                                            <div class="col-md-6 mt-10">
+                                                                <div class="input-group">
+                                                                    <img src="{{ asset('dist/img/visa.jpg') }}" style="width:100%; height:auto;" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <h5>Payment Details</h5>
+                                                                <div class="form-group {{ $errors->has('c_name') ? ' has-error' : '' }}">
+                                                                    <label class="control-label mb-10">Name on card</label>
+                                                                    <input type="text" class="form-control" id="c_name" placeholder="Mr John"
+                                                                        name="c_name" value="{{ old('c_name') }}" autocomplete="off">
+                                                                    @if ($errors->has('c_name'))
+                                                                    <span class="help-block">
+                                                                        <strong>{{ $errors->first('c_name') }}</strong>
+                                                                    </span>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="form-group {{ $errors->has('card_no') ? ' has-error' : '' }}">
+                                                                    <label class="control-label mb-10">Card Number</label>
+                                                                    <input type="text" class="form-control" id="card_no" placeholder=".... .... .... ...." data-slots="." data-accept="\d" size="19" name="card_no" value="{{ old('card_no') }}" autocomplete="off">
+                                                                    @if ($errors->has('card_no'))
+                                                                    <span class="help-block">
+                                                                        <strong>{{ $errors->first('card_no') }}</strong>
+                                                                    </span>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="col-md-6 pa-0 pr-5">
+                                                                    <div class="form-group {{ $errors->has('valid_till') ? ' has-error' : '' }}">
+                                                                        <label class="control-label mb-10">Valid Through</label>
+                                                                        <input type="text" class="form-control" id="valid_till" placeholder="02/22"
+                                                                            name="valid_till" value="{{ old('valid_till') }}" autocomplete="off">
+                                                                        @if ($errors->has('valid_till'))
+                                                                        <span class="help-block">
+                                                                            <strong>{{ $errors->first('valid_till') }}</strong>
+                                                                        </span>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 pa-0 pl-5">
+                                                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                                                        <label class="control-label mb-10">CVV</label>
+                                                                        <input type="text" class="form-control" id="cvv" placeholder="201"
+                                                                            name="cvv" value="{{ old('name') }}" autocomplete="off">
+                                                                        @if ($errors->has('name'))
+                                                                        <span class="help-block">
+                                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                                        </span>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div  id="profile_7" class="tab-pane fade" role="tabpanel">
+                                                            <p>under development</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- Row -->
+                                    <!-- <div class="row">
+                                        <div class="col-lg-12 col-sm-12">
+                                        </div>
+                                    </div> -->
+                                    <!-- /Row -->
                                 </div>
                             </div>
                         </div>
@@ -157,6 +227,35 @@
         $('.modal-body #price').val(price);
         $('.clearForm').clearForm();
         $('.select2').select2();
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        for (const el of document.querySelectorAll("[placeholder][data-slots]")) {
+            const pattern = el.getAttribute("placeholder"),
+                slots = new Set(el.dataset.slots || "_"),
+                prev = (j => Array.from(pattern, (c,i) => slots.has(c)? j=i+1: j))(0),
+                first = [...pattern].findIndex(c => slots.has(c)),
+                accept = new RegExp(el.dataset.accept || "\\d", "g"),
+                clean = input => {
+                    input = input.match(accept) || [];
+                    return Array.from(pattern, c =>
+                        input[0] === c || slots.has(c) ? input.shift() || c : c
+                    );
+                },
+                format = () => {
+                    const [i, j] = [el.selectionStart, el.selectionEnd].map(i => {
+                        i = clean(el.value.slice(0, i)).findIndex(c => slots.has(c));
+                        return i<0? prev[prev.length-1]: back? prev[i-1] || first: i;
+                    });
+                    el.value = clean(el.value).join``;
+                    el.setSelectionRange(i, j);
+                    back = false;
+                };
+            let back = false;
+            el.addEventListener("keydown", (e) => back = e.key === "Backspace");
+            el.addEventListener("input", format);
+            el.addEventListener("focus", format);
+            el.addEventListener("blur", () => el.value === pattern && (el.value=""));
+        }
     });
     
 </script>
