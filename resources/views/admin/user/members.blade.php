@@ -85,7 +85,32 @@
                                                 <td>{{$user->active_date}}</td>
                                                 <td>{{$user->maturity_exp}}</td>
                                                 <td>{{$user->create_subscription->bill_type}}</td>
-                                                <td>{{$user->maturity_left}} Days</td>
+                                                <td>
+                                                    <?php
+                                                        if($user->status == 1){    
+                                                            $exp_date = $user->maturity_exp;
+                                                            // $exp = toDateTimeString($exp_date);
+                                                            $exp = date('Y-m-d H:i:s', strtotime($exp_date));
+                                                            $diff = Carbon\Carbon::now()->diffInDays($exp, false);
+                                                            if($diff > 0){ 
+                                                                echo "Remainnig"." ".$diff." "."Days";
+                                                            }else{
+                                                               echo "Something Went Wrong";
+                                                            }
+                                                        }else{
+                                                            $exp_date = $user->cancel_date;
+                                                            $exp = date('Y-m-d H:i:s', strtotime($exp_date));
+                                                            $diff = Carbon\Carbon::now()->diffInDays($exp, false);
+                                                            if($diff == 0){ 
+                                                                echo "Expired Today";
+                                                            }
+                                                            else{
+                                                                $difff = abs($diff);
+                                                                echo "Expired"." ".$difff." "."Days Ago";
+                                                            }
+                                                        }
+                                                    ?>
+                                                </td>
                                                 <td>@if($user->status == 1) Active @else Deactive @endif</td>
                                             </tr>
                                             @endforeach
