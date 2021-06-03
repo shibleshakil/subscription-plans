@@ -93,7 +93,7 @@
                                                             $exp = date('Y-m-d H:i:s', strtotime($exp_date));
                                                             $diff = Carbon\Carbon::now()->diffInDays($exp, false);
                                                             if($diff > 0){ 
-                                                                echo "Remainnig"." ".$diff." "."Days";
+                                                                echo "Remaining"." ".$diff." "."Days";
                                                             }else{
                                                                echo "Something Went Wrong";
                                                             }

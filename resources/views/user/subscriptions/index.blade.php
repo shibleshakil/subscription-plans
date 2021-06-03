@@ -52,13 +52,30 @@
 
                                 <ul class="list-unstyled my-5 text-small text-center plan-data">
                                     <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i>Payment Type: {{$recom->create_subscription->bill_type}}</li>
+                                        <i class="fa fa-check mr-2 text-primary"></i>Payment Type : {{$recom->create_subscription->bill_type}}</li>
                                     <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i>Start Date: {{$recom->active_date}}</li>
+                                        <i class="fa fa-check mr-2 text-primary"></i>Start Date : {{$recom->active_date}}</li>
                                     <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->maturity_exp}}</li>
+                                        <i class="fa fa-check mr-2 text-primary"></i>Maturity Date : {{$recom->maturity_exp}}</li>
                                     <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i>Days Remainning: {{$recom->maturity_left}} days</li>
+                                        <i class="fa fa-check mr-2 text-primary"></i>
+                                        <?php   
+                                            $exp_date = $recom->maturity_exp;
+                                            // $exp = toDateTimeString($exp_date);
+                                            $exp = date('Y-m-d H:i:s', strtotime($exp_date));
+
+                                            $diff = Carbon\Carbon::now()->diffInDays($exp, false);
+                                            if($diff > 0){ 
+                                                echo "Remaining"." : ".$diff." "."Days";
+                                            }elseif($diff == 0){ 
+                                                echo "Expired Today";
+                                            }
+                                            else{
+                                                $difff = abs($diff);
+                                                echo "Expired"." : ".$difff." "."Days Ago";
+                                            }
+                                        ?>
+                                        </li>
                                 </ul>
                                 <!-- <a href="#" class="btn  btn-primary btn-rounded mt-20">Cancel</a> -->
                                 
