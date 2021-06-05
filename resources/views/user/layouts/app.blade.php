@@ -12,8 +12,6 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Custom CSS -->
-	<link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">
 	
     <!-- fontawesome CSS -->
 	<link href="{{ asset('dist/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -26,8 +24,11 @@
     <!-- bootstrap-select CSS -->
     <link href="{{ asset('vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css"/>
 
-	<!-- bootstrap-touchspin CSS -->
-	<link href="{{asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css"/>
+	<!-- vector map CSS -->
+	<link href="{{asset('vendors/bower_components/jquery-wizard.js/css/wizard.css')}}" rel="stylesheet" type="text/css"/>
+				
+	<!-- jquery-steps css -->
+	<link rel="stylesheet" href="{{ asset('vendors/bower_components/jquery.steps/demo/css/jquery.steps.css')}}">
     
 	<!-- Data table CSS -->
 	<link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -35,18 +36,14 @@
 	<!-- Morris Charts CSS -->
     <link href="{{ asset('vendors/bower_components/morris.js/morris.css') }}" rel="stylesheet" type="text/css"/>
 	
-	<!-- Data table CSS -->
-	<link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
-	
 	<link href="{{ asset('vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css') }}" rel="stylesheet" type="text/css">
-			
-	<!-- jquery-steps css -->
-	<link rel="stylesheet" href="{{ asset('vendors/bower_components/jquery.steps/demo/css/jquery.steps.css')}}">
+
 	
 	<!-- bootstrap-touchspin CSS -->
 	<link href="{{ asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" type="text/css"/>
-	<!-- vector map CSS -->
-	<link href="{{asset('vendors/bower_components/jquery-wizard.js/css/wizard.css')}}" rel="stylesheet" type="text/css"/>
+	
+    <!-- Custom CSS -->
+	<link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">
 
 	<!-- Custom CSS -->
 	<link href="{{asset('src/scss/style.scss')}}" rel="stylesheet" type="text/css">		
@@ -70,10 +67,16 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{asset('dist/js/modal-data.js') }}"></script>		
+    <script src="{{asset('dist/js/modal-data.js') }}"></script>	
+	
 		
 	<!-- Form Wizard JavaScript -->
 	<script src="{{asset('vendors/bower_components/jquery.steps/build/jquery.steps.min.js')}}"></script>
+	<script src="'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+	
+	<!-- Form Wizard Data JavaScript -->
+	<script src="{{asset('dist/js/form-wizard-data.js')}}"></script>
+		
 	
 	<!-- Bootstrap Touchspin JavaScript -->
 	<script src="{{ asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')}}"></script>
