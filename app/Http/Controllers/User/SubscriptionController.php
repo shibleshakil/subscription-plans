@@ -37,6 +37,23 @@ class SubscriptionController extends Controller
         return view('user.subscriptions.index')->with(compact('recomandation'));
     }
 
+    public function paymentDetails(Request $request) {   
+        $recomandation = CreateSubscription::where('id', $request->id)->first();
+        return view('user.subscriptions.paymentPage')->with(compact('recomandation'));
+    }
+
+    public function upgradePaymentDetails(Request $request) {   
+        $recomandation = CreateSubscription::where('id', $request->id)->first();
+        $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
+        return view('user.subscriptions.upgradePaymentPage')->with(compact('recomandation','old'));
+    }
+
+    public function downgradePaymentDetails(Request $request) {   
+        $recomandation = CreateSubscription::where('id', $request->id)->first();
+        $old = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
+        return view('user.subscriptions.downgradePaymentPage')->with(compact('recomandation','old'));
+    }
+
     public function userSubAdd(Request $request){
         $test = $request->price;
         $price = (float) $test;

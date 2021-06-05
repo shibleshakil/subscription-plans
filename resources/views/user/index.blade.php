@@ -34,167 +34,71 @@
                 </div>
             @endif
         <!-- /Title -->
-                
-        <!--  Row  -->
+
+        <!-- Row -->
         <div class="row">
-            @if(sizeof($recomandation) > 0)
-            @foreach($recomandation as $key => $recom)
-            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                <div class="panel panel-default card-view pa-0">
+            <div class="col-sm-12">
+                <div class="panel panel-default card-view pb-0">
                     <div class="panel-wrapper collapse in">
-                        <div class="panel-body pa-15 text-center">
-                            <div class="bg-white p-5 rounded-lg shadow">
-                                <h4>{{$recom->name}}</h4>
-                                <h5>Interest Rate: <span class="h1 font-weight-bold">{{$recom->interest_rate}}%</span></h5>
-                                <h5>ZAR{{$recom->price}}</h5>
-
-                                <div class="custom-separator"></div>
-
-                                <ul class="list-unstyled my-5 text-small text-center plan-data">
-                                    <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i>Payment Type: {{$recom->bill_type}}</li>
-                                    <li class="mb-3">
-                                        <i class="fa fa-check mr-2 text-primary"></i>Maturity Date: {{$recom->maturity_date}} Days</li>
-                                </ul>
-                                <!-- <a href="#" class="btn  btn-primary btn-rounded">Subscribe</a> -->
-                                <button type="submit" data-toggle="modal" data-target="#payment" data-target-id="{{$recom->id}}"
-                                    data-maturity_date="{{ $recom->maturity_date }}" data-price="{{ $recom->price }}" 
-                                    class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Subscribe</button>
-                                <!-- <form action="{{ route('user-subscriptions.store')}}" method="post" id="addSubscribe" enctype="multipart/form-data">@csrf
-                                    <input type="hidden" id="id" name="id" value="{{$recom->id}}">
-                                    <input type="hidden" id="maturity_date" name="maturity_date" value="{{$recom->maturity_date}}">
-                                    <button type="submit" class="btn  btn-primary btn-rounded mt-20" id="submitbtn">Subscribe</button>
-                                </form> -->
-                            </div>
-                        </div>
-                    </div>	
-                </div>	
-            </div>
-            @endforeach
-            
-            @else
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="panel panel-default card-view pa-0">
-                    <div class="panel-wrapper collapse in">
-                        <div class="panel-body text-center">
-                            <div class="bg-white rounded-lg shadow">
-                                <p><span class="h1 font-weight-bold">No Offered Plan Avaiable</span></p>
-                            </div>
-                        </div>
-                    </div>	
-                </div>	
-            </div>
-            @endif					
-        </div>	
-        <!-- / Row  -->	
-         <!--add Model-->
-         <div class="modal fade bs-example-modal-lg in" id="payment" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Payment For Subscription
-                            <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </h5>
-                    </div>
-                    <form role="form" action="{{ route('user-subscriptions.store')}}" method="post" enctype="multipart/form-data" class="clearForm">
-                        @csrf
-                        <div class="modal-body">
+                        <div class="panel-body pb-0">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <input type="hidden" id="id" name="id">
-                                    <input type="hidden" id="maturity_date" name="maturity_date">
-                                    <input type="hidden" id="price" name="price">
-                                    <div class="panel panel-default card-view">
-                                        <div class="panel-wrapper collapse in">
-                                            <div class="panel-body">
-                                                <div  class="tab-struct custom-tab-1">
-                                                    <ul role="tablist" class="nav nav-tabs" id="myTabs_7">
-                                                        <li class="active" role="presentation"><a aria-expanded="true"  data-toggle="tab" role="tab" id="home_tab_7" href="#home_7">Payment Details</a></li>
-                                                        <li role="presentation" class=""><a  data-toggle="tab" id="profile_tab_7" role="tab" href="#profile_7" aria-expanded="false">Others</a></li>
-                                                    </ul>
-                                                    <div class="tab-content" id="myTabContent_7">
-                                                        <div  id="home_7" class="tab-pane fade active in" role="tabpanel">
-                                                            <div class="col-md-6 mt-10">
-                                                                <div class="input-group">
-                                                                    <img src="{{ asset('dist/img/visa.jpg') }}" style="width:100%; height:auto;" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <h5>Payment Details</h5>
-                                                                <div class="form-group {{ $errors->has('c_name') ? ' has-error' : '' }}">
-                                                                    <label class="control-label mb-10">Name on card</label>
-                                                                    <input type="text" class="form-control" id="c_name" placeholder="Mr John"
-                                                                        name="c_name" value="{{ old('c_name') }}" autocomplete="off">
-                                                                    @if ($errors->has('c_name'))
-                                                                    <span class="help-block">
-                                                                        <strong>{{ $errors->first('c_name') }}</strong>
-                                                                    </span>
-                                                                    @endif
-                                                                </div>
-                                                                <div class="form-group {{ $errors->has('card_no') ? ' has-error' : '' }}">
-                                                                    <label class="control-label mb-10">Card Number</label>
-                                                                    <input type="text" class="form-control" id="card_no" placeholder=".... .... .... ...." data-slots="." data-accept="\d" size="19" name="card_no" value="{{ old('card_no') }}" autocomplete="off">
-                                                                    @if ($errors->has('card_no'))
-                                                                    <span class="help-block">
-                                                                        <strong>{{ $errors->first('card_no') }}</strong>
-                                                                    </span>
-                                                                    @endif
-                                                                </div>
-                                                                <div class="col-md-6 pa-0 pr-5">
-                                                                    <div class="form-group {{ $errors->has('valid_till') ? ' has-error' : '' }}">
-                                                                        <label class="control-label mb-10">Valid Through</label>
-                                                                        <input type="text" class="form-control" id="valid_till" placeholder="02/22"
-                                                                            name="valid_till" value="{{ old('valid_till') }}" autocomplete="off">
-                                                                        @if ($errors->has('valid_till'))
-                                                                        <span class="help-block">
-                                                                            <strong>{{ $errors->first('valid_till') }}</strong>
-                                                                        </span>
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6 pa-0 pl-5">
-                                                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-                                                                        <label class="control-label mb-10">CVV</label>
-                                                                        <input type="text" class="form-control" id="cvv" placeholder="201"
-                                                                            name="cvv" value="{{ old('name') }}" autocomplete="off">
-                                                                        @if ($errors->has('name'))
-                                                                        <span class="help-block">
-                                                                            <strong>{{ $errors->first('name') }}</strong>
-                                                                        </span>
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div  id="profile_7" class="tab-pane fade" role="tabpanel">
-                                                            <p>under development</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <!-- item -->
+                                @if(sizeof($recomandation) > 0)
+                                @foreach($recomandation as $key => $recom)
+                                <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-30">
+                                    <div class="panel panel-pricing mb-0">
+                                        <div class="panel-heading">
+                                            @if($recom->name == "Platinam")
+                                            <i class=" ti-shield"></i>
+                                            @elseif($recom->name == "Gold")
+                                            <i class="ti-crown"></i>
+                                            @elseif($recom->name == "Silver")
+                                            <i class="ti-wallet"></i>
+                                            @else
+                                            <i class="ti-bookmark-alt"></i>
+                                            @endif
+
+                                            <h6>{{$recom->name}}</h6>
+                                            <h5>Interest Rate: <span class="panel-price">{{$recom->interest_rate}}%</span></h5>
+                                            <h6 class="mt-25">Price : ZAR{{$recom->price}}</h6>
+                                        </div>
+                                        <div class="panel-body text-center pl-0 pr-0">
+                                            <hr class="mb-30"/>
+                                            <ul class="list-group mb-0 text-center">
+                                                <li class="list-group-item"><i class="fa fa-check"></i> </i>Payment Type: {{$recom->bill_type}}</li>
+                                                <li><hr class="mt-5 mb-5"/></li>
+                                                <li class="list-group-item"><i class="fa fa-check"></i> Maturity Date: {{$recom->maturity_date}} Days</li>
+                                                <li><hr class="mt-5 mb-5"/></li>
+                                                <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                                            </ul>
+                                        </div>
+                                        <div class="panel-footer pb-35">
+                                            <!-- <a class="btn btn-success btn-rounded btn-lg" href="#">subscribe now</a> -->
+                                            <form action="{{ route ('user-payment-details')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
+                                                <input type="hidden" id="id" name="id" value="{{$recom->id}}">
+                                                <button type="submit" class="btn  btn-success btn-rounded btn-lg">subscribe now</button>
+                                            </form>
                                         </div>
                                     </div>
-                                    <!-- Row -->
-                                    <!-- <div class="row">
-                                        <div class="col-lg-12 col-sm-12">
-                                        </div>
-                                    </div> -->
-                                    <!-- /Row -->
                                 </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
-                            <button type="submit" id="subscribe" class="btn btn-success btn-rounded">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--/add Model-->
+                                <!-- /item -->
+                                @endforeach
+                                @else
+                                <!-- item -->
+                                <div class="col-lg-12 col-md-12 col-sm-12 text-center mb-30">
+                                    <div class="panel panel-pricing mb-0">
+                                        <p><span class="h1 font-weight-bold">No Offered Plan Avaiable</span></p>
+                                    </div>
+                                </div>
+                                <!-- /item -->
+                                @endif                                
+                            </div>	
+                        </div>	
+                    </div>	
+                </div>	
+            </div>	
+        </div>	
+        <!-- /Row -->
     </div>
 </div>
 <!-- /Main Content -->
@@ -203,60 +107,6 @@
 <!-- script -->
 @section('script')
 <script type="text/javascript">
-    $.fn.clearForm = function () {
-        return this.each(function () {
-            var type = this.type, tag = this.tagName.toLowerCase();
-            if (tag == 'form')
-                return $(':input', this).clearForm();
-            if (type == 'text' || type == 'password' || tag == 'textarea' || type == 'date')
-                this.value = '';
-            else if (type == 'checkbox' || type == 'radio')
-                this.checked = false;
-            else if (tag == 'select')
-                this.selectedIndex = -1;
-        });
-    };
-
-    $("#payment").on("show.bs.modal", function (e) {
-        var id = $(e.relatedTarget).data('target-id');
-        var maturity_date = $(e.relatedTarget).data('maturity_date');
-        var price = $(e.relatedTarget).data('price');
-
-        $('.modal-body #id').val(id);
-        $('.modal-body #maturity_date').val(maturity_date);
-        $('.modal-body #price').val(price);
-        $('.clearForm').clearForm();
-        $('.select2').select2();
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-        for (const el of document.querySelectorAll("[placeholder][data-slots]")) {
-            const pattern = el.getAttribute("placeholder"),
-                slots = new Set(el.dataset.slots || "_"),
-                prev = (j => Array.from(pattern, (c,i) => slots.has(c)? j=i+1: j))(0),
-                first = [...pattern].findIndex(c => slots.has(c)),
-                accept = new RegExp(el.dataset.accept || "\\d", "g"),
-                clean = input => {
-                    input = input.match(accept) || [];
-                    return Array.from(pattern, c =>
-                        input[0] === c || slots.has(c) ? input.shift() || c : c
-                    );
-                },
-                format = () => {
-                    const [i, j] = [el.selectionStart, el.selectionEnd].map(i => {
-                        i = clean(el.value.slice(0, i)).findIndex(c => slots.has(c));
-                        return i<0? prev[prev.length-1]: back? prev[i-1] || first: i;
-                    });
-                    el.value = clean(el.value).join``;
-                    el.setSelectionRange(i, j);
-                    back = false;
-                };
-            let back = false;
-            el.addEventListener("keydown", (e) => back = e.key === "Backspace");
-            el.addEventListener("input", format);
-            el.addEventListener("focus", format);
-            el.addEventListener("blur", () => el.value === pattern && (el.value=""));
-        }
-    });
     
 </script>
 @endsection
