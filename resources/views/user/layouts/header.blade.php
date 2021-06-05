@@ -1,11 +1,15 @@
 <!-- Top Menu Items -->
-<nav class="navbar navbar-inverse navbar-fixed-top front-navbar">
-    <div id="mobile_only_nav" class="mobile-only-nav pull-left">
-        <ul class="nav navbar-right top-nav pull-right">
-            <li>
-                <a class="ml-10">Subscription</a>
-            </li>
-        </ul>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="mobile-only-brand pull-left">
+        <div class="nav-header pull-left">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <img class="brand-img" src="{{ asset('dist/img/logo.png') }}" alt="brand"/>
+                    <span class="brand-text">Subscription</span>
+                </a>
+            </div>
+        </div>
+        <a id="toggle_mobile_nav" class="mobile-only-view" href="javascript:void(0);"><i class="zmdi zmdi-more"></i></a>
     </div>	
     <div id="mobile_only_nav" class="mobile-only-nav pull-right">
         <ul class="nav navbar-right top-nav pull-right">
@@ -15,20 +19,14 @@
             <li>
                 <a href="{{ route('user-subscriptions-list') }}">My Plan</a>
             </li>
-            <li>
-                <a class="ml-10"><?php echo Auth()->user()->name ?></a>
-            </li>
-            <li>
-                <a class="ml-10">ZAR <?php echo Auth()->user()->balance ?></a>
-            </li>
             <li class="dropdown auth-drp">
                 <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="{{ asset('dist/img/user.png') }}" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
                 <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
                     <li>
-                        <a href="#"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
+                        <a><i class="zmdi zmdi-account"></i><span><?php echo Auth()->user()->name ?></span></a>
                     </li>
                     <li>
-                        <a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
+                        <a><i class="fa fa-money"></i><span>ZAR <?php echo Auth()->user()->balance ?></span></a>
                     </li>
                     <li>
                         <a href="{{ route('logout') }}"
