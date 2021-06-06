@@ -43,7 +43,7 @@ $(function(){
 					form_2.find(".body:eq(" + newIndex + ") label.error").remove();
 					form_2.find(".body:eq(" + newIndex + ") .error").removeClass("error");
 				}
-				form_2.validate().settings.ignore = ":disabled,:hidden";
+				// form_2.validate().settings.ignore = ":disabled,:hidden";
 				return form_2.valid();
 			},
 			onFinishing: function (event, currentIndex)
@@ -64,8 +64,42 @@ $(function(){
 			}
 		});
 	}
+
+	if($('#example-advanced-form2').length >0){
+		var form_2 = $("#example-advanced-form2");
+		form_2.steps({
+			headerTag: "h3",
+			bodyTag: "fieldset",
+			enableFinishButton: false,
+			transitionEffect: "fade",
+			titleTemplate: '#title#',
+			labels: {
+				finish: "submit",
+				next: "Next",
+				previous: "Previous",
+			},
+			onStepChanging: function (event, currentIndex, newIndex)
+			{
+				if(newIndex == 3){
+					$('.actions').append('<button type="submit" class="btn btn-success submitButton ml-5">Submit</button>');
+				}else{
+					$('.submitButton').remove();
+				}
+				return true;
+			},
+			
+			
+		// }).validate({
+		// 	errorPlacement: function errorPlacement(error, element) { element.before(error); },
+		// 	rules: {
+		// 		confirm: {
+		// 			equalTo: "#password-2"
+		// 		}
+		// 	}
+		 });
+	}
 	
-	$('#datable_1').DataTable({
+	$('#datable_2').DataTable({
 		 "bFilter": false,
 		 "bLengthChange": false,
 		 "bPaginate": false,

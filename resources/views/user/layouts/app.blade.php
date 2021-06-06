@@ -72,7 +72,7 @@
 		
 	<!-- Form Wizard JavaScript -->
 	<script src="{{asset('vendors/bower_components/jquery.steps/build/jquery.steps.min.js')}}"></script>
-	<script src="'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+	<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script> -->
 	
 	<!-- Form Wizard Data JavaScript -->
 	<script src="{{asset('dist/js/form-wizard-data.js')}}"></script>
@@ -81,6 +81,9 @@
 	<!-- Bootstrap Touchspin JavaScript -->
 	<script src="{{ asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')}}"></script>
 	
+	<!-- Starrr JavaScript -->
+	<script src="{{asset('dist/js/starrr.js')}}"></script>
+
 	<!-- Product Checkout Data JavaScript -->
 	<script src="{{ asset('dist/js/product-checkout-data.js')}}"></script>
 
@@ -141,7 +144,8 @@
 	<!-- Init JavaScript -->
 	<script src="{{ asset('dist/js/init.js') }}"></script>
 	<script src="{{ asset('dist/js/dashboard-data.js') }}"></script>
-		@yield('script')
+	
+	@yield('script')
 </body>
 
 </html>

@@ -17520,7 +17520,7 @@ ul li i {
 .app-search .dd-handle:focus,
 .app-search .dd3-content:focus {
     border: 1px solid rgba(33, 33, 33, 0.12);
-    border-radius: 10px;
+    border-radius: 0;
     background-color: #fff;
     box-shadow: none;
     color: #212121 !important;

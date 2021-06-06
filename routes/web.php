@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('admin.dashboard');
+// Route::get('/test', function () {
+//     return view('test');
 // });
 
 // Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'greatings'])->name('greatings');
