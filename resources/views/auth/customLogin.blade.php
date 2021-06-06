@@ -48,13 +48,11 @@
                 <div class="table-struct full-width full-height">
                     <div class="table-cell vertical-align-middle auth-form-wrap">
                         <div class="auth-form  ml-auto mr-auto no-float">
-                            <div class="row">
+                            <div class="row" style="padding: 2%; box-shadow: 5px 5px 8px #2879ff; border-radius: 50px 20px;">
                                 <div class="col-sm-12 col-xs-12">
                                     <div class="mb-30">
-                                        <h3 class="text-center txt-dark mb-10">
-                                            <!-- <img class="brand-img" src="dist/img/btrc.png" alt="brand"
-                                                style="width:30px; height:25px;" /> -->
-                                                Subscription Plans Login
+                                        <h3 class="text-center mb-10" style="color: #2879ff">
+                                            Subscription Plans Login
                                         </h3>
                                         @if ($message = Session::get('success'))
 										<div class="alert alert-success alert-block">

@@ -130,7 +130,7 @@
         <!-- Row -->
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-default card-view pb-0">
+                <div class="panel panel-default pb-0">
                     <div class="panel-wrapper collapse in">
                         <div class="panel-body pb-0">
                             <div class="row">

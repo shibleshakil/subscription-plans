@@ -48,27 +48,33 @@
                                         <div class="col-sm-6">
                                             <div class="form-wrap">
                                                 <div class="form-group">
-                                                    <div class="input-group">
-                                                        <div class="input-group-addon"><i class="icon-user"></i></div>
-                                                        <input type="text" class="form-control"  name="Username" id="exampleInputuname" placeholder="Username">
+                                                    <label class="control-label col-md-3">Plan Name:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->name}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="input-group">
-                                                        <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
-                                                        <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="Enter email">
+                                                    <label class="control-label col-md-3">Plan Price:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">ZAR {{$recomandation->price}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="input-group">
-                                                        <div class="input-group-addon"><i class="icon-lock"></i></div>
-                                                        <input id="password-2" type="password" class="form-control" name="password" placeholder="Enter password">
+                                                    <label class="control-label col-md-3">Interest Rate:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->interest_rate}} %</p>
                                                     </div>
                                                 </div>
-                                                <div class="form-group mb-0">
-                                                    <div class="input-group">
-                                                        <div class="input-group-addon"><i class="icon-lock"></i></div>
-                                                        <input type="password" class="form-control"  id="confirm-2" name="confirm"  placeholder="confirm password">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Maturity Days:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->maturity_date}} Days</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Payment Type:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->bill_type}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,9 +90,9 @@
                                                 <div class="form-group">
                                                     <label class="control-label mb-10" for="exampleCountry">country:</label>
                                                     <select id="exampleCountry" class="form-control" name="country">
-                                                        <option value="1">India</option>
+                                                        <option value="1">USA</option>
                                                         <option value="2">Australia</option>
-                                                        <option value="3">USA</option>
+                                                        <option value="3">Canada</option>
                                                         <option value="4">Japan</option>
                                                     </select>
                                                 </div>
@@ -110,15 +116,15 @@
                                                 <div class="form-group">
                                                     <label class="control-label mb-10" for="cityName">city:</label>
                                                     <select id="cityName" class="form-control" name="country">
-                                                        <option value="">Banglore</option>
-                                                        <option value="">Pune</option>
+                                                        <option value="">Sitka</option>
+                                                        <option value="">Brownsville</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label mb-10" for="stateName">state:</label>
                                                     <select id="stateName" class="form-control" name="country">
-                                                        <option value="">Karnataka</option>
-                                                        <option value="">Maharashtra</option>
+                                                        <option value="">Alaska</option>
+                                                        <option value="">Texas</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -211,61 +217,77 @@
                                 
                                 <h3><span class="head-font capitalize-font">confirmation</span></h3>
                                 <fieldset>
-                                        <table class="table display product-overview" id="datable_1">
-                                            <thead>
-                                                <tr>
-                                                    <th>Photo</th>
-                                                    <th>Product</th>
-                                                    <th>Quantity</th>
-                                                    <th>price</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tfoot>
-                                                <tr>
-                                                    <th colspan="3">Subtotal:</th>
-                                                    <th></th>
-                                                    <th></th>
-                                                </tr>
-                                            </tfoot>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <img src="{{asset('dist/img/chair.jpg')}}" alt="iMac" width="80">
-                                                    </td>
-                                                    <td>Rounded Chair</td>
-                                                    <td>
-                                                    <input class="vertical-spin" type="text" data-bts-button-down-class="btn btn-default"   data-bts-button-up-class="btn btn-default" value="20" name="vertical-spin">
-                                                    </td>
-                                                    <td>$400</td>
-                                                    
-                                                    <td><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <img src="{{asset('dist/img/chair2.jpg')}}" alt="iMac" width="80">
-                                                    </td>
-                                                    <td>Rounded Chair</td>
-                                                    <td>
-                                                        <input class="vertical-spin" type="text" data-bts-button-down-class="btn btn-default"   data-bts-button-up-class="btn btn-default" value="10" name="vertical-spin">
-                                                    </td>
-                                                    <td>$450</td>
-                                                    <td><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <img src="{{asset('dist/img/chair3.jpg')}}" alt="iMac" width="80">
-                                                    </td>
-                                                    <td>Rounded Chair</td>
-                                                    <td>
-                                                    <input class="vertical-spin" type="text" data-bts-button-down-class="btn btn-default"   data-bts-button-up-class="btn btn-default" value="15" name="vertical-spin">
-                                                    </td>
-                                                    <td>$470</td>
-                                                    
-                                                    <td><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-wrap">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Plan Name:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->name}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Plan Price:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">ZAR {{$recomandation->price}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Interest Rate:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->interest_rate}} %</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Maturity Days:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->maturity_date}} Days</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Payment Type:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{$recomandation->bill_type}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-wrap">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">User Name:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{Auth()->user()->name}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Email:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0">{{Auth()->user()->email}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Address:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0"> 827 Deerfield Ave. 
+                                                        Greenwood</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">City:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0"> New York</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Country:</label>
+                                                    <div class="col-md-9">
+                                                        <p class="form-control-static pt-0"> USA</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </fieldset>
                             </form>
                         </div>
@@ -282,6 +304,8 @@
 <!-- script -->
 @section('script')
 <script type="text/javascript">
+
+
 </script>
 @endsection
 <!-- /script -->

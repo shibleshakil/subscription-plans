@@ -81,7 +81,7 @@ $(function(){
 			onStepChanging: function (event, currentIndex, newIndex)
 			{
 				if(newIndex == 3){
-					$('.actions').append('<button type="submit" class="btn btn-success submitButton ml-5">Submit</button>');
+					$('.actions').append('<button type="submit" class="btn btn-success submitButton ml-5 pl-25 pr-25 pt-10 pb-10 btn-lg">Submit</button>');
 				}else{
 					$('.submitButton').remove();
 				}

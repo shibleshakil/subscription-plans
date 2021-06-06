@@ -5694,12 +5694,21 @@ button.list-group-item-danger.active:focus {
     margin-bottom: 20px;
     background-color: #fff;
     border: 1px solid transparent;
+
+    background-image: linear-gradient(
+        to right top,
+        #f9fafe,
+        #eef0f7,
+        #e3e6ef,
+        #d9dce8,
+        #ced2e1
+    );
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
-    padding: 15px;
+    padding: 50px !important;
 }
 .panel-heading {
     padding: 10px 15px;

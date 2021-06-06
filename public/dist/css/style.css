@@ -21747,7 +21747,9 @@ a.compose-mail {
 /*Pricing Table*/
 .panel-pricing {
     background: #f7f7f9;
-    border-radius: 0;
+    /* border-radius: 0; */
+    box-shadow: 5px 5px 8px #d7dbe5 !important;
+    border-radius: 20px 20px 20px 20px !important;
     -webkit-transition: 0.3s ease;
     -moz-transition: 0.3s ease;
     transition: 0.3s ease;

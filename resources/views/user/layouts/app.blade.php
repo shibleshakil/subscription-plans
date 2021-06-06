@@ -9,8 +9,8 @@
 	<meta name="author" content="hencework"/>
 	
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{asset('favicon.ico')}}">
+	<link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 
 	
     <!-- fontawesome CSS -->
@@ -20,6 +20,9 @@
     
     <!-- select2 CSS -->
     <link href="{{ asset('vendors/bower_components/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
+
+    <link href="{{ asset('vendors/bower_components/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('vendors/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
     
     <!-- bootstrap-select CSS -->
     <link href="{{ asset('vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -143,7 +146,7 @@
 	
 	<!-- Init JavaScript -->
 	<script src="{{ asset('dist/js/init.js') }}"></script>
-	<script src="{{ asset('dist/js/dashboard-data.js') }}"></script>
+	<!-- <script src="{{ asset('dist/js/dashboard-data.js') }}"></script> -->
 	
 	@yield('script')
 </body>
