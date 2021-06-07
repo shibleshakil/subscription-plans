@@ -2,11 +2,13 @@
 @section('content')
 <!-- Main Content -->
 <div class="page-wrapper ml-0">
-    <div class="container-fluid">
+    <div class="container-fluid mt-20">
         <!-- Title -->
         <div class="row heading-bg">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h5 class="txt-dark">Offered Plans</h5>
+            <div class="col-xs-12" style="text-align: center;">
+                <h3><span style="color: #2725e9;">Flexible</span>
+                <span> Plans</span></h3>
+                <span style="color: #9598a6;">Choose a plan that works best for you</span>
             </div>
         </div>
         
@@ -38,15 +40,15 @@
         <!-- Row -->
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel pb-0">
+                <div class="panel offered-plan pb-0">
                     <div class="panel-wrapper collapse in">
-                        <div class="panel-body pb-0">
+                        <div class="panel-body of-pbody pb-0">
                             <!-- <div class="row"> -->
                                 <!-- item -->
                                 @if(sizeof($recomandation) > 0)
                                 @foreach($recomandation as $key => $recom)
                                 <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-30">
-                                    <div class="panel panel-pricing mb-0">
+                                    <div class="panel panel-pricing offered-plan-table mb-0">
                                         <div class="panel-heading">
                                             @if($recom->name == "Platinam")
                                             <i class=" ti-shield"></i>
@@ -65,18 +67,18 @@
                                         <div class="panel-body text-center pl-0 pr-0">
                                             <hr class="mb-30"/>
                                             <ul class="list-group mb-0 text-center">
-                                                <li class="list-group-item"><i class="fa fa-check"></i> </i>Payment Type: {{$recom->bill_type}}</li>
+                                                <li class="list-group-item"><i class="fa fa-check"></i> Payment Type: {{$recom->bill_type}}</li>
                                                 <li><hr class="mt-5 mb-5"/></li>
                                                 <li class="list-group-item"><i class="fa fa-check"></i> Maturity Date: {{$recom->maturity_date}} Days</li>
                                                 <li><hr class="mt-5 mb-5"/></li>
-                                                <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                                                <li class="list-group-item"><i class="fa fa-check"></i> 24/7 support</li>
                                             </ul>
                                         </div>
                                         <div class="panel-footer pb-35">
                                             <!-- <a class="btn btn-success btn-rounded btn-lg" href="#">subscribe now</a> -->
                                             <form action="{{ route ('user-payment-details')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
                                                 <input type="hidden" id="id" name="id" value="{{$recom->id}}">
-                                                <button type="submit" class="btn  btn-success btn-rounded btn-lg">subscribe now</button>
+                                                <button type="submit" class="btn btn-primary btn-lg sbtn">subscribe now <span class="pl-5"><i class="fa fa-arrow-right"></i></span></button>
                                             </form>
                                         </div>
                                     </div>
@@ -86,7 +88,7 @@
                                 @else
                                 <!-- item -->
                                 <div class="col-lg-12 col-md-12 col-sm-12 text-center mb-30">
-                                    <div class="panel panel-pricing mb-0">
+                                    <div class="panel panel-pricing offered-plan-table mb-0">
                                         <p><span class="h1 font-weight-bold">No Offered Plan Avaiable</span></p>
                                     </div>
                                 </div>

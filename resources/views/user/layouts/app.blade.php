@@ -22,7 +22,6 @@
     <link href="{{ asset('vendors/bower_components/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
 
     <link href="{{ asset('vendors/bower_components/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('vendors/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
     
     <!-- bootstrap-select CSS -->
     <link href="{{ asset('vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -46,10 +45,7 @@
 	<link href="{{ asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" type="text/css"/>
 	
     <!-- Custom CSS -->
-	<link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">
-
-	<!-- Custom CSS -->
-	<link href="{{asset('src/scss/style.scss')}}" rel="stylesheet" type="text/css">		
+	<link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">	
 	
 </head>
 

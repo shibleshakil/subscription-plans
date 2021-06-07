@@ -2,11 +2,13 @@
 @section('content')
 <!-- Main Content -->
 <div class="page-wrapper ml-0">
-    <div class="container-fluid">
+    <div class="container-fluid mt-20">
         <!-- Title -->
         <div class="row heading-bg">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h5 class="txt-dark">Offered Plans To Downgrade</h5>
+            <div class="col-xs-12" style="text-align: center;">
+                <h3><span style="color: #2725e9;">Flexible Plans</span>
+                <span> To Downgrade</span></h3>
+                <span style="color: #9598a6;">Choose a plan that works best for you</span>
             </div>
         </div>
         
@@ -38,15 +40,15 @@
         <!-- Row -->
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-default pb-0">
+                <div class="panel offered-plan pb-0">
                     <div class="panel-wrapper collapse in">
-                        <div class="panel-body pb-0">
+                        <div class="panel-body of-pbody pb-0">
                             <!-- <div class="row"> -->
                                 <!-- item -->
                                 @if(sizeof($downlist) > 0)
                                 @foreach($downlist as $key => $recom)
                                 <div class="col-lg-3 col-md-6 col-sm-12 text-center mb-30">
-                                    <div class="panel panel-pricing mb-0">
+                                    <div class="panel panel-pricing offered-plan-table mb-0">
                                         <div class="panel-heading">
                                             @if($recom->name == "Platinam")
                                             <i class=" ti-shield"></i>
@@ -76,7 +78,7 @@
                                             <!-- <a class="btn btn-success btn-rounded btn-lg" href="#">subscribe now</a> -->
                                             <form action="{{ route ('user-downgrade-payment-details')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
                                                 <input type="hidden" id="id" name="id" value="{{$recom->id}}">
-                                                <button type="submit" class="btn  btn-success btn-rounded btn-lg">downgrade now</button>
+                                                <button type="submit" class="btn btn-primary btn-lg sbtn">downgrade now <span class="pl-5"><i class="fa fa-arrow-down"></i></span></button>
                                             </form>
                                         </div>
                                     </div>
@@ -86,7 +88,7 @@
                                 @else
                                 <!-- item -->
                                 <div class="col-lg-12 col-md-12 col-sm-12 text-center mb-30">
-                                    <div class="panel panel-pricing mb-0">
+                                    <div class="panel panel-pricing offered-plan-table mb-0">
                                         <p><span class="h1 font-weight-bold">Sorry! No Plan To Downgrade Available For You</span></p>
                                     </div>
                                 </div>

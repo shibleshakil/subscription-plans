@@ -2,7 +2,7 @@
 @section('content')
 <!-- Main Content -->
 <div class="page-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid mt-20">
 				
         <!-- Title -->
         <div class="row heading-bg">

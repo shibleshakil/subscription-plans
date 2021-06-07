@@ -54,3 +54,8 @@ Route::middleware(['user'])->group(function(){
     Route::post('/user/upgrade/payment/details', 'App\Http\Controllers\User\SubscriptionController@upgradePaymentDetails')->name('user-upgrade-payment-details');
     Route::post('/user/downgrade/payment/details', 'App\Http\Controllers\User\SubscriptionController@downgradePaymentDetails')->name('user-downgrade-payment-details');
 });
+
+Route::fallback(function () {
+    // abort(404);
+    return redirect()->back();
+});

@@ -53,7 +53,7 @@
 								<div class="row" style="padding: 2%; box-shadow: 5px 5px 8px #2879ff; border-radius: 50px 20px;">
 									<div class="col-sm-12 col-xs-12">
 										<div class="mb-30">
-											<h3 class="text-center txt-dark mb-10">Subscription Plans Register</h3>
+											<h3 class="text-center mb-10" style="color: #2879ff">Subscription Plans Register</h3>
 										</div>
 										
 										@if ($message = Session::get('success'))
