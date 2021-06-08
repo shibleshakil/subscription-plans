@@ -154,7 +154,7 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group mb-0">
-                                                <img src="{{asset('dist/img/visa.png')}}" class="pay-img" alt="">
+                                                <img src="{{asset('dist/img/visa1.png')}}" class="pay-img" alt="">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
