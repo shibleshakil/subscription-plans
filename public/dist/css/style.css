@@ -16896,7 +16896,7 @@ a#toggle_mobile_nav {
     .dropdown-menu.user-auth-dropdown {
     min-width: 175px;
     text-transform: capitalize;
-    background: skyblue;
+    /* background: skyblue; */
 }
 .navbar.navbar-inverse.navbar-fixed-top .nav > li .dropdown-menu.mega-menu {
     right: 23px;
