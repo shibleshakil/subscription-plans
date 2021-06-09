@@ -94,14 +94,14 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-30">
-                                                <a class="btn btn-primary btn-sm" href="#">Renew</a>
+                                                <a class="btn btn-primary btn-sm renew" href="#">Renew</a>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-30">
                                                 <!-- <a class="btn btn-info btn-rounded btn-sm" href="{{ route ('user-subscriptions-upgrade-list') }}">Upgrade</a> -->
                                                 <form action="{{ route ('user-subscriptions-upgrade-list') }}" method="POST" enctype="multipart/form-data">@csrf
                                                     <input type="hidden" id="id" name="id" value="{{$recom->create_subscription_id}}">
                                                     <input type="hidden" id="price" name="price" value="{{$recom->create_subscription->price}}">
-                                                    <button type="submit" class="btn  btn-info btn-sm">Upgrade</button>
+                                                    <button type="submit" class="btn  btn-info btn-sm upgrade">Upgrade</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -110,14 +110,14 @@
                                                 <form action="{{ route ('user-subscriptions-downgrade-list') }}" method="POST" enctype="multipart/form-data">@csrf
                                                     <input type="hidden" id="id" name="id" value="{{$recom->create_subscription_id}}">
                                                     <input type="hidden" id="price" name="price" value="{{$recom->create_subscription->price}}">
-                                                    <button type="submit" class="btn  btn-info btn-sm">Downgrade</button>
+                                                    <button type="submit" class="btn  btn-info btn-sm downgrade">Downgrade</button>
                                                 </form>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-30">
                                                 <!-- <a class="btn btn-danger btn-rounded btn-sm" href="#">Cancel</a> -->
                                                 <form action="{{ route ('user-subscriptions.delete')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
                                                     <input type="hidden" id="id" name="id" value="{{$recom->id}}">
-                                                    <button type="submit" class="btn  btn-danger btn-sm">Cancel</button>
+                                                    <button type="submit" class="btn  btn-danger btn-sm cancel">Cancel</button>
                                                 </form>
                                             </div>
                                         </div>

@@ -14,37 +14,10 @@
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
 											<span class="txt-light block counter">ZAR<span class="counter-anim"><?php echo Auth()->user()->balance ?></span></span>
-											<span class="weight-500 uppercase-font txt-light block font-13">BALANCE</span>
+											<span class="weight-500 uppercase-font txt-light block font-13">Available BALANCE</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
 											<i class="fa fa-money txt-light data-right-rep-icon"></i>
-										</div>
-									</div>	
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel panel-default pa-0">
-					<div class="panel-wrapper collapse in">
-						<div class="panel-body pa-0">
-							<div class="sm-data-box bg-yellow">
-								<div class="container-fluid">
-									<div class="row">
-										@if(!empty($plan))
-										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">{{$plan->create_subscription->name}}</span>
-											<span class="weight-500 uppercase-font txt-light block">active plan</span>
-										</div>
-										@else
-										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">No Subscription Available</span>
-										</div>
-										@endif
-										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-											<i class="zmdi zmdi-redo txt-light data-right-rep-icon"></i>
 										</div>
 									</div>	
 								</div>
@@ -61,11 +34,11 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter"><span class="counter-anim">4,054,876</span></span>
-											<span class="weight-500 uppercase-font txt-light block">pageviews</span>
+											<span class="txt-light block counter"><span class="counter-anim">3</span></span>
+											<span class="weight-500 uppercase-font txt-light block">notification</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-											<i class="zmdi zmdi-file txt-light data-right-rep-icon"></i>
+											<i class="fa fa-bell txt-light data-right-rep-icon"></i>
 										</div>
 									</div>	
 								</div>
@@ -82,11 +55,121 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter"><span class="counter-anim">46.43</span>%</span>
-											<span class="weight-500 uppercase-font txt-light block">growth rate</span>
+											<span class="txt-light block counter"><span class="counter-anim">4</span></span>
+											<span class="weight-500 uppercase-font txt-light block">Send</span>
 										</div>
-										<div class="col-xs-6 text-center  pl-0 pr-0 pt-25  data-wrap-right">
-											<div id="sparkline_4" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
+										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+											<i class="fa fa-send txt-light data-right-rep-icon"></i>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel panel-default pa-0">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-0">
+							<div class="sm-data-box bg-yellow">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+											<span class="txt-light block counter"><span class="counter-anim">4</span></span>
+											<span class="weight-500 uppercase-font txt-light block">request</span>
+										</div>
+										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+											<i class="fa fa-external-link txt-light data-right-rep-icon"></i>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Row -->
+		<!-- Row -->
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel panel-default pa-0">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-0">
+							<div class="sm-data-box bg5">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+											<span class="txt-light block counter">ZAR<span class="counter-anim">546454</span></span>
+											<span class="weight-500 uppercase-font txt-light block font-13">Loan</span>
+										</div>
+										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+											<i class="fa fa-minus-square txt-light data-right-rep-icon"></i>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel panel-default pa-0">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-0">
+							<div class="sm-data-box bg6">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+											<span class="txt-light block counter">ZAR<span class="counter-anim">4,054</span></span>
+											<span class="weight-500 uppercase-font txt-light block">Topup</span>
+										</div>
+										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+											<i class="fa fa-plus-square txt-light data-right-rep-icon"></i>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel panel-default pa-0">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-0">
+							<div class="sm-data-box bg7">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+											<span class="txt-light block counter">ZAR<span class="counter-anim">{{number_format((float)$plan->create_subscription->price, 2, '.', '')}}</span></span>
+											<span class="weight-500 uppercase-font txt-light block">Recent Transaction</span>
+										</div>
+										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+											<i class="fa fa-money txt-light data-right-rep-icon"></i>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel panel-default pa-0">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-0">
+							<div class="sm-data-box bg8">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+											<span class="txt-light block counter"><span class="counter-anim">1</span></span>
+											<span class="weight-500 uppercase-font txt-light block">Your Cards</span>
+										</div>
+										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+											<i class="fa fa-credit-card-alt txt-light data-right-rep-icon" data-toggle="modal"
+                        						data-target="#yourcard"></i>
 										</div>
 									</div>	
 								</div>
@@ -433,7 +516,37 @@
 			</div>	
 		</div>	
 		<!-- Row -->
+
+		<!-- sample modal content -->
+		<div id="yourcard" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content" style="background: transparent;">
+					<!-- <div class="modal-body"> -->
+						<div class="row">
+							<div class="col-sm-12">
+								<!-- <div class="form-group mb-0"> -->
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<img src="{{asset('dist/img/visa1.png')}}" width="100%" alt="">
+								<!-- </div> -->
+							</div>
+						</div>
+					<!-- </div> -->
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
 	</div>
 </div>
 <!-- Main Content -->
 @endsection
+
+<!-- script -->
+@section('script')
+<script type="text/javascript">	
+    $("#yourcard").on("show.bs.modal", function (e) {
+    });
+</script>
+@endsection
+<!-- /script -->

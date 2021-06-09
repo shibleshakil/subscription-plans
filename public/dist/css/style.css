@@ -21745,6 +21745,38 @@ a.compose-mail {
     padding: 15px;
 }
 
+.renew {
+    padding: 8px 31px !important;
+}
+
+.upgrade {
+    padding: 8px 26px !important;
+}
+
+.downgrade {
+    padding: 8px 18px !important;
+}
+
+.cancel {
+    padding: 8px 30px !important;
+}
+
+.bg5{
+    background: #416b6b;
+}
+
+.bg6{
+    background: #3ec598;
+}
+
+.bg7{
+    background: #336d33;
+}
+
+.bg8{
+    background: #8181c7;
+}
+
 .offered-plan-table {
     box-shadow: 5px 5px 8px #d7dbe5 !important;
     border-radius: 20px 20px 20px 20px !important;
