@@ -18707,16 +18707,17 @@ div.colorpicker {
 }
 .wizard .steps ul > li {
     display: table-cell;
-    background: rgba(33, 33, 33, 0.1);
+    background: #6b6f72;
 }
 .wizard .steps ul > li.done {
-    background: #3798c4;
+    background: #018671;
 }
 .wizard .steps ul > li.current {
-    background: #3a89b0 !important;
+    background: #8bc740 !important;
 }
 .wizard .steps ul > li > a {
     margin: 0;
+    color: #ffffff !important;
     padding: 14px 20px;
     background: transparent !important;
 }
