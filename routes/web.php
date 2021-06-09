@@ -42,11 +42,11 @@ Route::middleware(['user'])->group(function(){
     Route::post('/user/subscription/delete', 'App\Http\Controllers\User\SubscriptionController@userSubCancel')->name('user-subscriptions.delete');
     Route::get('/user/subscription/list', 'App\Http\Controllers\User\SubscriptionController@userSubList')->name('user-subscriptions-list');
     
-    Route::get('/user/subscription/upgrade/list', 'App\Http\Controllers\User\SubscriptionController@upgradeList')->name('user-subscriptions-upgrade-list');
+    // Route::get('/user/subscription/upgrade/list', 'App\Http\Controllers\User\SubscriptionController@upgradeList')->name('user-subscriptions-upgrade-list');
     Route::post('/user/subscription/upgrade/list', 'App\Http\Controllers\User\SubscriptionController@upgradeList')->name('user-subscriptions-upgrade-list');
     Route::post('/user/subscription/upgrade', 'App\Http\Controllers\User\SubscriptionController@subUpgrade')->name('user-subscriptions-upgrade');
 
-    Route::get('/user/subscription/downgrade/list', 'App\Http\Controllers\User\SubscriptionController@downgradeList')->name('user-subscriptions-downgrade-list');
+    // Route::get('/user/subscription/downgrade/list', 'App\Http\Controllers\User\SubscriptionController@downgradeList')->name('user-subscriptions-downgrade-list');
     Route::post('/user/subscription/downgrade/list', 'App\Http\Controllers\User\SubscriptionController@downgradeList')->name('user-subscriptions-downgrade-list');
     Route::post('/user/subscription/downgrade', 'App\Http\Controllers\User\SubscriptionController@subDowngrade')->name('user-subscriptions-downgrade');
 
@@ -56,6 +56,6 @@ Route::middleware(['user'])->group(function(){
 });
 
 Route::fallback(function () {
-    // abort(404);
-    return redirect()->back();
+    // abort(401);
+    return redirect()->route('home');
 });
