@@ -30,7 +30,7 @@ class HomeController extends Controller
         return view('admin.dashboard');
         }else{
             $recomandation = CreateSubscription::where('status', 1)->get();
-            return view('user.index')->with(compact('recomandation')); 
+            return view('user.dashboard')->with(compact('recomandation')); 
         }
     }
 }

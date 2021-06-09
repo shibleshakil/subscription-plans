@@ -33,8 +33,8 @@ class SubscriptionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $recomandation = CreateSubscription::where('status', 1)->inRandomOrder()->get();
-        return view('user.subscriptions.index')->with(compact('recomandation'));
+        $recomandation = CreateSubscription::where('status', 1)->get();
+        return view('user.index')->with(compact('recomandation'));
     }
 
     public function paymentDetails(Request $request) {   

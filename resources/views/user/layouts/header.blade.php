@@ -14,7 +14,7 @@
     <div id="mobile_only_nav" class="mobile-only-nav pull-right">
         <ul class="nav navbar-right top-nav pull-right">
             <li>
-                <a href="{{ route('home') }}">Offered Plans</a>
+                <a href="{{ url('/user/subscriptions/recomanded') }}">Offered Plans</a>
             </li>
             <li>
                 <a href="{{ route('user-subscriptions-list') }}">My Plan</a>
@@ -24,9 +24,6 @@
                 <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
                     <li>
                         <a><i class="zmdi zmdi-account"></i><span><?php echo Auth()->user()->name ?></span></a>
-                    </li>
-                    <li>
-                        <a><i class="fa fa-money"></i><span>ZAR <?php echo Auth()->user()->balance ?></span></a>
                     </li>
                     <li>
                         <a href="{{ route('logout') }}"

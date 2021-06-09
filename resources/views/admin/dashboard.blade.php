@@ -6,7 +6,7 @@
 		<!-- Row -->
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel panel-default card-view pa-0">
+				<div class="panel panel-default pa-0">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-0">
 							<div class="sm-data-box bg-red">
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel panel-default card-view pa-0">
+				<div class="panel panel-default pa-0">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-0">
 							<div class="sm-data-box bg-yellow">
@@ -48,7 +48,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel panel-default card-view pa-0">
+				<div class="panel panel-default pa-0">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-0">
 							<div class="sm-data-box bg-green">
@@ -69,7 +69,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel panel-default card-view pa-0">
+				<div class="panel panel-default pa-0">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-0">
 							<div class="sm-data-box bg-blue">
@@ -95,7 +95,7 @@
 		<!-- Row -->
 		<div class="row">
 				<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-				<div class="panel panel-default card-view">
+				<div class="panel panel-default">
 					<div class="panel-heading">
 						<div class="pull-left">
 							<h6 class="panel-title txt-dark">user statistics</h6>
@@ -131,7 +131,7 @@
 				</div>
 			</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel panel-default card-view">
+				<div class="panel panel-default">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body sm-data-box-1">
 							<span class="uppercase-font weight-500 font-14 block text-center txt-dark">customer satisfaction</span>	
@@ -162,7 +162,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="panel panel-default card-view">
+				<div class="panel panel-default">
 					<div class="panel-heading">
 						<div class="pull-left">
 							<h6 class="panel-title txt-dark">browser stats</h6>
@@ -209,7 +209,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel panel-default card-view panel-refresh">
+				<div class="panel panel-default panel-refresh">
 					<div class="refresh-container">
 						<div class="la-anim-1"></div>
 					</div>
@@ -274,7 +274,7 @@
 		<!-- Row -->
 		<div class="row">
 			<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
-				<div class="panel panel-default card-view panel-refresh">
+				<div class="panel panel-default panel-refresh">
 					<div class="refresh-container">
 						<div class="la-anim-1"></div>
 					</div>
@@ -379,7 +379,7 @@
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-				<div class="panel panel-default card-view panel-refresh">
+				<div class="panel panel-default panel-refresh">
 					<div class="refresh-container">
 						<div class="la-anim-1"></div>
 					</div>
