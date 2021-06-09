@@ -33,10 +33,16 @@
 							<div class="sm-data-box bg-yellow">
 								<div class="container-fluid">
 									<div class="row">
+										@if(!empty($plan))
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter"><span class="counter-anim">46.41</span>%</span>
-											<span class="weight-500 uppercase-font txt-light block">bounce rate</span>
+											<span class="txt-light block counter">{{$plan->create_subscription->name}}</span>
+											<span class="weight-500 uppercase-font txt-light block">active plan</span>
 										</div>
+										@else
+										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+											<span class="txt-light block counter">No Subscription Available</span>
+										</div>
+										@endif
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
 											<i class="zmdi zmdi-redo txt-light data-right-rep-icon"></i>
 										</div>

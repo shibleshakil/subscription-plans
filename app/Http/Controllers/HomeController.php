@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
-use App\Models\CreateSubscription;
+use App\Models\Subscription;
 
 class HomeController extends Controller
 {
@@ -29,8 +29,9 @@ class HomeController extends Controller
         if (Auth::user()->type == "Admin") {     
         return view('admin.dashboard');
         }else{
-            $recomandation = CreateSubscription::where('status', 1)->get();
-            return view('user.dashboard')->with(compact('recomandation')); 
+            // $recomandation = CreateSubscription::where('status', 1)->get();
+            $plan = Subscription::where('user_id', Auth()->user()->id)->where('status', 1)->first();
+            return view('user.dashboard')->with(compact('plan')); 
         }
     }
 }

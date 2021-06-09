@@ -78,7 +78,7 @@
                                             <!-- <a class="btn btn-success btn-rounded btn-lg" href="#">subscribe now</a> -->
                                             <form action="{{ route ('user-downgrade-payment-details')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
                                                 <input type="hidden" id="id" name="id" value="{{$recom->id}}">
-                                                <button type="submit" class="btn btn-primary btn-lg sbtn">downgrade now <span class="pl-5"><i class="fa fa-arrow-down"></i></span></button>
+                                                <button type="submit" class="btn btn-primary btn-lg sbtn">downgrade now <span class="pl-5"><i class="fa fa-level-down"></i></span></button>
                                             </form>
                                         </div>
                                     </div>

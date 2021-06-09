@@ -78,7 +78,7 @@
                                             <form action="{{ route ('user-upgrade-payment-details')}}" method="post" id="cancelSubscribe" enctype="multipart/form-data">@csrf
                                                 <input type="hidden" id="id" name="id" value="{{$recom->id}}">
                                                 <!-- <button type="submit" class="btn  btn-success btn-rounded btn-lg">upgrade now</button> -->
-                                                <button type="submit" class="btn btn-primary btn-lg sbtn">upgrade now <span class="pl-5"><i class="fa fa-arrow-up"></i></span></button>
+                                                <button type="submit" class="btn btn-primary btn-lg sbtn">upgrade now <span class="pl-5"><i class="fa fa-level-up"></i></span></button>
                                             </form>
                                         </div>
                                     </div>
