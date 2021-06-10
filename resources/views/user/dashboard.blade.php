@@ -3,6 +3,28 @@
 <!-- Main Content -->
 <div class="page-wrapper ml-0">
 	<div class="container-fluid pt-25">
+		@if ($message = Session::get('success'))
+		<div class="alert alert-success alert-block">
+			<button type="button" class="close text-danger" data-dismiss="alert">×</button>
+			<strong>{{ $message }}</strong>
+		</div>
+		@endif
+		@if ($message = Session::get('error'))
+		<div class="alert alert-danger alert-block">
+			<button type="button" class="close text-danger" data-dismiss="alert">×</button>
+			<strong>{{ $message }}</strong>
+		</div>
+		@endif
+		@if ($errors->any())
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+					<button type="button" class="close text-danger" data-dismiss="alert">×</button>
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
 		<!-- Row -->
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
