@@ -167,7 +167,7 @@
 									<div class="row" data-toggle="modal" data-target="#yourcard">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
 											<span class="txt-light block counter"><span class="counter-anim">1</span></span>
-											<span class="weight-500 uppercase-font txt-light block">Your Cards</span>
+											<span class="weight-500 uppercase-font txt-light block">Your Cards (Click to View)</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
 											<i class="fa fa-credit-card-alt txt-light data-right-rep-icon" ></i>
@@ -524,8 +524,8 @@
 			
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-						<h5 class="modal-title" id="mySmallModalLabel">Your Cards</h5>
+						<h5 class="modal-title" id="mySmallModalLabel">Your Cards <span><button type="button" class="close text-danger" data-dismiss="modal" aria-hidden="true">×</button></span></h5>
+						
 					</div>
 					<div class="modal-body">
 						<div class="row">
