@@ -13,7 +13,8 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">ZAR<span class="counter-anim"><?php echo Auth()->user()->balance ?></span></span>
+											<span class="txt-light block counter">ZAR<span class="counter-anim">
+												<?php echo Auth()->user()->balance ?></span></span>
 											<span class="weight-500 uppercase-font txt-light block font-13">Available BALANCE</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
@@ -143,8 +144,9 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">ZAR<span class="counter-anim">{{number_format((float)$plan->create_subscription->price, 2, '.', '')}}</span></span>
-											<span class="weight-500 uppercase-font txt-light block">Recent Transaction</span>
+											<span class="txt-light block counter">ZAR<span class="counter-anim">
+												{{number_format((float)$plan->create_subscription->price, 2, '.', '')}}</span></span>
+											<span class="weight-500 uppercase-font txt-light block">Recent Transactions</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
 											<i class="fa fa-money txt-light data-right-rep-icon"></i>
@@ -162,14 +164,13 @@
 						<div class="panel-body pa-0">
 							<div class="sm-data-box bg8">
 								<div class="container-fluid">
-									<div class="row">
+									<div class="row" data-toggle="modal" data-target="#yourcard">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
 											<span class="txt-light block counter"><span class="counter-anim">1</span></span>
 											<span class="weight-500 uppercase-font txt-light block">Your Cards</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-											<i class="fa fa-credit-card-alt txt-light data-right-rep-icon" data-toggle="modal"
-                        						data-target="#yourcard"></i>
+											<i class="fa fa-credit-card-alt txt-light data-right-rep-icon" ></i>
 										</div>
 									</div>	
 								</div>
@@ -182,7 +183,7 @@
 		<!-- /Row -->
 		
 		<!-- Row -->
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -357,11 +358,11 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- /Row -->
 		
 		<!-- Row -->
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
 				<div class="panel panel-default panel-refresh">
 					<div class="refresh-container">
@@ -514,23 +515,31 @@
 					</div>	
 				</div>	
 			</div>	
-		</div>	
+		</div>	 -->
 		<!-- Row -->
 
 		<!-- sample modal content -->
-		<div id="yourcard" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div id="yourcard" class="modal fade" role="dialog" aria-labelledby="myModalLabel" >
 			<div class="modal-dialog">
-				<div class="modal-content" style="background: transparent;">
-					<!-- <div class="modal-body"> -->
+			
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h5 class="modal-title" id="mySmallModalLabel">Your Cards</h5>
+					</div>
+					<div class="modal-body">
 						<div class="row">
 							<div class="col-sm-12">
 								<!-- <div class="form-group mb-0"> -->
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<!-- <button type="button" class="close" data-dismiss="modal">×</button> -->
 									<img src="{{asset('dist/img/visa1.png')}}" width="100%" alt="">
 								<!-- </div> -->
 							</div>
 						</div>
-					<!-- </div> -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
 				</div>
 				<!-- /.modal-content -->
 			</div>
