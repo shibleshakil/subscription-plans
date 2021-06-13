@@ -847,6 +847,10 @@ code {
     background: #01c853 !important;
 }
 
+.bg-green1 {
+    background: #53d87d !important;
+}
+
 .bg-grey {
     background: #878787 !important;
 }
@@ -855,12 +859,20 @@ code {
     background: #fec107 !important;
 }
 
+.bg-yellow1 {
+    background: #008d71 !important;
+}
+
 .bg-red {
     background: #ff2a00 !important;
 }
 
 .bg-blue {
     background: #2879ff !important;
+}
+
+.bg-blue1 {
+    background: #18b082 !important;
 }
 
 .bg-pink {
@@ -15063,8 +15075,15 @@ ul.wysihtml5-toolbar
     width: 225px;
 }
 .active-menu {
-    color: black !important;
+    color: #ffffff !important;
     font-weight: bold;
+}
+
+.cards {
+    width: 130%;
+    height: 318px;
+    margin-top: -14%;
+    margin-left: -42px;
 }
 
 .fixed-sidebar-left .side-nav li.navigation-header > span,
@@ -16633,7 +16652,7 @@ a#toggle_mobile_nav {
     position: static;
 }
 .navbar.navbar-inverse.navbar-fixed-top .nav > li > a {
-    color: #878787;
+    color: #ffffff;
     background: transparent !important;
     -webkit-transition: 0.3s ease;
     -moz-transition: 0.3s ease;
@@ -17144,7 +17163,7 @@ a#toggle_mobile_nav {
     background: #fff;
     margin-bottom: 12px;
     border: 1px solid rgba(33, 33, 33, 0.1);
-    border-radius: 20px !important;
+    border-radius: 0;
     font-size: medium;
     box-shadow: none;
     padding: 15px 15px 0 !important;
@@ -21766,20 +21785,79 @@ a.compose-mail {
     padding: 8px 30px !important;
 }
 
+.pa-4 {
+    padding: 4px;
+}
+.pa-5 {
+    padding: 5px;
+}
+
+.custom-header {
+    background: #09b27c !important;
+}
+
+.custom-icon {
+    color: #ffffff !important;
+}
+
+.offer-menu {
+    background: #008d71 !important;
+}
+
+.my-plan {
+    background: #06ca93 !important;
+}
+
+.bg1 {
+    background: #008d71;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #008d71;
+}
+
+.bg2 {
+    background: #18b082;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #18b082;
+}
+
+.bg3 {
+    background: #00ab7b;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #00ab7b;
+}
+
+.bg4 {
+    background: #34c081;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #34c081;
+}
+
 .bg5 {
-    background: #416b6b;
+    background: #53d87d;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #53d87d;
 }
 
 .bg6 {
-    background: #3ec598;
+    background: #31d56f;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #31d56f;
 }
 
 .bg7 {
-    background: #336d33;
+    background: #31d56f;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #31d56f;
 }
 
 .bg8 {
     background: #8181c7;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #8181c7;
+}
+
+.user-dash {
+    background: #008d71 !important;
 }
 
 .offered-plan-table {
@@ -24831,6 +24909,11 @@ ul.inbox-nav li a:focus {
 .sp-logo-wrap .brand-img {
     position: relative;
     top: 2px;
+}
+.logo {
+    width: 50% !important;
+    height: 40px !important;
+    margin-left: 10% !important;
 }
 .sp-logo-wrap .brand-text {
     color: #212121;

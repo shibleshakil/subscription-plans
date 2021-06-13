@@ -9,8 +9,8 @@
 	<meta name="author" content="hencework"/>
 	
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="{{asset('favicon.ico')}}">
-	<link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('dist/img/logo2.png') }}">
+	<link rel="icon" href="{{ asset('dist/img/logo2.png') }}" type="image/x-icon">
 
 	
     <!-- fontawesome CSS -->

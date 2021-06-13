@@ -102,14 +102,14 @@ $(document).ready(function(){
 			{
 				data: [200,50,250],
 				backgroundColor: [
-					"#2879ff",
-					"#01c853",
-					"#fec107",
+					"#18b082",
+					"#53d87d",
+					"#008d71",
 				],
 				hoverBackgroundColor: [
-					"#2879ff",
-					"#01c853",
-					"#fec107",
+					"#18b082",
+					"#53d87d",
+					"#008d71",
 				]
 			}]
 		};
