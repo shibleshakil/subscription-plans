@@ -1,5 +1,6 @@
 <!-- Top Menu Items -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
+    <?php $url = Route::currentRouteName();?>
     <div class="mobile-only-brand pull-left">
         <div class="nav-header pull-left">
             <div class="logo-wrap">
@@ -14,10 +15,10 @@
     <div id="mobile_only_nav" class="mobile-only-nav pull-right">
         <ul class="nav navbar-right top-nav pull-right">
             <li>
-                <a href="{{ url('/user/subscriptions/recomanded') }}">Offered Plans</a>
+                <a @if($url == 'user-subscriptions-offered') class="active-menu" @endif href="{{ route('user-subscriptions-offered') }}">Offered Plans</a>
             </li>
             <li>
-                <a href="{{ route('user-subscriptions-list') }}">My Plan</a>
+                <a @if($url == 'user-subscriptions-list') class="active-menu" @endif href="{{ route('user-subscriptions-list') }}">My Plan</a>
             </li>
             <li class="dropdown auth-drp">
                 <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="{{ asset('dist/img/user.png') }}" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>

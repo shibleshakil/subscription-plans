@@ -37,6 +37,11 @@ class SubscriptionController extends Controller
         return view('user.index')->with(compact('recomandation'));
     }
 
+    public function offered() {
+        $recomandation = CreateSubscription::where('status', 1)->get();
+        return view('user.index')->with(compact('recomandation'));
+    }
+
     public function paymentDetails(Request $request) {   
         $recomandation = CreateSubscription::where('id', $request->id)->first();
         return view('user.subscriptions.paymentPage')->with(compact('recomandation'));
@@ -58,10 +63,10 @@ class SubscriptionController extends Controller
         $test = $request->price;
         $price = (float) $test;
         if(Subscription::where('user_id', Auth()->User()->id)->where('status', 1)->exists()){
-            return redirect()->route('home')->with('error', 'Already have a subscription');
+            return redirect()->route('user-subscriptions-offered')->with('error', 'Already have a subscription! Please cancel it To subscribe a new one');
         }else{
             if(User::find(Auth()->user()->id)->balance < $price){
-                return redirect()->route('home')->with('error', 'Insuficent Balance! Please Deposit');
+                return redirect()->route('user-subscriptions-offered')->with('error', 'Insuficent Balance! Please Deposit');
               }else{
                 $data = new Subscription;
                 $data->user_id = Auth()->User()->id;
@@ -80,7 +85,7 @@ class SubscriptionController extends Controller
                     }
                 }catch (\Exception $e) {
                     DB::rollback();
-                    return redirect()->route('home')->with('error', $e->getMessage());
+                    return redirect()->route('user-subscriptions-offered')->with('error', $e->getMessage());
                 }
                 
             }

@@ -15062,6 +15062,11 @@ ul.wysihtml5-toolbar
 .fixed-sidebar-left .side-nav li {
     width: 225px;
 }
+.active-menu {
+    color: black !important;
+    font-weight: bold;
+}
+
 .fixed-sidebar-left .side-nav li.navigation-header > span,
 .fixed-sidebar-left .side-nav li.navigation-header > i {
     padding: 11px 15px;
@@ -21761,19 +21766,19 @@ a.compose-mail {
     padding: 8px 30px !important;
 }
 
-.bg5{
+.bg5 {
     background: #416b6b;
 }
 
-.bg6{
+.bg6 {
     background: #3ec598;
 }
 
-.bg7{
+.bg7 {
     background: #336d33;
 }
 
-.bg8{
+.bg8 {
     background: #8181c7;
 }
 
