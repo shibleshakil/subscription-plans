@@ -26,11 +26,16 @@
 			</div>
 		@endif
 		<!-- Row -->
-		<div class="row">			
+		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<!-- <div class="cards"> -->
-					<img src="{{asset('dist/img/visa1.png')}}" class="cards" alt="">
+					<img src="http://119.148.30.62:8080/subscriptions/public/dist/img/visa1.png" class="cards" alt="">
 				<!-- </div> -->
+				<div style="position: absolute;top: 20px;left: 36px;color: #fff;">
+					<span style="font-size: 15px;">My Balance</span>
+					<br>
+					<span style="font-size: 24px;">ZAR5000</span>
+				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="panel-default pa-4">

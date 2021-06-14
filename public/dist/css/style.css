@@ -25399,7 +25399,7 @@ ul.inbox-nav li a:focus {
         top: 0;
     }
     .navbar.navbar-inverse.navbar-fixed-top .mobile-only-brand {
-        background: #fff;
+        background: #06ad7e;
         position: relative;
         z-index: 2;
     }
@@ -25484,7 +25484,7 @@ ul.inbox-nav li a:focus {
     }
 
     .navbar.navbar-inverse.navbar-fixed-top .mobile-only-nav {
-        background: #f5f5f5;
+        background: #09b27c;
     }
 
     .inbox-pagination li:first-child {
