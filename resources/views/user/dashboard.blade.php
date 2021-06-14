@@ -205,7 +205,7 @@
 				<div class="panel panel-default">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body sm-data-box-1">
-							<span class="uppercase-font weight-500 font-14 block text-center txt-dark">Customer transactions</span>	
+							<span class="uppercase-font weight-500 font-14 block text-center txt-green">Customer transactions</span>	
 							<div class="cus-sat-stat weight-500 txt-success text-center mt-5">
 								<span class="counter-anim">93.13</span><span>%</span>
 							</div>

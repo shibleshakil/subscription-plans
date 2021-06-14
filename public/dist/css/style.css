@@ -843,6 +843,10 @@ code {
     text-align: left !important;
 }
 
+.txt-green {
+    color: green;
+}
+
 .bg-green {
     background: #01c853 !important;
 }
@@ -15081,9 +15085,9 @@ ul.wysihtml5-toolbar
 
 .cards {
     width: 130%;
-    height: 318px;
+    /* height: 318px; */
     margin-top: -14%;
-    margin-left: -42px;
+    margin-left: -54px;
 }
 
 .fixed-sidebar-left .side-nav li.navigation-header > span,
