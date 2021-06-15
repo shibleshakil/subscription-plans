@@ -20,7 +20,7 @@
             <li class="my-plan">
                 <a @if($url == 'user-subscriptions-list') class="active-menu" @endif href="{{ route('user-subscriptions-list') }}">My Plan</a>
             </li>
-            <li class="dropdown alert-drp">
+            <!-- <li class="dropdown alert-drp">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-notifications top-nav-icon custom-icon"></i><span class="top-nav-icon-badge">5</span></a>
                 <ul  class="dropdown-menu alert-dropdown" data-dropdown-in="bounceIn" data-dropdown-out="bounceOut">
                     <li>
@@ -113,7 +113,7 @@
                         </div>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <li class="dropdown auth-drp">
                 <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="{{ asset('dist/img/user.png') }}" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
                 <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">

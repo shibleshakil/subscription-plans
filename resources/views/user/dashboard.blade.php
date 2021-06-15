@@ -29,12 +29,17 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<!-- <div class="cards"> -->
-					<img src="http://119.148.30.62:8080/subscriptions/public/dist/img/visa1.png" class="cards" alt="">
+					<img src="http://119.148.30.62:8080/subscriptions/public/dist/img/visa.png" class="cards" alt="">
 				<!-- </div> -->
 				<div style="position: absolute;top: 20px;left: 36px;color: #fff;">
 					<span style="font-size: 15px;">My Balance</span>
 					<br>
-					<span style="font-size: 24px;">ZAR5000</span>
+					<span style="font-size: 24px;">ZAR<?php echo Auth()->user()->balance ?></span>
+				</div>
+				<div style="position: absolute;top: 75px;right: 36px;color: #fff;">
+					<span style="font-size: 15px;">Valid Until</span>
+					<br>
+					<span class=" text-center" style="font-size: 16px;">08/03/22</span>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -45,12 +50,12 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">ZAR<span class="counter-anim">
-												<?php echo Auth()->user()->balance ?></span></span>
-											<span class="weight-500 uppercase-font txt-light block font-13">Available BALANCE</span>
+											<span class="txt-light block counter"><span class="counter-anim">
+												4</span></span>
+											<span class="weight-500 uppercase-font txt-light block font-13">send</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-											<i class="fa fa-money txt-light data-right-rep-icon"></i>
+											<i class="fa fa-send txt-light data-right-rep-icon"></i>
 										</div>
 									</div>	
 								</div>
@@ -68,10 +73,10 @@
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
 											<span class="txt-light block counter"><span class="counter-anim">4</span></span>
-											<span class="weight-500 uppercase-font txt-light block">Send</span>
+											<span class="weight-500 uppercase-font txt-light block">notification</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-											<i class="fa fa-send txt-light data-right-rep-icon"></i>
+											<i class="fa fa-bell txt-light data-right-rep-icon"></i>
 										</div>
 									</div>	
 								</div>

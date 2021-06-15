@@ -87,11 +87,6 @@
                                             <div class="form-group">
                                                 <label class="pull-left control-label mb-10"
                                                     for="exampleInputpwd_2">Password</label>
-                                                @if (Route::has('password.request'))
-                                                <a class="capitalize-font txt-primary block mb-10 pull-right font-12"
-                                                    href="{{ route('password.request') }}">
-                                                    forgot password ?</a>
-                                                @endif
 
                                                 <div class="clearfix"></div>
                                                 <input id="password" type="password"
@@ -111,6 +106,12 @@
                                                         id="remember" {{ old('remember') ? 'checked' : '' }}>
                                                     <label for="checkbox_2"> Keep me logged in</label>
                                                 </div>
+                                                
+                                                @if (Route::has('password.request'))
+                                                <a class="capitalize-font txt-primary block mb-10 pull-right font-12"
+                                                    href="{{ route('password.request') }}">
+                                                    forgot password ?</a>
+                                                @endif
                                                 <div class="clearfix"></div>
                                             </div>
                                             <div class="form-group text-center">
