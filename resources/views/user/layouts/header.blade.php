@@ -10,6 +10,7 @@
                 </a>
             </div>
         </div>
+        <a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block ml-20 pull-left" href="javascript:void(0);"><i class="zmdi zmdi-menu txt-light"></i></a>
         <a id="toggle_mobile_nav" class="mobile-only-view" href="javascript:void(0);"><i class="zmdi zmdi-more"></i></a>
     </div>	
     <div id="mobile_only_nav" class="mobile-only-nav pull-right">

@@ -1,7 +1,7 @@
 @extends('user.layouts.app')
 @section('content')
 <!-- Main Content -->
-<div class="page-wrapper ml-0">
+<div class="page-wrapper">
     <div class="container-fluid mt-20">
         <!-- Title -->
         <div class="row heading-bg">

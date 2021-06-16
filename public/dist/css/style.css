@@ -15086,8 +15086,38 @@ ul.wysihtml5-toolbar
 .cards {
     width: 130%;
     /* height: 318px; */
-    margin-top: -14%;
-    margin-left: -54px;
+    margin-top: -3%;
+    margin-left: -15%;
+}
+
+.user-side-icon {
+    color: #ffffff !important;
+}
+
+.user-side {
+    background-color: #008d71 !important;
+    top: 68px;
+    margin-top: -1px;
+}
+.user-side-bg {
+    background-color: #008d71 !important;
+}
+.user-side-nav,
+.user-sub-nav {
+    color: white !important;
+}
+
+.user-nav {
+    margin-left: 7% !important;
+    margin-top: 10% !important;
+}
+
+.user-drop-icon {
+    margin-right: 8%;
+}
+
+.user-li {
+    padding-top: 4%;
 }
 
 .fixed-sidebar-left .side-nav li.navigation-header > span,
@@ -21798,6 +21828,7 @@ a.compose-mail {
 
 .custom-header {
     background: #09b27c !important;
+    box-shadow: -1px 5px 8px #09b27c;
 }
 
 .custom-icon {
@@ -23574,6 +23605,9 @@ a.compose-mail {
 
 .sm-data-box .counter {
     font-size: 24px;
+}
+.user-counter {
+    font-size: 19px !important;
 }
 .sm-data-box .data-wrap-left,
 .sm-data-box .data-wrap-right {

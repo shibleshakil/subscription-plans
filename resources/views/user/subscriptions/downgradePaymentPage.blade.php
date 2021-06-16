@@ -1,7 +1,7 @@
 @extends('user.layouts.app')
 @section('content')
 <!-- Main Content -->
-<div class="page-wrapper ml-0 paypanel">
+<div class="page-wrapper paypanel">
     <div class="container-fluid mt-20">
         <!-- Title -->  
 		@if ($message = Session::get('success'))

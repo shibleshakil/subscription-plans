@@ -1,7 +1,7 @@
 @extends('user.layouts.app')
 @section('content')
 <!-- Main Content -->
-<div class="page-wrapper ml-0">
+<div class="page-wrapper">
 	<div class="container-fluid pt-25">
 		@if ($message = Session::get('success'))
 		<div class="alert alert-success alert-block">
@@ -31,15 +31,18 @@
 				<!-- <div class="cards"> -->
 					<img src="http://119.148.30.62:8080/subscriptions/public/dist/img/visa.png" class="cards" alt="">
 				<!-- </div> -->
-				<div style="position: absolute;top: 20px;left: 36px;color: #fff;">
+				<div style="position: absolute; top: 17%; left: 12%; color: #fff;">
 					<span style="font-size: 15px;">My Balance</span>
 					<br>
-					<span style="font-size: 24px;">ZAR<?php echo Auth()->user()->balance ?></span>
+					<span style="font-size: 20px;">ZAR<?php echo Auth()->user()->balance ?></span>
 				</div>
-				<div style="position: absolute;top: 75px;right: 36px;color: #fff;">
+				<div style="position: absolute;top: 35%; right: 12%; color: #fff;">
 					<span style="font-size: 15px;">Valid Until</span>
 					<br>
 					<span class=" text-center" style="font-size: 16px;">08/03/22</span>
+				</div>
+				<div style="position: absolute; bottom: 25%; left: 11%; color: #fff;">
+					<span class="uppercase-font" style="font-size: 16px;">Wanda Ndimande</span>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -50,7 +53,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter"><span class="counter-anim">
+											<span class="txt-light block user-counter"><span class="counter-anim">
 												4</span></span>
 											<span class="weight-500 uppercase-font txt-light block font-13">send</span>
 										</div>
@@ -72,7 +75,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter"><span class="counter-anim">4</span></span>
+											<span class="txt-light block user-counter"><span class="counter-anim">4</span></span>
 											<span class="weight-500 uppercase-font txt-light block">notification</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
@@ -93,7 +96,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter"><span class="counter-anim">4</span></span>
+											<span class="txt-light block user-counter"><span class="counter-anim">4</span></span>
 											<span class="weight-500 uppercase-font txt-light block">request</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
@@ -114,7 +117,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">ZAR<span class="counter-anim">546454</span></span>
+											<span class="txt-light block user-counter">ZAR<span class="counter-anim">546454</span></span>
 											<span class="weight-500 uppercase-font txt-light block font-13">Loan</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
@@ -135,7 +138,7 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">ZAR<span class="counter-anim">4,054</span></span>
+											<span class="txt-light block user-counter">ZAR<span class="counter-anim">4,054</span></span>
 											<span class="weight-500 uppercase-font txt-light block">Topup</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
@@ -156,8 +159,8 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-											<span class="txt-light block counter">ZAR<span class="counter-anim">
-												{{number_format((float)$plan->create_subscription->price, 2, '.', '')}}</span></span>
+											<span class="txt-light block user-counter">ZAR<span class="counter-anim">
+												@if(!empty($plan->create_subscription->price))number_format((float)$plan->create_subscription->price, 2, '.', '')@endif</span></span>
 											<span class="weight-500 uppercase-font txt-light block">Transactions</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
