@@ -133,6 +133,14 @@ var hound = function(){
 	
 	/*Sidebar Navigation*/
 	$(document).on('click', '#toggle_nav_btn,#open_right_sidebar,#setting_panel_btn', function (e) {
+		if($("#before").attr('data-icon') == "before"){
+			$("#before").attr('data-icon', 'after');
+			$("#before").attr('class', 'fa fa-arrow-right txt-light');
+		}else{
+			$("#before").attr('data-icon', 'before');
+			$("#before").attr('class', 'fa fa-arrow-left txt-light');
+		}
+		
 		$(".dropdown.open > .dropdown-toggle").dropdown("toggle");
 		return false;
 	});

@@ -2,7 +2,7 @@
 @section('content')
 <!-- Main Content -->
 <div class="page-wrapper">
-	<div class="container-fluid pt-25">
+	<div class="container-fluid pt-0">
 		@if ($message = Session::get('success'))
 		<div class="alert alert-success alert-block">
 			<button type="button" class="close text-danger" data-dismiss="alert">×</button>
@@ -31,18 +31,18 @@
 				<!-- <div class="cards"> -->
 					<img src="http://119.148.30.62:8080/subscriptions/public/dist/img/visa.png" class="cards" alt="">
 				<!-- </div> -->
-				<div style="position: absolute; top: 17%; left: 12%; color: #fff;">
-					<span style="font-size: 15px;">My Balance</span>
+				<div class="user-card-bl">
+					<span class="font-15">My Balance</span>
 					<br>
-					<span style="font-size: 20px;">ZAR<?php echo Auth()->user()->balance ?></span>
+					<span class="font-20">ZAR<?php echo Auth()->user()->balance ?></span>
 				</div>
-				<div style="position: absolute;top: 35%; right: 12%; color: #fff;">
-					<span style="font-size: 15px;">Valid Until</span>
+				<div class="user-card-vl">
+					<span class="font-15">Valid Until</span>
 					<br>
-					<span class=" text-center" style="font-size: 16px;">08/03/22</span>
+					<span class=" text-center font-16" >08/03/22</span>
 				</div>
-				<div style="position: absolute; bottom: 25%; left: 11%; color: #fff;">
-					<span class="uppercase-font" style="font-size: 16px;">Wanda Ndimande</span>
+				<div class="user-card-name">
+					<span class="uppercase-font font-16">Wanda Ndimande</span>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -193,7 +193,7 @@
 					</div>
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body">
-							<div id="morris_extra_line_chart" class="morris-chart" style="height:293px;"></div>
+							<div id="morris_extra_line_chart" class="morris-chart ov-st"></div>
 							<ul class="flex-stat mt-40">
 								<li>
 									<span class="block">Weekly Users</span>
@@ -326,7 +326,7 @@
 								<div class="">
 									<span class="clabels clabels-lg inline-block bg-blue1 mr-10 pull-left"></span>
 									<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">44.46% organic</span><span class="block txt-grey">356 visits</span></span>
-									<div id="sparkline_1" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
+									<div id="sparkline_1" class="pull-right transaction"></div>
 									<div class="clearfix"></div>
 								</div>
 							</div>
@@ -335,7 +335,7 @@
 								<div class="">
 									<span class="clabels clabels-lg inline-block bg-green1 mr-10 pull-left"></span>
 									<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">5.54% Refrral</span><span class="block txt-grey">36 visits</span></span>
-									<div id="sparkline_2" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
+									<div id="sparkline_2" class="pull-right transaction" ></div>
 									<div class="clearfix"></div>
 								</div>
 							</div>
@@ -344,7 +344,7 @@
 								<div class="">
 									<span class="clabels clabels-lg inline-block bg-yellow1 mr-10 pull-left"></span>
 									<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">50% Other</span><span class="block txt-grey">245 visits</span></span>
-									<div id="sparkline_3" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
+									<div id="sparkline_3" class="pull-right transaction" ></div>
 									<div class="clearfix"></div>
 								</div>
 							</div>

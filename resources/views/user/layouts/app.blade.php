@@ -51,7 +51,6 @@
 
 <body>
     <div class="wrapper theme-1-active pimary-color-red">  
-		@include('user.layouts.header')
 		@include('user.layouts.sidebar')
 		@yield('content')
         

@@ -5,10 +5,10 @@
     <div class="container-fluid  mt-20">
         <!-- Title -->
         <div class="row heading-bg">
-            <div class="col-xs-12" style="text-align: center;">
-                <h3><span style="color: #2725e9;">Flexible Plans</span>
+            <div class="col-xs-12 text-center">
+                <h3><span class="plan-color">Flexible Plans</span>
                 <span> To Upgrade</span></h3>
-                <span style="color: #9598a6;">Choose a plan that works best for you</span>
+                <span class="plan-color1">Choose a plan that works best for you</span>
             </div>
         </div>
         

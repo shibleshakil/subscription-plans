@@ -184,7 +184,7 @@
                                                 $btn = number_format((float)$recomandation->price, 2, '.', '');
                                             ?>
                                             <div class="form-group text-center">
-                                                <button type="button" class="btn btn-primary btn-lg pay-btn"> <span style="color: #d4e4ec;">PAY</span> ZAR{{$btn}}</button>
+                                                <button type="button" class="btn btn-primary btn-lg pay-btn"> <span class="pay-btn-span">PAY</span> ZAR{{$btn}}</button>
                                             </div>
 
                                         </div>

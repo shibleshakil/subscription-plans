@@ -5,8 +5,8 @@
     <div class="container-fluid mt-20">
         <!-- Title -->
         <div class="row heading-bg">
-            <div class="col-xs-12" style="text-align: center;">
-                <h3><span style="color: #2725e9;">My</span>
+            <div class="col-xs-12 text-center">
+                <h3><span class="plan-color">My</span>
                 <span> Plan</span></h3>
             </div>
         </div>

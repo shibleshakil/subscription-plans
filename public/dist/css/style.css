@@ -15096,8 +15096,8 @@ ul.wysihtml5-toolbar
 
 .user-side {
     background-color: #008d71 !important;
-    top: 68px;
-    margin-top: -1px;
+    top: 0;
+    /* margin-top: -1px; */
 }
 .user-side-bg {
     background-color: #008d71 !important;
@@ -15107,6 +15107,58 @@ ul.wysihtml5-toolbar
     color: white !important;
 }
 
+.user-img-menu {
+    position: absolute;
+    bottom: 8px;
+    background: #00ab7b;
+}
+
+.user-menu-img {
+    width: 20%;
+    margin-top: 4%;
+    margin-left: 7%;
+}
+
+.user-img-dropdown {
+    position: inherit;
+    background: #18b082;
+    color: white;
+}
+.user-card-bl {
+    position: absolute;
+    top: 17%;
+    left: 12%;
+    color: #fff;
+}
+.user-card-vl {
+    position: absolute;
+    top: 35%;
+    right: 12%;
+    color: #fff;
+}
+.user-card-name {
+    position: absolute;
+    bottom: 25%;
+    left: 11%;
+    color: #fff;
+}
+
+.plan-color {
+    color: #2725e9;
+}
+
+.plan-color1 {
+    color: #9598a6;
+}
+
+.use-img-name {
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 6%;
+}
+.open-dropdown {
+    display: block;
+}
 .user-nav {
     margin-left: 7% !important;
     margin-top: 10% !important;
@@ -21802,6 +21854,23 @@ a.compose-mail {
 .well.well-sm {
     padding: 15px;
 }
+.transaction {
+    width: 100px;
+    overflow: hidden;
+    margin: 0px auto;
+}
+
+.ov-st {
+    height: 293px;
+}
+.login-div {
+    padding: 2%;
+    box-shadow: 5px 5px 8px #2879ff;
+    border-radius: 50px 20px;
+}
+.login-div-head {
+    color: #2879ff;
+}
 
 .renew {
     padding: 8px 31px !important;
@@ -21943,6 +22012,9 @@ a.compose-mail {
     border-color: #399ac4 !important;
     /* color: #d4e4ec; */
     /* padding: 12px 50px !important; */
+}
+.pay-btn-span {
+    color: #d4e4ec;
 }
 .pay-header {
     margin-bottom: 30px;
@@ -24949,9 +25021,11 @@ ul.inbox-nav li a:focus {
     top: 2px;
 }
 .logo {
-    width: 50% !important;
-    height: 40px !important;
+    width: 11% !important;
+    /* height: 50px !important; */
     margin-left: 10% !important;
+    margin-top: 7% !important;
+    border-radius: 2px !important;
 }
 .sp-logo-wrap .brand-text {
     color: #212121;
