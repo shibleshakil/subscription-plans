@@ -160,15 +160,6 @@
 										<div class="col-xs-4 text-right pl-0 pr-5 pt-40 pb-10">
 											<a href="#" class="btn btn-startted">Get Started</a>
 										</div>
-										<!-- <div class="col-xs-1 text-center  pl-5 pr-0 pt-35 pb-30 font-20">
-											<i class="fa fa-money txt-light"></i>
-										</div>
-										<div class="col-xs-8 pb-8 pt-10 text-center">
-											<span class="txt-light">Answer a few questions and we will send you an offer.</span>
-										</div>
-										<div class="col-xs-3 text-center  pl-0 pr-0 pt-40 pb-30">
-											<a href="#" class="btn btn-startted">Get Started</a>
-										</div> -->
 									</div>	
 								</div>
 							</div>
@@ -492,16 +483,16 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-credit-card txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">pay</span></a>
+									<a href="#"><span><i class="fa fa-credit-card txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">pay</span></a>
 								</div>
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-save txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">save</span></a>
+									<a href="#"><span><i class="fa fa-save txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">save</span></a>
 								</div>
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-shopping-cart txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">buy</span></a>
+									<a href="#"><span><i class="fa fa-shopping-cart txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">buy</span></a>
 								</div>
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-money txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">cash</span></a>
+									<a href="#"><span><i class="fa fa-money txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">cash</span></a>
 								</div>
 							</div>
 						</div>
