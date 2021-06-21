@@ -15083,10 +15083,34 @@ ul.wysihtml5-toolbar
     font-weight: bold;
 }
 
+.card-welcome {
+    font-size: 22px;
+    color: #008d71;
+}
+
+.friends-img {
+    width: 45px;
+    height: 45px;
+}
+
+.btn-startted {
+    padding: 5px 12px;
+    background: #00ab7b;
+}
+
+.foot-btn-row {
+    background: rgba(0, 151, 19, 0.1);
+}
+
+.foot-btn {
+    float: left;
+    padding-left: 35px;
+}
+
 .cards {
     width: 130%;
     /* height: 318px; */
-    margin-top: -3%;
+    margin-top: -13%;
     margin-left: -15%;
 }
 
@@ -15109,14 +15133,22 @@ ul.wysihtml5-toolbar
 
 .user-img-menu {
     position: absolute;
+    width: 100%;
     bottom: 8px;
     background: #00ab7b;
 }
 
+.slimScrollDivUser {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+}
+
 .user-menu-img {
-    width: 20%;
+    width: 40px;
     margin-top: 4%;
-    margin-left: 7%;
+    margin-left: 4%;
 }
 
 .user-img-dropdown {
@@ -25006,6 +25038,14 @@ ul.inbox-nav li a:focus {
     background: #fff;
 }
 
+.user-page-wrapper {
+    padding: 58px 6px;
+}
+
+.user-nav-btn {
+    padding-left: 250%;
+}
+
 .sp-header {
     position: absolute;
     width: 100%;
@@ -25021,7 +25061,7 @@ ul.inbox-nav li a:focus {
     top: 2px;
 }
 .logo {
-    width: 11% !important;
+    width: 25px !important;
     /* height: 50px !important; */
     margin-left: 10% !important;
     margin-top: 7% !important;

@@ -1,7 +1,7 @@
 @extends('user.layouts.app')
 @section('content')
 <!-- Main Content -->
-<div class="page-wrapper">
+<div class="page-wrapper user-page-wrapper">
 	<div class="container-fluid pt-0">
 		@if ($message = Session::get('success'))
 		<div class="alert alert-success alert-block">
@@ -28,6 +28,7 @@
 		<!-- Row -->
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				<span class="card-welcome">Good day Wanda!</span>
 				<!-- <div class="cards"> -->
 					<img src="http://119.148.30.62:8080/subscriptions/public/dist/img/visa.png" class="cards" alt="">
 				<!-- </div> -->
@@ -45,11 +46,141 @@
 					<span class="uppercase-font font-16">Wanda Ndimande</span>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 				<div class="panel-default pa-4">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-5">
-							<div class="sm-data-box bg1">
+							<div class="sm-data-box">
+								<div class="container-fluid">
+									<div class="row pt-5">
+										<div class="col-xs-6 text-left">
+											<a href="#"><span class="txt-green">Friends</span></a>
+										</div>
+										<div class="col-xs-6 text-right">
+											<a href="#"><span class="txt-green">See All</span></a></a>
+										</div>
+										<div class="clearfix"></div>
+										<div class="col-xs-1">
+										</div>
+										<div class="col-xs-2 text-center  pl-0 pr-0">
+											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+												Mike
+											</span></a>
+										</div>
+										<div class="col-xs-2 text-center  pl-0 pr-0">
+											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+												Ananda
+											</span></a>
+										</div>
+										<div class="col-xs-2 text-center  pl-0 pr-0">
+											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+												Cheis
+											</span></a>
+										</div>
+										<div class="col-xs-2 text-center  pl-0 pr-0"> 
+											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+												Yolanda
+											</span></a>
+										</div>
+										<div class="col-xs-2 text-center  pl-0 pr-0">
+											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide 	image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+												Asm
+												</span>
+											</a>
+										</div>
+										<div class="col-xs-1">
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel-default pa-4">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-5">
+							<div class="sm-data-box bg2">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-8 text-left pl-15 pr-0 data-wrap-left">
+											<i class="fa fa-money txt-light font-24"></i>
+											<span class="weight-500 uppercase-font txt-light font-18">
+												0 saving</span>
+										</div>
+										<div class="col-xs-4 text-right pl-0 pr-15 pt-50 pb-20">
+											<span class="weight-500 uppercase-font txt-light font-16">ZAR0.00 </span>
+											<i class="fa fa-chevron-right txt-light"></i>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel-default pa-4">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-5">
+							<div class="sm-data-box bg3">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-8 text-left pl-15 pr-0 data-wrap-left">
+											<i class="fa fa-money txt-light font-24"></i>
+											<span class="weight-500 uppercase-font txt-light font-18">
+											FREE FUNERAL COVER</span>
+										</div>
+										<div class="col-xs-4 text-right  pl-0 pr-15 pt-50 pb-20">
+											<span class="weight-500 uppercase-font txt-light font-16">ZAR2500 </span>
+											<i class="fa fa-chevron-right txt-light"></i>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel-default pa-4">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-5">
+							<div class="sm-data-box bg4">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-xs-8 text-left pl-10 pr-0 data-wrap-left">
+											<i class="fa fa-money txt-light font-24"></i>
+											<span class="weight-500 uppercase-font txt-light font-11">
+											Get A Personolized Loan Offer</span>
+											<span class="txt-light text-center font-11 ml-5 block">Answer a few questions and we will send you an offer that you pre-qualify for.</span>
+										</div>
+										<div class="col-xs-4 text-right pl-0 pr-5 pt-40 pb-10">
+											<a href="#" class="btn btn-startted">Get Started</a>
+										</div>
+										<!-- <div class="col-xs-1 text-center  pl-5 pr-0 pt-35 pb-30 font-20">
+											<i class="fa fa-money txt-light"></i>
+										</div>
+										<div class="col-xs-8 pb-8 pt-10 text-center">
+											<span class="txt-light">Answer a few questions and we will send you an offer.</span>
+										</div>
+										<div class="col-xs-3 text-center  pl-0 pr-0 pt-40 pb-30">
+											<a href="#" class="btn btn-startted">Get Started</a>
+										</div> -->
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				<div class="panel-default pa-4">
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body pa-5">
+							<div class="sm-data-box bg5">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
@@ -71,7 +202,7 @@
 				<div class="panel-default pa-4">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-5">
-							<div class="sm-data-box bg2">
+							<div class="sm-data-box bg7">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
@@ -87,12 +218,15 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+			</div> -->
+		<!-- </div> -->
+			<!-- <div class="clearfix"></div> -->
+		<!-- <div class="row"> -->
+			<!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="panel-default pa-4">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-5">
-							<div class="sm-data-box bg3">
+							<div class="sm-data-box bg1">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
@@ -113,7 +247,7 @@
 				<div class="panel-default pa-4">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-5">
-							<div class="sm-data-box bg4">
+							<div class="sm-data-box bg2">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
@@ -134,7 +268,7 @@
 				<div class="panel-default pa-4">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-5">
-							<div class="sm-data-box bg5">
+							<div class="sm-data-box bg3">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
@@ -155,12 +289,12 @@
 				<div class="panel-default pa-4">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-5">
-							<div class="sm-data-box bg6">
+							<div class="sm-data-box bg4">
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
 											<span class="txt-light block user-counter">ZAR<span class="counter-anim">
-												@if(!empty($plan->create_subscription->price))number_format((float)$plan->create_subscription->price, 2, '.', '')@endif</span></span>
+												2000</span></span>
 											<span class="weight-500 uppercase-font txt-light block">Transactions</span>
 										</div>
 										<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
@@ -172,23 +306,18 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<!-- /Row -->
 		
 		<!-- Row -->
-		<div class="row">
+		<!-- <div class="row mt-10">
 			<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 				<div class="panel panel-default">
 					<div class="panel-heading user-dash">
 						<div class="pull-left">
 							<h6 class="panel-title txt-light">Overall Statistics</h6>
 						</div>
-						<!-- <div class="pull-right">
-							<span class="no-margin-switcher">
-								<input type="checkbox" id="morris_switch"  class="js-switch" data-color="#ff2a00" data-secondary-color="#2879ff" data-size="small"/>	
-							</span>	
-						</div> -->
 						<div class="clearfix"></div>
 					</div>
 					<div class="panel-wrapper collapse in">
@@ -349,6 +478,33 @@
 								</div>
 							</div>
 						</div>	
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- /Row -->
+
+		<!-- Row -->
+		<div class="row mt-10">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-wrapper collapse in foot-btn-row">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-sm-3 text-center foot-btn">
+									<a href="#"><span><i class="fa fa-credit-card txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">pay</span></a>
+								</div>
+								<div class="col-sm-3 text-center foot-btn">
+									<a href="#"><span><i class="fa fa-save txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">save</span></a>
+								</div>
+								<div class="col-sm-3 text-center foot-btn">
+									<a href="#"><span><i class="fa fa-shopping-cart txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">buy</span></a>
+								</div>
+								<div class="col-sm-3 text-center foot-btn">
+									<a href="#"><span><i class="fa fa-money txt-green block"></i></span><span class="weight-500 uppercase-font txt-green block">cash</span></a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

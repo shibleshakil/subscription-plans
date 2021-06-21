@@ -1,7 +1,9 @@
 <!-- Left Sidebar Menu -->
 <div class="fixed-sidebar-left user-side">
     <div class="mobile-only-brand pull-right mr-10">
-        <a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block ml-20 pull-left" href="javascript:void(0);"><i id="before" data-icon="before" class="fa fa-arrow-left txt-light"></i></a>
+        <a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block pull-left user-nav-btn" href="javascript:void(0);">
+            <!-- <i id="before" data-icon="before" class="fa fa-arrow-left txt-light"></i> -->
+            <i class="zmdi zmdi-menu txt-green"></i></a>
     </div>
     <div class="logo-wrap">
         <a href="{{ route('home') }}">
