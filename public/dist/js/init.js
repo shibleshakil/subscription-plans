@@ -132,22 +132,22 @@ var hound = function(){
 	});
 	
 	/*Sidebar Navigation*/
-	$(document).on('click', '#toggle_nav_btn,#open_right_sidebar,#setting_panel_btn', function (e) {
-		$(".dropdown.open > .dropdown-toggle").dropdown("toggle");
-		return false;
-	});
 	// $(document).on('click', '#toggle_nav_btn,#open_right_sidebar,#setting_panel_btn', function (e) {
-	// 	if($("#before").attr('data-icon') == "before"){
-	// 		$("#before").attr('data-icon', 'after');
-	// 		$("#before").attr('class', 'fa fa-arrow-right txt-light');
-	// 	}else{
-	// 		$("#before").attr('data-icon', 'before');
-	// 		$("#before").attr('class', 'fa fa-arrow-left txt-light');
-	// 	}
-		
 	// 	$(".dropdown.open > .dropdown-toggle").dropdown("toggle");
 	// 	return false;
 	// });
+	$(document).on('click', '#toggle_nav_btn,#open_right_sidebar,#setting_panel_btn', function (e) {
+		if($("#before").attr('data-icon') == "before"){
+			$("#before").attr('data-icon', 'after');
+			$("#before").attr('class', 'fa  fa-bars txt-success');
+		}else{
+			$("#before").attr('data-icon', 'before');
+			$("#before").attr('class', 'fa fa-close txt-success');
+		}
+		
+		$(".dropdown.open > .dropdown-toggle").dropdown("toggle");
+		return false;
+	});
 	$(document).on('click', '#toggle_nav_btn', function (e) {
 		$wrapper.removeClass('open-right-sidebar open-setting-panel').toggleClass('slide-nav-toggle');
 		return false;
@@ -381,10 +381,24 @@ var boxLayout = function() {
 boxLayout();	
 
 /***** Resize function start *****/
+$(window).resize(function() {
+	if ($(window).width() < 1440) {
+		if($("#before").attr('data-icon') == "before"){
+			$("#before").attr('data-icon', 'after');
+			$("#before").attr('class', 'fa fa-bars txt-success');
+		}else{
+			$("#before").attr('data-icon', 'before');
+			$("#before").attr('class', 'fa  fa-close txt-success');
+		}
+	}
+  });
+/***** Resize function end *****/
+/***** Resize function start *****/
 $(window).on("resize", function () {
 	setHeightWidth();
 	boxLayout();
 	chatApp();
 }).resize();
 /***** Resize function end *****/
+
 

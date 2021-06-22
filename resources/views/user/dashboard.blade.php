@@ -54,36 +54,36 @@
 								<div class="container-fluid">
 									<div class="row pt-5">
 										<div class="col-xs-6 text-left">
-											<a href="#"><span class="txt-green">Friends</span></a>
+											<a href="#"><span class="txt-success">Friends</span></a>
 										</div>
 										<div class="col-xs-6 text-right">
-											<a href="#"><span class="txt-green">See All</span></a></a>
+											<a href="#"><span class="txt-success">See All</span></a></a>
 										</div>
 										<div class="clearfix"></div>
 										<div class="col-xs-1">
 										</div>
 										<div class="col-xs-2 text-center  pl-0 pr-0">
-											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+											<a href="{{ route ('user-chats') }}"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-success capitalize-font head-font">
 												Mike
 											</span></a>
 										</div>
 										<div class="col-xs-2 text-center  pl-0 pr-0">
-											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+											<a href="{{ route ('user-chats') }}"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-success capitalize-font head-font">
 												Ananda
 											</span></a>
 										</div>
 										<div class="col-xs-2 text-center  pl-0 pr-0">
-											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+											<a href="{{ route ('user-chats') }}"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-success capitalize-font head-font">
 												Cheis
 											</span></a>
 										</div>
 										<div class="col-xs-2 text-center  pl-0 pr-0"> 
-											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+											<a href="{{ route ('user-chats') }}"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide image"><span class="testi-pers-name block mt-0  txt-success capitalize-font head-font">
 												Yolanda
 											</span></a>
 										</div>
 										<div class="col-xs-2 text-center  pl-0 pr-0">
-											<a href="#"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide 	image"><span class="testi-pers-name block mt-0  txt-green capitalize-font head-font">
+											<a href="{{ route ('user-chats') }}"><img class="img-circle friends-img" src="{{ asset ('dist/img/user2.png') }}" alt="First slide 	image"><span class="testi-pers-name block mt-0  txt-success capitalize-font head-font">
 												Asm
 												</span>
 											</a>
@@ -483,16 +483,16 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-credit-card txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">pay</span></a>
+									<a href="#"><span><i class="fa fa-credit-card txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">pay</span></a>
 								</div>
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-save txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">save</span></a>
+									<a href="#"><span><i class="fa fa-save txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">save</span></a>
 								</div>
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-shopping-cart txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">buy</span></a>
+									<a href="#"><span><i class="fa fa-shopping-cart txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">buy</span></a>
 								</div>
 								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-money txt-green block font-20"></i></span><span class="weight-500 uppercase-font txt-green block">cash</span></a>
+									<a href="#"><span><i class="fa fa-money txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">cash</span></a>
 								</div>
 							</div>
 						</div>

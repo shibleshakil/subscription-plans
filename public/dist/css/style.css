@@ -15119,12 +15119,12 @@ ul.wysihtml5-toolbar
 }
 
 .user-side {
-    background-color: #008d71 !important;
+    background-color: #18b082 !important;
     top: 0;
     /* margin-top: -1px; */
 }
 .user-side-bg {
-    background-color: #008d71 !important;
+    background-color: #18b082 !important;
 }
 .user-side-nav,
 .user-sub-nav {
@@ -15173,6 +15173,44 @@ ul.wysihtml5-toolbar
     bottom: 25%;
     left: 11%;
     color: #fff;
+}
+
+.self-msg-bg {
+    background: rgb(0, 141, 113) none repeat scroll 0 0 !important;
+    color: white !important;
+}
+
+.txt-custom-icon {
+    color: rgb(0, 141, 113) !important;
+}
+
+.chat-input-group {
+    border-radius: 20px !important;
+}
+
+.custom-emoji {
+    right: 30px !important;
+}
+
+.custom-file {
+    right: 30px !important;
+}
+.send-img {
+    width: 30px;
+    height: 30px;
+}
+
+.send-div {
+    right: 30px !important;
+    top: 16px !important;
+}
+
+.chat-card {
+    border-radius: 20px !important;
+}
+
+.active-chat-user {
+    background: rgb(217, 242, 238) !important;
 }
 
 .plan-color {
@@ -25039,7 +25077,7 @@ ul.inbox-nav li a:focus {
 }
 
 .user-page-wrapper {
-    padding: 58px 6px;
+    padding: 60px 6px;
 }
 
 .user-nav-btn {
@@ -25062,6 +25100,13 @@ ul.inbox-nav li a:focus {
 }
 .logo {
     width: 25px !important;
+    /* height: 50px !important; */
+    margin-left: 10% !important;
+    margin-top: 7% !important;
+    border-radius: 2px !important;
+}
+.main-logo {
+    width: 75% !important;
     /* height: 50px !important; */
     margin-left: 10% !important;
     margin-top: 7% !important;

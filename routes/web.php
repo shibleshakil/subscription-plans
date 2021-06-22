@@ -54,6 +54,7 @@ Route::middleware(['user'])->group(function(){
     Route::post('/user/payment/details', 'App\Http\Controllers\User\SubscriptionController@paymentDetails')->name('user-payment-details');
     Route::post('/user/upgrade/payment/details', 'App\Http\Controllers\User\SubscriptionController@upgradePaymentDetails')->name('user-upgrade-payment-details');
     Route::post('/user/downgrade/payment/details', 'App\Http\Controllers\User\SubscriptionController@downgradePaymentDetails')->name('user-downgrade-payment-details');
+    Route::get('/user/chat','App\Http\Controllers\User\ChatController@chatList')->name('user-chats');
 });
 
 Route::fallback(function () {
