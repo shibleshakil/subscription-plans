@@ -1,14 +1,20 @@
 <!-- Left Sidebar Menu -->
 <div class="fixed-sidebar-left user-side">
     <div class="mobile-only-brand pull-right mr-10">
-        <a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block pull-left user-nav-btn" href="javascript:void(0);">
-            <i id="before" data-icon="before" class="fa fa-close txt-success"></i>
-            <!-- <i class="zmdi zmdi-menu txt-success"></i></a> -->
+        <div class="user-nav-btn">
+            <a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block pull-left" href="javascript:void(0);">
+                <i id="before" data-icon="before" class="fa fa-close txt-success"></i>
+            </a>
+        </div>
+        <div class="side-logo" >
+            <a href="{{ route('home') }}">
+                <img class="brand-img side-logo-img" src="{{ asset('dist/img/logo2.png') }}" alt="brand"/>
+            </a>
+        </div>
     </div>
     <div class="logo-wrap">
         <a href="{{ route('home') }}">
             <img class="brand-img main-logo" src="{{ asset('dist/img/logo2.png') }}" alt="brand"/>
-            <span class="brand-text"></span>
         </a>
     </div>
     <ul class="nav navbar-nav side-nav nicescroll-bar user-side-bg user-nav toggle_nav_btn">

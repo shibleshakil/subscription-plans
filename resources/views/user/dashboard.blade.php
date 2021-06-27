@@ -2,7 +2,7 @@
 @section('content')
 <!-- Main Content -->
 <div class="page-wrapper user-page-wrapper">
-	<div class="container-fluid pt-0">
+	<div class="container-fluid mt-10">
 		@if ($message = Session::get('success'))
 		<div class="alert alert-success alert-block">
 			<button type="button" class="close text-danger" data-dismiss="alert">×</button>
@@ -28,7 +28,7 @@
 		<!-- Row -->
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-				<span class="card-welcome">Good day Wanda!</span>
+				<!-- <span class="card-welcome">Good day Wanda!</span> -->
 				<!-- <div class="cards"> -->
 					<img src="http://119.148.30.62:8080/subscriptions/public/dist/img/visa.png" class="cards" alt="">
 				<!-- </div> -->
@@ -47,7 +47,10 @@
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-				<div class="panel-default pa-4">
+				<div class="wel-card">
+					<span class="card-welcome">Good day Wanda!</span>
+				</div>
+				<div class="panel-default wel pa-4">
 					<div class="panel-wrapper collapse in">
 						<div class="panel-body pa-5">
 							<div class="sm-data-box">
@@ -105,9 +108,9 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-8 text-left pl-15 pr-0 data-wrap-left">
-											<i class="fa fa-money txt-light font-24"></i>
-											<span class="weight-500 uppercase-font txt-light font-18">
-												0 saving</span>
+											<!-- <i class="fa fa-money txt-light font-24"></i> -->
+											<img src="{{ asset ('dist/img/saving1.png') }}" class="saving" alt="">
+											<span class="weight-500 uppercase-font txt-light saving-spam">SAVINGS & INVESTMENTS</span>
 										</div>
 										<div class="col-xs-4 text-right pl-0 pr-15 pt-50 pb-20">
 											<span class="weight-500 uppercase-font txt-light font-16">ZAR0.00 </span>
@@ -128,9 +131,8 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-8 text-left pl-15 pr-0 data-wrap-left">
-											<i class="fa fa-money txt-light font-24"></i>
-											<span class="weight-500 uppercase-font txt-light font-18">
-											FREE FUNERAL COVER</span>
+											<i><img src="{{ asset ('dist/img/grave2.png') }}" alt=""  class="grave"></i>
+											<span class="weight-500 uppercase-font txt-light grave-spam">FUNERAL COVER</span>
 										</div>
 										<div class="col-xs-4 text-right  pl-0 pr-15 pt-50 pb-20">
 											<span class="weight-500 uppercase-font txt-light font-16">ZAR2500 </span>
@@ -152,10 +154,10 @@
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-xs-8 text-left pl-10 pr-0 data-wrap-left">
-											<i class="fa fa-money txt-light font-24"></i>
-											<span class="weight-500 uppercase-font txt-light font-11">
-											Get A Personolized Loan Offer</span>
-											<span class="txt-light text-center font-11 ml-5 block">Answer a few questions and we will send you an offer that you pre-qualify for.</span>
+											<i><img src="{{ asset ('dist/img/loan.png') }}" alt=""  class="loan"></i>
+											<span class="weight-500 uppercase-font txt-light loan-spam">
+											Get A Personol Loan<span class="txt-light loan-spam-two block">Answer a few questions and we will send you an offer that you pre-qualify for.</span></span>
+											
 										</div>
 										<div class="col-xs-4 text-right pl-0 pr-5 pt-40 pb-10">
 											<a href="#" class="btn btn-startted">Get Started</a>
@@ -212,7 +214,6 @@
 			</div> -->
 		<!-- </div> -->
 			<!-- <div class="clearfix"></div> -->
-		<!-- <div class="row"> -->
 			<!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="panel-default pa-4">
 					<div class="panel-wrapper collapse in">
@@ -482,17 +483,17 @@
 					<div class="panel-wrapper collapse in foot-btn-row">
 						<div class="panel-body">
 							<div class="row">
-								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-credit-card txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">pay</span></a>
+								<div class="col-xs-3 text-center foot-btn">
+									<a href="#"><span><i><img src="{{ asset ('dist/img/icon_pay.png') }}" alt=""  class="pay"></i></span><span class="weight-500 uppercase-font txt-success block">pay</span></a>
 								</div>
-								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-save txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">save</span></a>
+								<div class="col-xs-3 text-center foot-btn">
+									<a href="#"><span><i><img src="{{ asset ('dist/img/icon_save.png') }}" alt=""  class="save"></i></span><span class="weight-500 uppercase-font txt-success block">save</span></a>
 								</div>
-								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-shopping-cart txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">buy</span></a>
+								<div class="col-xs-3 text-center foot-btn">
+									<a href="#"><span><i><img src="{{ asset ('dist/img/icon_buy.png') }}" alt=""  class="buy"></i></span><span class="weight-500 uppercase-font txt-success block">buy</span></a>
 								</div>
-								<div class="col-sm-3 text-center foot-btn">
-									<a href="#"><span><i class="fa fa-money txt-success block font-20"></i></span><span class="weight-500 uppercase-font txt-success block">cash</span></a>
+								<div class="col-xs-3 text-center foot-btn">
+									<a href="#"><span><i><img src="{{ asset ('dist/img/icon_cash.png') }}" alt=""  class="cash"></i></span><span class="weight-500 uppercase-font txt-success block">cash</span></a>
 								</div>
 							</div>
 						</div>

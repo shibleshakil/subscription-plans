@@ -15083,6 +15083,15 @@ ul.wysihtml5-toolbar
     font-weight: bold;
 }
 
+.wel-card {
+    margin-top: -32px;
+    margin-left: 18px;
+}
+
+.wel {
+    margin-top: -15px;
+}
+
 .card-welcome {
     font-size: 22px;
     color: #008d71;
@@ -15104,7 +15113,7 @@ ul.wysihtml5-toolbar
 
 .foot-btn {
     float: left;
-    padding-left: 35px;
+    /* padding-left: 35px; */
 }
 
 .cards {
@@ -15158,13 +15167,13 @@ ul.wysihtml5-toolbar
 }
 .user-card-bl {
     position: absolute;
-    top: 17%;
+    top: 5%;
     left: 12%;
     color: #fff;
 }
 .user-card-vl {
     position: absolute;
-    top: 35%;
+    top: 25%;
     right: 12%;
     color: #fff;
 }
@@ -25071,6 +25080,62 @@ ul.inbox-nav li a:focus {
     color: #878787;
 }
 
+.saving {
+    width: 50px;
+    height: 40px;
+}
+
+.grave {
+    width: 50px;
+    height: 40px;
+}
+
+.loan {
+    width: 60px;
+    height: 50px;
+}
+
+.pay {
+    width: 50%;
+    /* height: 40px; */
+}
+
+.buy {
+    width: 50%;
+    /* height: 40px; */
+}
+
+.save {
+    width: 50%;
+    /* height: 40px; */
+}
+
+.cash {
+    width: 50%;
+    /* height: 40px; */
+}
+.grave-spam {
+    position: absolute;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-left: 8px;
+}
+.saving-spam {
+    position: absolute;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-left: 8px;
+}
+.loan-spam {
+    position: absolute;
+    font-size: 13px;
+}
+.loan-spam-two {
+    position: absolute;
+    font-size: 9px;
+    text-align: center;
+}
+
 /*Login Form*/
 .page-wrapper.auth-page {
     background: #fff;
@@ -25078,10 +25143,13 @@ ul.inbox-nav li a:focus {
 
 .user-page-wrapper {
     padding: 60px 6px;
+    background: #def4e1;
 }
 
 .user-nav-btn {
-    padding-left: 250%;
+    float: left;
+    position: absolute;
+    margin-left: 10%;
 }
 
 .sp-header {
@@ -25104,6 +25172,14 @@ ul.inbox-nav li a:focus {
     margin-left: 10% !important;
     margin-top: 7% !important;
     border-radius: 2px !important;
+}
+.side-logo {
+    position: absolute;
+    padding-top: 25px !important;
+    margin-left: 30% !important;
+}
+.side-logo-img {
+    width: 80px !important;
 }
 .main-logo {
     width: 75% !important;
