@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'greatings'])->name('greatings');
 
+
+Route::get('/verify-id','App\Http\Controllers\HomeController@verifyIndex')->name('verify-index');
+
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware('admin');
@@ -55,6 +58,7 @@ Route::middleware(['user'])->group(function(){
     Route::post('/user/upgrade/payment/details', 'App\Http\Controllers\User\SubscriptionController@upgradePaymentDetails')->name('user-upgrade-payment-details');
     Route::post('/user/downgrade/payment/details', 'App\Http\Controllers\User\SubscriptionController@downgradePaymentDetails')->name('user-downgrade-payment-details');
     Route::get('/user/chat','App\Http\Controllers\User\ChatController@chatList')->name('user-chats');
+
 });
 
 Route::fallback(function () {

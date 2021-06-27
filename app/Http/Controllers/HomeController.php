@@ -34,4 +34,8 @@ class HomeController extends Controller
             return view('user.dashboard')->with(compact('plan')); 
         }
     }
+
+    public function verifyIndex(){
+        return view('user.verify');
+    }
 }
