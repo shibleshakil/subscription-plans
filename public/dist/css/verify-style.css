@@ -21,21 +21,21 @@ body {
 }
 
 #container {
-    width: 270px;
+    width: 272px;
 }
 #keyboard {
-    margin: 0;
+    margin: 2px 8px;
     padding: 0;
     list-style: none;
+    width: 258px;
 }
 #keyboard li,
 button {
     float: left;
-    margin: 3px 10px;
-    width: 60px;
-    height: 60px;
+    margin: 3px 8px;
+    width: 68px;
+    height: 68px;
     font-size: 18px;
-    /* line-height: 60px; */
     text-align: center;
     background: #fff;
     border: 1px solid #f9f9f9;
@@ -99,19 +99,19 @@ button:hover {
 .output-class {
     font-size: 30px;
     /* background: white; */
-    /* width: 228px; */
-    margin-bottom: 25px;
+    width: 272px;
+    margin-bottom: 30px;
     height: 50px;
 }
 
 .verify-output {
-    width: 228px;
-    padding: 5px 8px;
+    width: 258px;
+    padding: 10px 22px;
     margin: 2px 7px;
-    background: gray;
+    background: #dfdfdf;
     border-radius: 20px;
     box-shadow: 5px 5px 8px gray;
-    color: white;
+    /* color: white; */
     border: 1px solid gray;
 }
 
