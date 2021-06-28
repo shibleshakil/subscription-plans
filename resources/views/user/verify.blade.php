@@ -30,7 +30,7 @@
                 </div>
                 <div class="clerfix"></div>
                 <div class="col-md-4  container-grid second">
-                    <div class="output-class"><input type="text" id="output" class="verify-output"></div>
+                    <div class="output-class"><input type="text" id="output" class="verify-output" readonly></div>
                     <div id="container">
                         <ul id="keyboard">   
                             <button onclick="showNumber('1')" class="letter">1</button>  
@@ -41,11 +41,13 @@
                             <button onclick="showNumber('6')" class="letter">6</button>  
                             <button onclick="showNumber('7')" class="letter clearl">7</button>  
                             <button onclick="showNumber('8')" class="letter">8</button>  
-                            <button onclick="showNumber('9')" class="letter">9</button>  
+                            <button onclick="showNumber('9')" class="letter">9</button> 
+                            <!-- <button onclick="removeOutput()" class="letter clearl"><i class="fa fa-chevron-right"></i></button> -->
+                            <button onclick="removeOutput()" class="letter clearl"><img src="{{ asset ('dist/img/long-left-arrow.png') }}" alt="" class="img-arrow"></button> 
                             <button onclick="showNumber('0')" class="letter">0</button>  
-                            <button data-switch class="switch">abc</button>  
-                            <button onclick="returnNull()" class="return">return</button>  
-                            <button onclick="removeOutput()" class="delete lastitem"><</button>
+                            <!-- <button data-switch class="switch">abc</button>   -->
+                            <button onclick="returnNull()" class="letter">clear</button>  
+                            <!-- <button onclick="removeOutput()" class="delete lastitem"><</button> -->
                         </ul>  
                     </div>
                 </div>

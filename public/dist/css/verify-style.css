@@ -13,9 +13,11 @@ body {
 
 .main {
     /* padding: 10px 30px; */
-    border: 1px solid black;
     margin: 50px 20px;
     min-width: 280px;
+    box-shadow: 5px 5px 8px #2d2d2d;
+    border-radius: 20px;
+    border: 1px solid #eee;
 }
 
 #container {
@@ -29,15 +31,16 @@ body {
 #keyboard li,
 button {
     float: left;
-    margin: 0 5px 5px 0;
-    width: 53px;
-    height: 53px;
-    font-size: 24px;
+    margin: 3px 10px;
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
     /* line-height: 60px; */
     text-align: center;
     background: #fff;
     border: 1px solid #f9f9f9;
-    border-radius: 5px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 8px #6a5b5b;
 }
 .capslock,
 .tab,
@@ -95,14 +98,21 @@ button:hover {
 
 .output-class {
     font-size: 30px;
-    background: white;
-    width: 228px;
-    margin-bottom: 10px;
+    /* background: white; */
+    /* width: 228px; */
+    margin-bottom: 25px;
     height: 50px;
 }
 
 .verify-output {
     width: 228px;
+    padding: 5px 8px;
+    margin: 2px 7px;
+    background: gray;
+    border-radius: 20px;
+    box-shadow: 5px 5px 8px gray;
+    color: white;
+    border: 1px solid gray;
 }
 
 .container-grid {
@@ -147,4 +157,8 @@ button:hover {
 
 .second {
     min-height: 480px;
+}
+
+.img-arrow {
+    width: 20px;
 }
