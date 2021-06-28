@@ -123,10 +123,12 @@ button:hover {
 
 .img {
     text-align: left;
+    padding: 10px;
 }
 
 .pin-logo {
-    width: 30%;
+    width: 100%;
+    height: auto;
 }
 
 .text-foot {

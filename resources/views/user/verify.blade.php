@@ -19,13 +19,9 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <div class="row main">
-                <div class="col-md-2"></div>
-                <div class="col-md-4 container-grid">
-                    <div class="img">
-                        <img src="{{ asset('dist/img/pin-code.png') }}" alt="" class="pin-logo">
-                    </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3  container-grid">
                     <h5 class="h5-first">Enter your</h5>
-                    <h5 class="h5-second">South African ID Number</h5>
                     <span class="text-foot">Your 13 digit South African ID number tells us who you are!</span>
                 </div>
                 <div class="clerfix"></div>
@@ -42,16 +38,18 @@
                             <button onclick="showNumber('7')" class="letter clearl">7</button>  
                             <button onclick="showNumber('8')" class="letter">8</button>  
                             <button onclick="showNumber('9')" class="letter">9</button> 
-                            <!-- <button onclick="removeOutput()" class="letter clearl"><i class="fa fa-chevron-right"></i></button> -->
                             <button onclick="removeOutput()" class="letter clearl"><img src="{{ asset ('dist/img/long-left-arrow.png') }}" alt="" class="img-arrow"></button> 
                             <button onclick="showNumber('0')" class="letter">0</button>  
-                            <!-- <button data-switch class="switch">abc</button>   -->
                             <button onclick="returnNull()" class="letter">clear</button>  
-                            <!-- <button onclick="removeOutput()" class="delete lastitem"><</button> -->
                         </ul>  
                     </div>
                 </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-3 container-grid">
+                    <div class="img">
+                        <img src="{{ asset('dist/img/keypad.png') }}" alt="" class="pin-logo">
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
                 
             </div>
         </div>
