@@ -29,17 +29,17 @@
                     <div class="output-class"><input type="text" id="output" class="verify-output" readonly></div>
                     <div id="container">
                         <ul id="keyboard">   
+                            <button onclick="showNumber('0')" class="letter">0</button>  
                             <button onclick="showNumber('1')" class="letter">1</button>  
                             <button onclick="showNumber('2')" class="letter">2</button>  
-                            <button onclick="showNumber('3')" class="letter">3</button>  
-                            <button onclick="showNumber('4')" class="letter clearl">4</button>  
+                            <button onclick="showNumber('3')" class="letter c3earl">3</button>  
+                            <button onclick="showNumber('4')" class="letter">4</button>  
                             <button onclick="showNumber('5')" class="letter">5</button>  
-                            <button onclick="showNumber('6')" class="letter">6</button>  
-                            <button onclick="showNumber('7')" class="letter clearl">7</button>  
-                            <button onclick="showNumber('8')" class="letter">8</button>  
-                            <button onclick="showNumber('9')" class="letter">9</button> 
+                            <button onclick="showNumber('6')" class="letter c6earl">6</button>  
+                            <button onclick="showNumber('7')" class="letter">7</button>  
+                            <button onclick="showNumber('8')" class="letter">8</button> 
                             <button onclick="removeOutput()" class="letter clearl"><img src="{{ asset ('dist/img/long-left-arrow.png') }}" alt="" class="img-arrow"></button> 
-                            <button onclick="showNumber('0')" class="letter">0</button>  
+                            <button onclick="showNumber('9')" class="letter">9</button>  
                             <button onclick="returnNull()" class="letter">clear</button>  
                         </ul>  
                     </div>
