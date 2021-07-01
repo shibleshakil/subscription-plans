@@ -26,7 +26,7 @@
                 </div>
                 <div class="clerfix"></div>
                 <div class="col-md-4  container-grid"> <!--container-grid second class remove to fix the height -->
-                    <div class="output-class"><input type="text" id="output" class="verify-output" readonly></div>
+                    <div class="output-class"><input type="text" id="output" class="verify-output"></div>
                     <!-- <div id="container">
                         <ul id="keyboard">   
                             <button onclick="showNumber('0')" class="letter">0</button>  
