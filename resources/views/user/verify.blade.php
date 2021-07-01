@@ -25,9 +25,9 @@
                     <span class="text-foot">Your 13 digit South African ID number tells us who you are!</span>
                 </div>
                 <div class="clerfix"></div>
-                <div class="col-md-4  container-grid second">
+                <div class="col-md-4  container-grid"> <!--container-grid second class remove to fix the height -->
                     <div class="output-class"><input type="text" id="output" class="verify-output" readonly></div>
-                    <div id="container">
+                    <!-- <div id="container">
                         <ul id="keyboard">   
                             <button onclick="showNumber('0')" class="letter">0</button>  
                             <button onclick="showNumber('1')" class="letter">1</button>  
@@ -42,7 +42,7 @@
                             <button onclick="showNumber('9')" class="letter">9</button>  
                             <button onclick="returnNull()" class="letter">clear</button>  
                         </ul>  
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-md-3 container-grid">
                     <div class="img">
